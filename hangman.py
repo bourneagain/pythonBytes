@@ -46,7 +46,7 @@ print "<<<<<<<<<<<<<<<                                                          
 print "<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<"
 print "\n"
 print "\n"
-print "*******    GUESS THE COUNTRY/STATE/CITY NAME *******"
+print "*******    GUESS THE COUNTRY/STATE/CITY NAMES of INDIA *******"
 print "\n"
 print "         "+' '.join(dash)
 print "\n"
