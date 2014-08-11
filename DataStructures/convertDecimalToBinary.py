@@ -25,3 +25,5 @@ while not binaryNum.isEmpty():
 
 print "Binary representation of " + str(decNum) + " is " + "".join(str(v) for v in binaryString)
 
+
+
