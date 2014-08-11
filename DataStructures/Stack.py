@@ -29,5 +29,4 @@ class Stack(object):
 
 
 
-binaryNum=Stack()
-print binaryNum.size()
+
