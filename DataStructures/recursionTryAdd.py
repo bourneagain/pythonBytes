@@ -1,3 +1,6 @@
+"""
+This is an example to illustrate the recursive add function 
+"""
 addList=[1,2,10,500,-123]
 
 def recursiveAdd(addList2):
