@@ -1,4 +1,3 @@
 pythonBytes
 ===========
-
-A Repo of code developed while i started learning python
+Some random snippets of python code for fun and learning!
