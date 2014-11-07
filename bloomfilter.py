@@ -6,28 +6,33 @@ def bloomFilter(A):
 	res={}
 	val=""
 	for i in A:
-		res[i]=bloomHash(i)
+		res[i]=bloomHash(i,0)
 	print res		
 
-def bloomHash(K):
+def bloomHash(K,n):
+	print "K"+str(K)
 	global setIndex
 	m=32
 	haslist=[]
 	for ha in range(1,4):
 		biton=(((K**2+K**3)*ha)%32)
-		setIndex.append(biton)
+		print "biton is " + str(biton)
+		if n==0: 
+			setIndex.append(biton)
 		haslist.append(biton);
+	print haslist
 	return haslist
 	
 def checkFalsePositive():
 	print "ENTERED"
 	global setIndex
-	n=1;
+	n=0;
 	while True:
-		a=bloomHash(1)
-		print a 
+		a=bloomHash(n,1)
+		print a
 		if len(set(a) & set(setIndex)) == len(set(a)):
 			print set(a),set(setIndex) 
+			print n 
 			break
 		else:
 			n=n+1
