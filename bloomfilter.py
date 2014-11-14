@@ -1,3 +1,7 @@
+
+#1998,2001,2004,2007,2010,2013,
+
+
 import sys
 setIndex=[]
 def bloomFilter(A):
@@ -26,7 +30,7 @@ def bloomHash(K,n):
 def checkFalsePositive():
 	print "ENTERED"
 	global setIndex
-	n=0;
+	n=1987
 	while True:
 		a=bloomHash(n,1)
 		print a
