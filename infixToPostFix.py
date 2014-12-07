@@ -10,7 +10,7 @@ def topost(infix):
 	op=[]	
 	for c in infix:
 
-		if c in "ABCDEFGHIJKLMNOPQRSTUVWXYZ" or c.isdigit():
+		if c in "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz" or c.isdigit():
 			res.append(c)
 		else:
 			while(len(op)>0 and precedence[c]<=precedence[op[-1]]):
@@ -25,6 +25,7 @@ def topost(infix):
 	return res
 
 infix="A*B+C*D"
+infix="a+b*(c^d-e)^(f+g*h)-i"
 print topost(infix)
 #
 #[]

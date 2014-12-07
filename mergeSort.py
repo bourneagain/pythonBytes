@@ -37,7 +37,7 @@ def merge(left,right):
 
 
 A=range(1000000)
-random.shuffle(A)
+#random.shuffle(A)
 #aux=[]
 #print A
 print merge_sort(A)
