@@ -84,7 +84,33 @@ FLP:SchedulesCommutative|Disjoint Schedules are commutative
 s1={(p1,m1),(p2,m2),(p1,m1)}|s2={(p,m)}|p Not in s1
 There always exists an initial config that is bivalent
 starting from bivalent,there is always another bivalent config reachable
-#Routing|NetworkLayer
-DistanceVectorRouting(RIP)|Proactive|
-Link-State(OSPF)
-TCP:connectionless|decomposition|reliable:acks|mult/demult|congestion|FIFO_order
+|Routing|NetworkLayer
+|_DistanceVectorRouting(RIP)|Proactive|
+|_Link-State(OSPF)
+|_TCP:connectionless|decomposition|reliable:acks|mult/demult|congestion|FIFO_order
+|_DNS|Recursive:may_fail_
+|_Iterative_LocalNameServerMostResponsibilty>BETTER|longer but more control
+
+RPC|CodeReuse|Dispatcher:inServer
+|Concurrency|pessimistic|optimisitic
+|_Pessimistic:locking(read|writeMode)|optimisticTwoPhaseLocking:serialEquivilance|GrowingPhase,ShrinkingPhase
+|_Optimistic|firstCut,TimeStampOrder,MultiVersionControl
+|_firstCutApproach:r/w@will-chk@commit-rollback:cascadingAborts
+|_TimeStampOrder:read_if_lastW_by_lowerid,write_if_lastR_bylowerid
+|_MultiVersionControl:multipleVers,readOnlyImmediatePrevious
+EventualConsistency:Cassandra+Dynamo=lastWriteWins|
+Riak=vectorClocks:sizeBased|TimeBasedPruning
+#Replication|challenge|Transperancy+consistency
+|1-f^k:K=#replica,f=probFailure:
+|_Passive:Active=Master:treatAllSame
+Transaction&Replication|NonReplicatedSystem:serialEquvilance
+|_InReplicatedSys:serialEqui+OneCopySerializability:"""The effect of transactions performed by clients on replicated objects should be the same as if they had been performed one at a time on a single set of objects"""
+TransactionCommit:OnePhase|TwoPhase|Coordinator:Prepare+Yes/No+Commit<LOG>
+#KeyValueStore
+|_Cassandra|ReplicationStatergy|Simple,Network
+|_Simple:Random,ByteOrder<rangeQueries>|
+|_NetworkTopology<DCWide+withinDC_RACK>:Snitches:Simple|RackInferring<x.<DC>.<rack>.<node>|PropertyFile|ECS:ECSRegion<DC>+AvailabilityZone<rack>
+
+
+
+
