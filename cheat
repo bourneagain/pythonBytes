@@ -110,6 +110,18 @@ TransactionCommit:OnePhase|TwoPhase|Coordinator:Prepare+Yes/No+Commit<LOG>
 |_Cassandra|ReplicationStatergy|Simple,Network
 |_Simple:Random,ByteOrder<rangeQueries>|
 |_NetworkTopology<DCWide+withinDC_RACK>:Snitches:Simple|RackInferring<x.<DC>.<rack>.<node>|PropertyFile|ECS:ECSRegion<DC>+AvailabilityZone<rack>
+|_Writes|HintedHandOff:replicasDown:Timeout|memTable<Append>Cache|SSTABLE_disk
+|_Reads|slow:BLOOM+INDEX+SSTABLE+MULTIPLEREPLICA+MULTIPLE_sstables_rows
+|_PHI:toSetLongerTimeoutForSlowerServers
+|_Quoram:W:Coordinator:waitsFor_W_toRepsond||asynchronous<FAST>Write&Return
+|_(W+N>N__W>N/2):
+|_(W=1,R=1): very few writes and reads
+|_(W=N, R=1): great for read-heavy workloads
+|_(W=N/2+1, R=N/2+1): great for write-heavy workloads
+|_(W=1, R=N): great for write-heavy workloads with mostly one client writing per key
+MongoDB|consistent,shard:collectionOfChunks
+|_ReadPrefernce=primary/secondary/nearest
+|_Write="acknowledged":primaryAcksImmediately|Journalled+replicaAck
 
 
 
