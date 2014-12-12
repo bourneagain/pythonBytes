@@ -106,26 +106,29 @@ For all k ≠ j: M[k] ≤ Pi[k]
 i.e., Receiver satisfies causality 
 When above two conditions satisfied, deliver M to application and set Pi[j]  = M[j]
 
-SRM (Scalable Reliable Multicast)|Uses NAKs
-But adds random delays, and uses exponential backoff to avoid NAK storms
-RMTP (Reliable Multicast Transport Protocol)|Uses ACKs
-
+SRM (Scalable Reliable Multicast)|Uses NAKs|Adds random delays|exponential backoff2avoid NAK storms
+RMTP (Reliable Multicast Transport Protocol)|Uses ACKs|
+GossibStyleMulticast: #message : c*b*log(n)
 
 #CHORD
 At node n, send query for key k to largest successor/finger entry <= k
 if none exist, send query to successor(n) 
 Consistent Hashing => with K keys and N peers, each peer stores O(K/N) keys. (i.e., < c.K/N, for some constant c)
 r=2log(N)|lookupCorrectNess
+NewPeersJoining:O((logN)*(logN))
+
+#kelips:OnlyMetaInformation
 
 Name,Memory,Lookup,#messagesForLookup
 Napster,O(1)/O(N)@server,O(1),O(1)
 Chord,log(N),log(N),log(N)
 Kelips,O(rootN),o(1),disseminationtime(ologn)
+
 Safety:  For all non-faulty processes p: (p’s elected = (q: a particular non-faulty process with the best attribute value) or Null)
 Liveness: For all election runs: (election run terminates) & for all non-faulty processes p: p’s elected is not Null
 Election:
 Ring:election|elected|worst:Best=3n-1:2n
-Bully:election|ok|coordinator|worst:best=o(n)sq:N-2(onemessageTransmissionTime)
+Bully:election|ok|coordinator|worst:best=o(n)sq:N-2(onemessageTransmissionTime)|LivenessNotGuranteed
 GoogleChubby:live & safe|quoram|voteOnce|masterLease|MutualExclusion_locking
 __Bandwidth|#msg sent in each enter and exit.
 __Clientdelay|delay incurred by a process at each enter and exit operation (when no other process is in, or waiting)
