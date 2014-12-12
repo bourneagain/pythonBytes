@@ -1,28 +1,63 @@
-DOUBTS:
-virtual synchrony: order does not matter? L7 ppt51
-
-
 points
 virual syncrhonious system cannot scale: succeptible to partion
+Paas: You get access to flexible computing and storage infrastructure, coupled with a software platform (often tightly coupled)
+GoogleAppEngine
+Saas: You get access to software services, when you need them. Often
+said to subsume SOA (Service Oriented Architectures).GoogleDocs
+Iaas:AmazonEWS :Virtualization
+Haas:LeastSecure
 
 
-Paas    : You get access to flexible computing and storage infrastructure, coupled with a software platform (often tightly coupled)
-Saas
-Iaas
-Haas
+####################
+Global Resource Manager (RM)
+Scheduling
+Per-server Node Manager (NM)
+Daemon and server-specific functions
+Per-application (job) Application Master (AM)
+Container negotiation with RM and NMs
+Detecting task failures of that job
+
+NM heartbeats to RM
+If server fails, RM lets all affected AMs know, and AMs take action
+NM keeps track of each task running at its server
+If task fails while in-progress, mark the task as idle and restart it
+AM heartbeats to RM
+On failure, RM restarts AM, which then syncs up with its running tasks
+
+When you have 120 servers in the DC, the mean time to failure (MTTF) of the next machine is 1 month.
+
+When you have 12,000 servers in the DC, the MTTF is about once every 7.2 hours!
+
+DesirableProperties:CompletenEss,Accuracy,Speed,Scale
+Gossip:Bandwidth_up:TimeToPropagte_down
+
+
+####################
+
 Paxos safety?
 If some round has a majority (i.e., quorum) hearing proposed value v’ and accepting it (middle of Phase 2), then subsequently at each round either   : 1) the round chooses v’ as decision or 2) the round fails •   Proof   : –   Potential leader waits for majority of OKs in Phase 1 –   At least one will contain v’ (because two majorities or quorums always intersect) –   It will choose to send out v’ in Phase 2 •   Success requires a majority, and any two majority sets intersect Scale, On-demand access, data-intensive, new programming
 
-
 WUE = Annual Water Usage / IT Equipment Energy (L/kWh) – low is good • PUE = Total facility Power / IT Equipment Power – low is good
 (e.g., Google~1.11) 
-CLOCKSKEW|Given a maximum acceptable skew M between any pair of clocks, need to synchronize at least once every: M / (2 * MDR) time units
+CLOCKSKEW| M / (2 * MDR) |Given a maximum acceptable skew M between any pair of clocks, need to synchronize at least once every:time units
 External Synchronization with D => Internal Synchronization with 2*D
 ----
 |VectorTimeStamp:|Send:increment its ith element
 |_Receive|Vi[i] = Vi[i] + 1
       Vi[j] = max(Vmessage[j], Vi[j]) for j ≠ i 
-|_chandy_
+|_VT1 = VT2,  
+|_   iff   (if and only if)
+|_    VT1[i] = VT2[i], for all i = 1, … , N
+|_VT1 ≤ VT2,  
+|_   iff   VT1[i] ≤ VT2[i], for all i = 1, … , N
+|_Two events are causally related iff
+|_    VT1 < VT2,  i.e.,
+|_   iff   VT1 ≤ VT2 & 
+|_   there exists j such that 
+|_  :1 ≤ j ≤ N & VT1[j] < VT2 [j]
+
+
+#SNAPSHOT_ALGORITHM_CHANDY_LAMPORT
 Whenever a process Pi receives a Marker message on an incoming channel Cji
  if (this is the first Marker Pi is seeing) 
 Pi records its own state first
@@ -33,17 +68,22 @@ Starts recording the incoming messages on each of the incoming channels at Pi: C
   else // already seen a Marker message
 Mark the state of channel Cji as all the messages that have arrived on it since recording was turned on for Cji
 ______
-AlltoAll   :L=N/tg=N*logN/T
+AlltoAll:L=N/T
+Gossip: N*logN/t(gossip) | N*log(N)/T 
+Ideal:[log(PM(T))/log(Pm)]/T
+SWIM:e/(e-1)
+
 Cristian   :Error is at most (RTT-min2-min1)/2)|setTime:t + (RTT+min2-min1)/2
 NTP   :o = (tr1 – tr2 + ts2 – ts1)/2|
 Lamport    : max(localClock+messagTimestamp)
 vector    : Vi[i] = Vi[i] + 1 && Vi[j] = max(Vmessage[j], Vi[j]) for j ≠ i
-heckpointing   : can restart distributed application on failure
+checkpointing   : can restart distributed application on failure
 Garbage collection of objects   : objects at servers that don’t have any other objects (at any servers) with pointers to them
 Deadlock detection   : Useful in database transaction systems
 Termination of computation   : Useful in batch computing systems like Folding@Home, SETI@Home
 
 FIFO:
+NOMAX_increment_onlyWhileSending_receive_checkToDeliver!!!!
 |_Send multicast at process Pj:
 Set Pj[j] = Pj[j] + 1
 Include new Pj[j] in multicast message as its sequence number
@@ -66,9 +106,16 @@ For all k ≠ j: M[k] ≤ Pi[k]
 i.e., Receiver satisfies causality 
 When above two conditions satisfied, deliver M to application and set Pi[j]  = M[j]
 
+SRM (Scalable Reliable Multicast)|Uses NAKs
+But adds random delays, and uses exponential backoff to avoid NAK storms
+RMTP (Reliable Multicast Transport Protocol)|Uses ACKs
+
+
 #CHORD
 At node n, send query for key k to largest successor/finger entry <= k
 if none exist, send query to successor(n) 
+Consistent Hashing => with K keys and N peers, each peer stores O(K/N) keys. (i.e., < c.K/N, for some constant c)
+r=2log(N)|lookupCorrectNess
 
 Name,Memory,Lookup,#messagesForLookup
 Napster,O(1)/O(N)@server,O(1),O(1)
@@ -135,6 +182,7 @@ starting from bivalent,there is always another bivalent config reachable
 |_Iterative_LocalNameServerMostResponsibilty>BETTER|longer but more control
 
 RPC|CodeReuse|Dispatcher:inServer
+|_LPC:exactlyOnce
 |Concurrency|pessimistic|optimisitic
 |_Pessimistic:locking(read|writeMode)|optimisticTwoPhaseLocking:serialEquivilance|GrowingPhase,ShrinkingPhase
 |_Optimistic|firstCut,TimeStampOrder,MultiVersionControl
@@ -144,6 +192,8 @@ RPC|CodeReuse|Dispatcher:inServer
 EventualConsistency:Cassandra+Dynamo=lastWriteWins|
 Riak=vectorClocks:sizeBased|TimeBasedPruning
 #Replication|challenge|Transperancy+consistency
+Why|Fault-tolerance|Load balancing|Replication => Higher Availability
+What problem is this?Consensus!(It’s also called the “Atomic Commit problem”)
 |1-f^k:K=#replica,f=probFailure:
 |_Passive:Active=Master:treatAllSame
 Transaction&Replication|NonReplicatedSystem:serialEquvilance
@@ -155,17 +205,29 @@ TransactionCommit:OnePhase|TwoPhase|Coordinator:Prepare+Yes/No+Commit<LOG>
 |_NetworkTopology<DCWide+withinDC_RACK>:Snitches:Simple|RackInferring<x.<DC>.<rack>.<node>|PropertyFile|ECS:ECSRegion<DC>+AvailabilityZone<rack>
 |_Writes|HintedHandOff:replicasDown:Timeout|memTable<Append>Cache|SSTABLE_disk
 |_Reads|slow:BLOOM+INDEX+SSTABLE+MULTIPLEREPLICA+MULTIPLE_sstables_rows
-|_PHI:toSetLongerTimeoutForSlowerServers
+|_PHI:toSetLongerTimeoutForSlowerServers|log(CDF or Probability(t_now – t_last))/log 10
+
 |_Quoram:W:Coordinator:waitsFor_W_toRepsond||asynchronous<FAST>Write&Return
+ANY: any server (may not be replica)
+Fastest: coordinator may cache write and reply quickly to client
+ALL: all replicas
+Slowest, but ensures strong consistency
+ONE: at least one replica|Faster than ALL, and ensures durability without failuresQUORUM: quorum across all replicas in all datacenters (DCs)|Global consistency, but still fast
+LOCAL_QUORUM: quorum in coordinator’s DC|Faster: only waits for quorum in first DC client contacts|
+
+EACH_QUORUM: quorum in every DC|Lets each DC do its own quorum: supports hierarchical replies
 |_(W+N>N__W>N/2):
 |_(W=1,R=1): very few writes and reads
 |_(W=N, R=1): great for read-heavy workloads
 |_(W=N/2+1, R=N/2+1): great for write-heavy workloads
 |_(W=1, R=N): great for write-heavy workloads with mostly one client writing per key
+
 MongoDB|consistent,shardKey:Primary|collectionOfChunks
 |_ReadPrefernce=primary/secondary/nearest
 |_Write="acknowledged":primaryAcksImmediately|Journalled+replicaAck
 |_Oplog:InMemory:JournalledToHarddisklater
+HBASE:
+ColFamily:someNameToColumNfamily|colQualifier:actualColumninColumnFamily
 #GraphProcessing
 |_Storm:MasterNode<NIMBUS>|DistribeCode+Assigntask+MonitorFailures
 |_Worker<SuperVisor>:onServer|listenToWorkAssignedToMachines
