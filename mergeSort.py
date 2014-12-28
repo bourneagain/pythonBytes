@@ -1,4 +1,4 @@
-import random
+import random,time
 def merge_sort(m):
     """
      good implementation 
@@ -17,6 +17,7 @@ def merge_sort(m):
 
 
 def merge(left,right):
+	
     leftP=rightP=0
     result=[]
     while(leftP<len(left) and rightP<len(right)):
@@ -27,6 +28,13 @@ def merge(left,right):
             result.append(right[rightP])
             rightP+=1
 
+	print len(left),leftP,len(right),rightP
+	time.sleep(2)
+	print "left",  
+	print left
+	print "right",
+	print right
+	time.sleep(2)
     if left:
         result.extend(left[leftP:])
 
@@ -35,9 +43,8 @@ def merge(left,right):
 
     return result
 
-
-A=range(1000000)
 #random.shuffle(A)
 #aux=[]
 #print A
+A=[5,3,1,8,10,4]
 print merge_sort(A)
