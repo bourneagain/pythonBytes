@@ -2,9 +2,16 @@ def qs(a):
     less=[]
     more=[]
     pivotList=[]
-    pivot=a[0]
     if len(a)<=1:
         return a
+    try:
+        pivot=a[0]
+    except IndexError:
+        print pivot
+        print less
+        print pivotList
+        print more
+
     for i in a:
         if i<pivot:
             less.append(i)
@@ -12,13 +19,13 @@ def qs(a):
             more.append(i)
         else:
             pivotList.append(i)
-    more=qs(more)
     less=qs(less)
+    more=qs(more)
     return less+pivotList+more
 
-a=[5,3,4,2,7,6,9]
-print qs(a)
+a=[3,3,3,3,3,8]
 print a
+print qs(a)
 
 # def quickSort(arr):
 #     less = []
