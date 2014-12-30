@@ -1,18 +1,26 @@
-def compress(A):
-	#a a b c c c c c a a a
-	counter=1;
-	opstring=[]
-	for i in range(0,len(A)-1):
-		if A[i] == A[i+1]:
-			counter+=1
+def compress(string):
+	#c a a
+	if len(string) == 0 or len(string) == 1:
+		return string
+	prev=string[0]
+	strc=1
+	newStr=[]
+	for i in range(1,len(string)):
+		if string[i] == prev:
+			strc+=1
 		else:
-			opstring.append(A[i])
-			opstring.append(counter)
-			counter=1	
-	if counter!=1:
-		opstring.append(A[i-1])
-		opstring.append(counter)
-		
-	print opstring	
+			newStr.append(prev)
+			newStr.append(strc)
+			strc=1
+		prev=string[i]
+	newStr.append(prev)
+	newStr.append(strc)
+	newStr=map(lambda x: str(x),newStr)	
+	newStr=''.join(newStr)	
+	
+	if len(newStr) > len(string):
+		return string
+	else:
+		return newStr
 
-compress("aabcccccaaa")
+print compress("saaaaaaaaaaaaaaaaaaammmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmaaaa")	
