@@ -4,14 +4,7 @@ def qs(a):
     pivotList=[]
     if len(a)<=1:
         return a
-    try:
-        pivot=a[0]
-    except IndexError:
-        print pivot
-        print less
-        print pivotList
-        print more
-
+    pivot=a[0]
     for i in a:
         if i<pivot:
             less.append(i)
