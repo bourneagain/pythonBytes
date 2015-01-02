@@ -15,7 +15,6 @@ def coin_change(coins,sum):
 				temp.append(dp[j-vi])
 		dp[j]=1+min(temp)
 	print dp[sum]
-		#print min(dp[j-vi] for vi in coins if vi<=j)
 
 coin_change([1,3,6,7],5)
 			
