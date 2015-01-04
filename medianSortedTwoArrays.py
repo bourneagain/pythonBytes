@@ -63,7 +63,7 @@ def _median(a,b):
 
 	nn=(n-1)//2
 	mm=(m-1)//2
-	print a[nn:],b[:(mm+1)],"------",a[nn],b[mm]
+	print a[nn:],b[:mm+1],"------",a[nn],b[mm]
 	if a[nn] < b[mm]:
 		return _median(a[nn:],b[:mm+1])
 	return _median(a[:nn+1],b[mm:])
