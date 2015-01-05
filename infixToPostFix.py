@@ -1,38 +1,54 @@
-#'*4+23' or '423+*' in prefix and postfix notation respectively.
-
-def topost(infix):
-	precedence={}
-	precedence['+']=1
-	precedence['-']=1
-	precedence['*']=2
-	precedence['/']=2
-	res=[]
-	op=[]	
-	for c in infix:
-
-		if c in "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz" or c.isdigit():
-			res.append(c)
+def infixtopost(a):
+	postfixList=[]
+	opStack=[]
+	prec = {}
+	prec["*"] = 3
+	prec["/"] = 3
+	prec["+"] = 2
+	prec["-"] = 2
+	prec["("] = 1
+	for token   in  a:
+		if  token   in  "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz"  or  token   in  "0123456789":
+			postfixList.append(token)
+		elif    token   ==  '(':
+			opStack.append(token)
+		elif    token   ==  ')':
+			topToken    =   opStack.pop()
+			while   topToken    !=  '(':
+				postfixList.append(topToken)
+				topToken    =   opStack.pop()
 		else:
-			while(len(op)>0 and precedence[c]<=precedence[op[-1]]):
+			while len(opStack) and (prec[opStack[-1]] >= prec[token]):
+				postfixList.append(opStack.pop())
+			opStack.append(token)
 
-				print "len(op),c,precedence[c],op[-1]"
-				print len(op),c,precedence[c],op[-1]
-				res.append(op.pop())
-			op.append(c)
-	
-	while(len(op)>0):
-		res.append(op.pop())		
-	return res
+	while len(opStack):
+		postfixList.append(opStack.pop())
+	return  "   ".join(postfixList)
 
-infix="A*B+C*D"
-infix="a+b*(c^d-e)^(f+g*h)-i"
-print topost(infix)
-#
-#[]
-#[]
-#['+']
-#['+']
-#['+', '*']
-#['+', '*']
-#['+', '*', '-']
-#['1', '2', '3', '4', '-', '*', '+']
+def checkOperatorPrecedence(a,b):
+	"""
+	0 if a's precedence is more than b operator
+	1 otherwise
+	"""
+	check={}
+	check['(']=1
+	check['*']=2
+	check['/']=2
+	check['-']=3
+	check['+']=3
+	if check[a] <= check[b]:
+		return 1
+	else:
+		return 0
+
+
+infix="(a+b)*(c+d)"
+infix='5*3^(4-2)'
+infix='(2+3)*9/'
+
+infix="(A+B)*C-(D-E)*(F+G)"
+infix="a+b*ac*d"
+#infix="a+b*(c^d-e)^(f+g*h)-i"
+
+print infixtopost(infix)
