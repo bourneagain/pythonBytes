@@ -21,8 +21,8 @@ def wordDistance(alist,word1,word2):
 			distance=abs(word1index-word2index)
 			if distance < minDistance:
 				minDistance=distance
-	return minDistance
+	return minDistance if minDistance!=sys.maxint else "NONE"
 
 
-alist=["the", "quick", "brown", "fox", "quick", "test", "kumar","fox"]
-print wordDistance(alist,"fox","kumar")
+alist=["the", "quick", "brown", "fox", "quick", "test", "kumar","foxie"]
+print wordDistance(alist,"x","kumar")
