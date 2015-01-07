@@ -1,20 +1,22 @@
+#from collections import defaultdict
 def guessSolutionGame(guess,sol):
-	guess_dict={}
-	sol_dict={}
-
 	hit=0
 	phit=0
-	for index,c in enumerate(sol):
-		sol_dict[c]=index
-	print sol_dict
-	for index,c in enumerate(guess):
-		try:
-			if sol_dict[c] == index:
-				hit+=1
-		except KeyError:
-			phit+=1
+	p={}
+	for i in range(0,len(sol)):
+		if guess[i] == sol[i]:
+			hit+=1
+		else:
+			if sol[i] not in p:
+				p[sol[i]]=i
+			else:
+				p[sol[i]]=i
+	for i in range(0,len(guess)):
+		if guess[i] != sol[i]:
+			if guess[i] in p:
+				phit+=1
+				del p[guess[i]]
 	return hit,phit
 
-print guessSolutionGame('AECD','RGBY')
-
+print guessSolutionGame('GGRR','RGBY')
 
