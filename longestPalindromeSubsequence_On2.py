@@ -1,6 +1,6 @@
 def return_all(s):
 	# this is just to get all the possible subsequences of a given string
-	# o(n2) run time
+	# o(n3) run time
 	end=len(s)
 
 	count=0
