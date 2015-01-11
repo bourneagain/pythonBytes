@@ -5,8 +5,9 @@ def dpMakeChange(coinValueList,change):
 		for j in [c for c in coinValueList if c <= cents]:
 			if minCoins[cents-j] + 1 < coinCount:
 				coinCount = minCoins[cents-j]+1
-		print minCoins
+				coins_list=j
 		minCoins[cents] = coinCount
-	return minCoins[change]
+	return minCoins[change],j
 
-print dpMakeChange([1,2,3],4)
+
+print dpMakeChange([1,5,10,21,25],15)
