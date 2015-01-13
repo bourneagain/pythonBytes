@@ -1,16 +1,15 @@
-def permutations(word): 
-	print word
-	if len(word) <= 1 : 
-		return [word]   #get all permutations of length N-1 
-	perms=permutations(word[1:]) 
-	print "perms when called with word",word,perms
-	char=word[0] 
-	result=[] #iterate over all permutations of length N-1 
-	for perm in perms: 
-		for i in range(len(perm)+1): 
-			print i,
-			result.append(perm[:i] + char + perm[i:]) 
-	return result
+def string_combinations(word):
+	print "word",word
+	#sam
+	_str=[]
+	if len(word) <= 1:
+		return [word]
+	perm=string_combinations(word[1:])
+	print "word,perm",word,perm
+	char = word[0]
+	for perm in perm:
+		for index in range(len(perm)+1):
+			_str.append(perm[:index] + char + perm[index:])
+	return _str
 
-A='sam'
-print permutations(A)
+print string_combinations('sam')
