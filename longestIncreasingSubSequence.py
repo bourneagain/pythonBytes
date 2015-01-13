@@ -1,54 +1,42 @@
-def lis(A):
-	resp=[]
-	for i in range(len(A)):
-		resp.append(1)
+def lisSub(A):
+	l=[]
+	l.append(A[0])
+	lis=[1]*len(A)
 
 	for i in range(1,len(A)):
-		print "A[i] : ",
-		print A[i],
 		for j in range(0,i):
-			print "A[j] : ",
-			print A[j]
-			print "resp[i]:resp[j]",
-			print resp[i],resp[j]
-			if A[i] > A[j] and resp[i] < resp[j] + 1:
-				resp[i]=resp[j]+1
-				print "CHANGED" ,
-				print resp[i],resp[j]
-			print "---- END inner for"
-			print ""
-		print "------------------- END TOP"
-		print ""
-		print ""
-	print "RESP below"
-	print resp
+			#for every value before i, check if they are smaller than i 
+			# if so check if adding one to the list at that position makes it longer than 
+			#what can be got for lis at i
+			
+			if A[i] > A[j] and lis[j] + 1 > lis[i]:
+				lis[i] = lis[j] + 1
+				if l[-1] < A[i]:
+					l.append(A[i])
+	return max(lis),l
+	
 
-A=[1, 8, 3, 4, 12] 
 
-print A
-lis(A)
 
-#
-#int maxLength = 1, bestEnd = 0;
-#DP[0] = 1;
-#prev[0] = -1;
-#
-#for (int i = 1; i < N; i++)
-#{
-#   DP[i] = 1;
-#   prev[i] = -1;
-#
-#   for (int j = i - 1; j >= 0; j--)
-#      if (DP[j] + 1 > DP[i] && array[j] < array[i])
-#      {
-#         DP[i] = DP[j] + 1;
-#         prev[i] = j;
-#      }
-#
-#   if (DP[i] > maxLength)
-#   {
-#      bestEnd = i;
-#      maxLength = DP[i];
-#   }
-#}
-#
+			#lis[i]=max(lis[i] for i in lis.keys() if all(x>A[i] for x in A[:i]))
+			#print lis[i]
+
+
+# def longest_increasing_subsequence(d):
+#     'Return one of the L.I.S. of list d'
+#     l = []
+	
+#     for i in range(len(d)):
+#     	for j in range(i):
+#     		if l[j][-1] < d[i]:
+#     			pass
+# 		# a=max( [ l[j] for j in range(i) if l[j][-1] < d[i] ] or [ [] ], key=len)
+# 		# print a
+# 		# l.append( max( [l[j] for j in range(i) if l[j][-1] < d[i]] or [[]], key=len)+ [d[i]])
+		
+#     return max(l, key=len)
+
+A=[10, 22, 9, 33, 21, 50, 41, 60, 80] 
+# #lisSub(A)
+# print longest_increasing_subsequence(A)
+print lisSub(A)
