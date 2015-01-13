@@ -2,20 +2,22 @@ def lisSub(A):
 	l=[]
 	l.append(A[0])
 	lis=[1]*len(A)
+	path=[str(x)+' ' for x in A]
 
 	for i in range(1,len(A)):
+		#print "----"
 		for j in range(0,i):
-			#for every value before i, check if they are smaller than i 
-			# if so check if adding one to the list at that position makes it longer than 
-			#what can be got for lis at i
-			
 			if A[i] > A[j] and lis[j] + 1 > lis[i]:
+				#print "BEFORE","i->",i,",j->",j,"|",A[i],A[j],"|",lis[i],lis[j]
 				lis[i] = lis[j] + 1
-				if l[-1] < A[i]:
-					l.append(A[i])
-	return max(lis),l
+				#print "AFTER ","i->",i,",j->",j,"|",A[i],A[j],"|",lis[i],lis[j]
+				path[i] = path[j] + str(A[i]) + ' '
+	return max(lis),max(path,key = len)
 	
-
+A=[0, 8, 4, 12, 2, 10, 6, 14, 1, 9, 5, 13, 3, 11, 7, 15] 
+# #lisSub(A)
+# print longest_increasing_subsequence(A)
+print lisSub(A)
 
 
 			#lis[i]=max(lis[i] for i in lis.keys() if all(x>A[i] for x in A[:i]))
@@ -36,7 +38,4 @@ def lisSub(A):
 		
 #     return max(l, key=len)
 
-A=[10, 22, 9, 33, 21, 50, 41, 60, 80] 
-# #lisSub(A)
-# print longest_increasing_subsequence(A)
-print lisSub(A)
+
