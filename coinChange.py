@@ -1,13 +1,15 @@
-def dpMakeChange(coinValueList,change):
-	minCoins={}
-	for cents in range(change+1):
-		coinCount = cents
-		for j in [c for c in coinValueList if c <= cents]:
-			if minCoins[cents-j] + 1 < coinCount:
-				coinCount = minCoins[cents-j]+1
-				coins_list=j
-		minCoins[cents] = coinCount
-	return minCoins[change],j
+def coin_change(coinlist, change):
+	dp=[x for x in range(0,change+1)]
+	# dp 0 indicating best solution for change 0
+	# assuming one is there in coinlist
+
+	for changes in range(1,change+1):
+		# so far solution for changes that we can make is using 1
+		for coin_availabe in [ x for x in coinlist if x <= changes ] :
+			if dp[changes - coin_availabe]+1 < dp[changes]:
+				dp[changes]=dp[changes - coin_availabe]+1
+	return dp[change]
+
+print coin_change([1, 5, 10,21,25],63)
 
 
-print dpMakeChange([1,5,10,21,25],15)
