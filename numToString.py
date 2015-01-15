@@ -17,6 +17,7 @@ class num:
 			return "negative " + self.numToString(-1 * n)
 		count=0
 		while n > 0:
+			print "HERE"
 			if n%1000 != 0:
 				str = self.numberString(n%1000) + ' ' + num.bigs[count] + ' ' + str
 			n/=1000
@@ -45,7 +46,7 @@ class num:
 
 def main():
 	sol=num()
-	print sol.numToString(319)
+	print sol.numToString(1099)
 
 
 if __name__ == '__main__':
