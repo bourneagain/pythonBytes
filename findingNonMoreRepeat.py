@@ -1,20 +1,17 @@
 class Solution:
 	def singleNumber(self, A):
 		result = 0
-		sflag=False
-		if sum(A) < 0:
-			sflag=True
-			A=[-1*x for x in A]
-		for i in xrange(0,64):
-			x = 1<<i;s=0
-			for i in A:
-				if i&x:
-					s+=1
-			if s%3:
-				result |=x
-			#rint result,s
-		return -1 * result if sflag else result
+		# count number of -ves ; if they equal count%3 == 0 : then -ves are cancelled out
+		sign = True if (sum(_<0 for _ in A))%3 else False
+		val = 0 
+		for i in range(32):
+			# move the number i times and and with one to check if that bit is set
+			# if so incr s 
+			s=sum((abs(num) >> i )& 1  for num in A) % 3
+			val |= s<<i
+		return -1*val if sign else val
+		
 a=Solution()
-n=[-1,-1,-1,-2,-3,-3,-3]
-n=[16,6,6,16,6,2,16]
+n=[-1,-1,-1,-2,3,3,3]
+#n=[16,6,6,16,6,2,16]
 print a.singleNumber(n)
