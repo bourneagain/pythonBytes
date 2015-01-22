@@ -4,8 +4,8 @@ def logger(func):
         return func(*args, **kwargs)
     return inner
 
-@logger ;# commnet this and try
-def add(a,b):
-    return a+b
+@logger 
+def add(a,b,c=2,d=3):
+    return (a,b,c,d)
 
-print add(1,2)
+print add(1,2,d=222,c=3)
