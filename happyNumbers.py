@@ -7,7 +7,8 @@ def check_happyNumbers(x):
 		elif s == 1:
 			return True
 		else:
-			aset = aset | {s}
+			# aset = aset | {s}
+			aset.add(s)
 			x=s
 
-print check_happyNumbers(28)
+print check_happyNumbers(20)
