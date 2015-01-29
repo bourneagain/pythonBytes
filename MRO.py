@@ -1,4 +1,5 @@
 # MRO : method resolution order
+#http://python-history.blogspot.com/2010/06/method-resolution-order.html
 class A:
     def p(self):
             print("inside A")
