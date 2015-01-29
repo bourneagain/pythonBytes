@@ -158,7 +158,64 @@ class linkedlist:
                 break
         return res
 
+    def sortedMerge(self, a, b):
+        if not a:
+            return b
+        elif not b:
+            return a
+        if a.data <= b.data:
+            res = a
+            res.next = self.sortedMerge(a.next,b)
+        else:
+            res = b
+            res.next = self.sortedMerge(a,b.next)
+        return res
 
+    def mergesort(self, head):
+        if not head:
+            return None
+        if not head.next:
+            return head
+        left,right = self.alternatingSplit(head)
+        l = self.mergesort(left)
+        r = self.mergesort(right)
+        return self.sortedMerge(l,r)
+
+    def reverse_iterative(self, head):
+        if not head:
+            return None
+        elif not head.next:
+            return head
+        prev = None
+        while head:
+            cur  = head.next
+            head.next = prev
+            prev = head
+            head = cur
+        return prev
+
+    def reverse_recursive(self, head):
+       
+        if not head:
+            return
+        first  = head
+        rest = first.next
+        if not rest:
+            return
+        self.reverse_recursive(rest)
+        first.next.next = first
+        first.next = None
+        head = rest
+
+        # ref = head
+        # if not head:    return
+        # first = head
+        # rest = first.next
+        # if not rest:    return
+        # self.reverseListRecursion(rest)
+        # first.next.next = first
+        # first.next = None
+        # head = rest         
 
 
 
@@ -173,13 +230,11 @@ head = a_list.addNode(head, -8)
 head = a_list.addNode(head, 87)
 head = a_list.addNode(head, 9)
 a_list.printlist(head)
-a,b = a_list.alternatingSplit(head)
-b = Node(None)
-a_list.printlist(a)
-a_list.printlist(b)
+head = a_list.mergesort(head)
+a_list.printlist(head)
 
-res = a_list.shuffleMerge(a,b)
-a_list.printlist(res)
+a_list.reverse_recursive(head)
+a_list.printlist(head)
 
 # head1 = Node(20)
 # head1 = a_list.addNode(head1, 10)
