@@ -1,38 +1,48 @@
+def lcs_recursive(a,b):
+	if not a or not b:
+		return 0
+	if a[-1] == b[-1]:
+		return 1 + lcs_recursive(a[:-1],b[:-1])		
+	else:
+		return max(lcs_recursive(a,b[:-1]) , lcs_recursive(a[:-1],b) )
+
+
+
+def lcs_dp(a,b):
+	lcs_dp={}
+	for i in range(len(a)+1):
+		for j in range(len(b)+1):
+			if i == 0 or j == 0:
+				lcs_dp[i,j] = 0
+				# lcs_dp stores the max length of common substring which ends at i-1,j-1 for a and b
+			elif a[i-1] == b[j-1]:
+				lcs_dp[i,j] = 1 + lcs_dp[i-1,j-1]
+			else:
+				lcs_dp[i,j] = max(lcs_dp[i,j-1],lcs_dp[i-1,j])
+	# return lcs_dp[len(a),len(b)]
+
+	# to print 
+	i = len(a)
+	j = len(b)
+	res=[None]*lcs_dp[i,j]
+	index = lcs_dp[i,j]-1
+	while i>0 and j>0:
+		if a[i-1] == b[j-1]:
+			res[index] = a[i-1]
+			index-=1
+			i-=1
+			j-=1
+		else:
+			if lcs_dp[i-1,j] > lcs_dp[i,j-1]:
+				i-=1
+			else:
+				j-=1
+	return res
+
+
 	
-# def lcs(s1, s2):
-# 	lcs_dp={}
-# 	l=[]
-# 	result=0
-# 	for i in range(len(s1)+1):
-# 		for j in range(len(s2)+1):
-# 			if i==0 or j==0:
-# 				lcs_dp[i,j]=0
-# 			elif s1[i-1] == s2[j-1]:
-# 				lcs_dp[i,j]=lcs_dp[i-1,j-1]+1
-# 			else:
-# 				lcs_dp[i,j] = max(lcs_dp[i-1,j], lcs_dp[i,j-1]);
 
-# 	#below for printing
 
-# 	i=len(s1)
-# 	j=len(s2)
-	
-# 	res=[0]*lcs_dp[len(s1),len(s2)]
-# 	l=lcs_dp[len(s1),len(s2)]-1
-# 	while i>0 and j>0:
-# 		if s1[i-1] == s2[j-1]:
-# 			res[l]=s1[i-1]
-# 			i-=1
-# 			j-=1
-# 			l-=1
-# 		elif lcs_dp[i-1,j] > lcs_dp[i,j-1]:
-# 			i-=1
-# 		else:
-# 			j-=1
+print lcs_recursive('ABCDGH','AEDFHR')
+print lcs_dp('xmjyauz','mzjawxu')
 
-# 	return lcs_dp[len(s1),len(s2)],''.join(res)
-
-# s1="AGGTAB"
-# s2="GXTXAYB"
-
-# print lcs(s1,s2)
