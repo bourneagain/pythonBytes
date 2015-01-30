@@ -154,19 +154,59 @@ class BSTree:
             else:
                 return False
 
+    def printLevelOrder(self, root):
+        import Queue
+        alist = []
+        if not root:
+            return None
+        cur_level_count = 1
+        next_level_count = 0
+        q = Queue.Queue()
+        q.put(root)
+        temp = []
+        while not q.empty():
+            popNode = q.get()
+            cur_level_count-=1
+            if popNode:
+                temp.append(popNode.data)
+                q.put(popNode.left)
+                q.put(popNode.right)
+                next_level_count+=2
+            if cur_level_count == 0:
+                alist.append(temp)
+                cur_level_count = next_level_count
+                next_level_count = 0
+                temp = []
+        return alist
+
+    def lca(self, root, n1, n2):
+        # idea is going from bottom 
+        if not root:
+            return None
+        if root.data == n1 or root.data == n2:
+            return root
+        l = self.lca(root.left, n1, n2)
+        r = self.lca(root.right, n1, n2)
+        if l and r:
+            return root
+        else:
+            return l if l else r
 
 
 tree = BSTree()
-root1 = TreeNode(2)
-root1.left=TreeNode(11)
-root1.right=TreeNode(3)
+root = TreeNode(1)
+root.left=TreeNode(2)
+root.right=TreeNode(3)
 
-root2 = TreeNode(2)
-root2.left=TreeNode(1)
-root2.right=TreeNode(4)
-# root.left.left=TreeNode(1)
-# root.left.right=TreeNode(3)
-# root.left.left.right=TreeNode(2)
+# root2 = TreeNode(2)
+# root2.left=TreeNode(1)
+# root2.right=TreeNode(4)
+
+root.left.left=TreeNode(4)
+root.left.left.left=TreeNode(8)
+root.left.right=TreeNode(5)
+root.right.left=TreeNode(6)
+root.right.right=TreeNode(7)
 
 
 # root = tree.addNode(root, 199)
@@ -175,6 +215,8 @@ root2.right=TreeNode(4)
 # root = tree.addNode(root, 890)
 # root = tree.addNode(root, 8900)
 # root = tree.addNode(root, 4)
+# print tree.printLevelOrder(root)
+print tree.lca(root, 1, 1).data
 # # root = tree.addNode(root, 200)
 # root = tree.addNode(root, 1)
 # tree.inorder(root)
@@ -194,7 +236,7 @@ root2.right=TreeNode(4)
 # print "DOYVLEDONE"
 # print tree.same_tree(root1,root2)
 # tree.inorder(root)
-print tree.isBST(root1)
+#print tree.isBST(root1)
 
 
 
