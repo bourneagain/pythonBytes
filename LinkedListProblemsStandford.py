@@ -195,27 +195,41 @@ class linkedlist:
         return prev
 
     def reverse_recursive(self, head):
-       
         if not head:
-            return
-        first  = head
-        rest = first.next
-        if not rest:
-            return
-        self.reverse_recursive(rest)
-        first.next.next = first
-        first.next = None
-        head = rest
+            return None
+        if not head.next:
+            return head
+        second = head.next
+        head.next = None
+        reversedNode = self.reverse_recursive(second)
+        second.next = head
+        return reversedNode
 
-        # ref = head
-        # if not head:    return
-        # first = head
-        # rest = first.next
-        # if not rest:    return
-        # self.reverseListRecursion(rest)
-        # first.next.next = first
-        # first.next = None
-        # head = rest         
+    def reverse_k_nodes(self, head, k):
+        if not head:
+            return None
+        if k == 0:
+            return head
+
+        cur = head
+        prev = None
+        next = None
+        c = 0
+        while cur and c < k:
+            next = cur.next
+            cur.next = prev
+            prev = cur
+            cur = next
+            c+=1
+
+        if next:
+            head.next = self.reverse_k_nodes(next,k)
+
+        return prev
+
+
+
+       
 
 
 
@@ -230,10 +244,11 @@ head = a_list.addNode(head, -8)
 head = a_list.addNode(head, 87)
 head = a_list.addNode(head, 9)
 a_list.printlist(head)
-head = a_list.mergesort(head)
-a_list.printlist(head)
+# head = a_list.mergesort(head)
+# a_list.printlist(head)
 
-a_list.reverse_recursive(head)
+# head = a_list.reverse_recursive(head)
+head = a_list.reverse_k_nodes(head, 2)
 a_list.printlist(head)
 
 # head1 = Node(20)
