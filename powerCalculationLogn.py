@@ -8,7 +8,7 @@ class Solution:
         elif n == 1:
             return float(x)
         if n < 0:
-            return self.pow(1/x,-n)
+            return self.pow(1/float(x),-n)
         if n % 2 == 0 :
             return self.pow(x*x,n//2)
         else:
