@@ -191,6 +191,35 @@ class BSTree:
             return root
         else:
             return l if l else r
+    def min_value_node(self, root):
+        if not root:
+            return None
+        while root.left:
+            root = root.left
+        return root
+    def delete_node(self, root, data):
+        if not root:
+            return None
+        if root.data == data:
+            if not root.left:
+                temp = root.right
+                del root
+                return temp
+            elif not root.right:
+                temp = root.left
+                del root
+                return temp
+            min_node = self.min_value_node(root.right)
+            root.data = min_node.data
+            root.right = self.delete_node(root.right, min_node.data )
+
+        if root.data < data:
+            root.left = self.delete_node(root.left, data)
+        else:
+            if root.data > data:
+                root.right = self.delete_node(root.right, data)
+        return root
+
 
 
 tree = BSTree()
@@ -208,7 +237,10 @@ root.left.right=TreeNode(5)
 root.right.left=TreeNode(6)
 root.right.right=TreeNode(7)
 
-
+tree.inorder(root)
+root = tree.delete_node(root,)
+print "DELETE"
+tree.inorder(root)
 # root = tree.addNode(root, 199)
 # root = tree.addNode(root, 300)
 # root = tree.addNode(root, -21)
@@ -216,7 +248,7 @@ root.right.right=TreeNode(7)
 # root = tree.addNode(root, 8900)
 # root = tree.addNode(root, 4)
 # print tree.printLevelOrder(root)
-print tree.lca(root, 1, 1).data
+# print tree.lca(root, 1, 1).data
 # # root = tree.addNode(root, 200)
 # root = tree.addNode(root, 1)
 # tree.inorder(root)
