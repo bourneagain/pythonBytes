@@ -44,6 +44,6 @@ def search_liner(a,x):
 		if i==x:
 			return c
 
-a=[1, 1, 0, 1, 1, 1, 1]
 a=[5,5,5,5,5,1,2]
-print search_array(a,1)
+a=[1, 1, 0, 1, 1, 1, 1]
+print search_array(a,0)

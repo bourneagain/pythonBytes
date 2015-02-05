@@ -1,5 +1,5 @@
 def check_dict(_str):
-	dict_=['is','a','this','man','kumar','i','was']
+	dict_=["mobile","samsung","sam","sung","man","mango","icecream","and","go","i","like","ice","cream"]
 	return _str in dict_
 
 def split_sentence(sentence):
@@ -22,11 +22,14 @@ def split_sentence(sentence):
 		if dp[i] == True:
 			ll.append(i)
 	prev=0
+	print dp
+	
 	for i in ll:
 		print sentence[prev:i],
 		prev=i
+
 	return False
 
-split_sentence('kumariswasmanthis')		
+split_sentence('samsungandmango')		
 
 

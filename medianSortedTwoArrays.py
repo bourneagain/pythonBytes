@@ -3,6 +3,7 @@ def median_of_two_sorted_arrays(a,b):
 		return _median(b,a)
 	else:
 		return _median(a,b)
+
 def _mo2(a,b):
 	return (a+b)/2
 

@@ -19,7 +19,7 @@ def solution(alist):
 
 		for i in range(1,len(alist)):
 			for j in range(0,i):
-				if alist[j] > alist[i] and ans[i] < (ans[j] + alist[i].height):
+				if alist[j] < alist[i] and ans[i] < (ans[j] + alist[i].height):
 					ans[i] = ans[j] + alist[i].height
 		print ans
 		return max(ans)

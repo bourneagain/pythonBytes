@@ -62,15 +62,22 @@ class LinkedList:
 		return prev
 
 	def reverseListRecursion(self, head):
-		ref = head
-		if not head:	return
-		first = head
-		rest = first.next
-		if not rest:	return
-		self.reverseListRecursion(rest)
-		first.next.next = first
-		first.next = None
-		head = rest	
+		if not head:
+			return None
+		if not head.next:
+			return head
+
+		rest = head.next
+		head.next = None
+
+		reversedList = self.reverseListRecursion(rest)
+		rest.next = head
+
+		return reversedList
+
+
+
+
 	
 	def alternateSplitList(self, head):
 		ref = head
@@ -125,9 +132,11 @@ a_list = LinkedList()
 head = Node(90)
 head = a_list.addNode(head, 2)
 head = a_list.addNode(head, 12)
-head = a_list.addNode(head, 11)
-head = a_list.addNode(head, 43)
-head = a_list.addNode(head, 8)
+# head = a_list.addNode(head, 11)
+# head = a_list.addNode(head, 43)
+# head = a_list.addNode(head, 8)
+a_list.printlist(head)
+head = a_list.reverseListRecursion(head)
 a_list.printlist(head)
 # a_list.nullHead(head)
 # a_list.printlist(head)
@@ -138,10 +147,10 @@ a_list.printlist(head)
 # print "after split"
 # a_list.printlist(head)
 # head = a_list.reverseList(head)
-ref = Node(None)
-head = a_list.mergeSort(head)
-print "here"
-a_list.printlist(head)
+# ref = Node(None)
+# head = a_list.mergeSort(head)
+# print "here"
+# a_list.printlist(head)
 # a_list2 = LinkedList()
 # head2 = Node(4)
 # head2 = a_list.addNode(head2, 5)

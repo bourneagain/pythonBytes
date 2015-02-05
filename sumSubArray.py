@@ -16,6 +16,7 @@ def subArrayMax(A):
 
 A=[1,-3,2,-5,7,6,-1,-4,11,-23]
 A=[-2, -3, 4, -1, -2, 1, 5, -3]
+A=[2,3,-8,-1,2,4,-2,3]
 print subArrayMax(A)
 print A
 				

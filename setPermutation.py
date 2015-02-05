@@ -21,5 +21,5 @@ def one_index(a):
 		ci+=1
 	return count
 
-print set_combination(('a1','a2','a3'))
+print set_combination(('s','a','m'))
 #print one_index(10)

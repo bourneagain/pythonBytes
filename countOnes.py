@@ -12,10 +12,12 @@ def countOnes2(n):
   mask=1
   #for positive
   count = 0
-  while n > 0:
+  itercount=0
+  while n and itercount<=31: # this condition for negative
       if mask & n:
         count+=1
       n=n>>1
+      itercount+=1
   return count
 
 def countOnes3(n):
@@ -25,10 +27,10 @@ def countOnes3(n):
   i=0
   while n and i<32:
     #time.sleep(1)
-    print n
+    # print n
     n= n & (n-1)
     count+=1
     i+=1
   return count
 
-print countOnes3(-1)
+print countOnes2(-1)

@@ -33,7 +33,7 @@ def max_sum(a):
 a=[-2,1,-3,4,-1,2,1,-5,4]
 print max_sum(a)
 
-A=[5,-9,6,-2,3]
-B=[-2,1,-3,4,-1,2,1,-5,4]
-print maxSumSubsequence(A)
-print maxSumSubsequence(B)
+# A=[5,-9,6,-2,3]
+# B=[-2,1,-3,4,-1,2,1,-5,4]
+# print maxSumSubsequence(A)
+# print maxSumSubsequence(B)

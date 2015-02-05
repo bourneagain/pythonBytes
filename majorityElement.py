@@ -18,4 +18,4 @@ def m(a):
 	else:
 		return None
 
-print m([2,2,5,5,3,5,5])
+print m([1,2,3,2,5,2,6,2])

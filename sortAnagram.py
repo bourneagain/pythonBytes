@@ -12,8 +12,8 @@ def a_cluster(lst):
 		if sig not in asp:
 			asp[sig] = []
 		asp[sig].append(elem)
-	print asp
-	sys.exit(0)
+	# print asp
+	# sys.exit(0)
 	result = []
 	for variants in asp.values():
 		result.extend(variants)

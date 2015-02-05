@@ -22,4 +22,5 @@ for IP in a:
 	print IP,"VALID" if all([checkIP2(int(n)) for n in IP.split('.')]) else "INVALID"
 
 
-
+checking valid email
+#([a-zA-Z0-9._%+-]+)@([a-zA-Z0-9.-]+)\.([a-zA-Z]{2,4})

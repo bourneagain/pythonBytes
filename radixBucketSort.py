@@ -16,16 +16,30 @@ def radixSort( num):
 		#		print "two",needle,num[j]
 				zerobucket.append(num[j])
 		#print "DE",num,onebucket,zerobucket
+		a=0
+		for i in zerobucket:
+			num[a]=i
+			a+=1
+		for i in onebucket:
+			num[a]=i
+			a+=1
+		# for b in range( RADIX ):
+		# 	buck = buckets[b]
+		# 	for i in buck:
+		# 		aList[a] = i
+  #       		a += 1
+		"""
 		num = []
 		num += zerobucket
 		num += onebucket
+		"""
 		#print "DONE",num
 
-	return num
+	#return num
 import random
 import time
 a=time.time()
 print "START",a
-print radixSort([random.randrange(0,10000) for x in range(1000000)])
+print radixSort([random.randrange(0,10000) for x in xrange(1000000)])
 b=time.time()-a
 print "TOTAL",b

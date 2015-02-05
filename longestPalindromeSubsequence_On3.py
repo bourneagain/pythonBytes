@@ -21,7 +21,8 @@ def if_palindrome(s):
 
 def lps(s):
 	for sub_sequence in return_all(s):
-		if if_palindrome(sub_sequence):
-		 	return sub_sequence
+		print sub_sequence
+		# if if_palindrome(sub_sequence):
+		#  	return sub_sequence
 
-print lps('dabcbap')
+print lps('sam')

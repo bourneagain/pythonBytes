@@ -220,27 +220,62 @@ class BSTree:
                 root.right = self.delete_node(root.right, data)
         return root
 
+    def sum_tree(self, root):
+        if not root:
+            return None
+        if root.left:
+            root.data+=self.sum_tree(root.left).data
+        if root.right:
+            root.data+=self.sum_tree(root.right).data
+        return root
+
+    def search_index(self, ino, in_start, in_end, value):
+        while in_start <= in_end:
+            if ino[in_start] == value:
+                return in_start
+            in_start+=1
+
+    def construct_tree_inorder_preorder(self, ino, preo, instart, inend, prestart ):
+        print preo, instart, inend
+        if instart > inend:
+            return None
+        root = TreeNode(preo[prestart])
+        if instart == inend:
+            return root
+        index = self.search_index(ino, instart, inend, root.data)
+        print root.data, index
+        root.left = self.construct_tree_inorder_preorder(ino, preo, instart, index,prestart+1)
+        root.right = self.construct_tree_inorder_preorder(ino, preo, index+1, inend,prestart+1)
+        return root
+
+
+
 
 
 tree = BSTree()
-root = TreeNode(1)
-root.left=TreeNode(2)
-root.right=TreeNode(3)
+# root = TreeNode(1)
+# root.left=TreeNode(2)
+# root.right=TreeNode(3)
+
+preorder = [7,10,4,3,1,2,8,11]
+inorder = [4,10,3,1,7,11,8,2]
+root  = tree.construct_tree_inorder_preorder(inorder, preorder, 0 , len(inorder), 0 )
+# root.right.right=TreeNode(4)
 
 # root2 = TreeNode(2)
 # root2.left=TreeNode(1)
 # root2.right=TreeNode(4)
 
-root.left.left=TreeNode(4)
-root.left.left.left=TreeNode(8)
-root.left.right=TreeNode(5)
-root.right.left=TreeNode(6)
-root.right.right=TreeNode(7)
-
+# root.left.left=TreeNode(4)
+# # root.left.left.left=TreeNode(8)
+# # root.left.right=TreeNode(5)
+# root.right.left=TreeNode(6)
+# root.right.right=TreeNode(7)
+# root = tree.sum_tree(root)
 tree.inorder(root)
-root = tree.delete_node(root,)
-print "DELETE"
-tree.inorder(root)
+# root = tree.delete_node(root,)
+# print "DELETE"
+# tree.inorder(root)
 # root = tree.addNode(root, 199)
 # root = tree.addNode(root, 300)
 # root = tree.addNode(root, -21)

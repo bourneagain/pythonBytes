@@ -1,4 +1,7 @@
 def kthSmall(a,b,k):
+	"""
+	o(k) solution
+	"""
 	count=1
 	n=len(a)
 	m=len(b)
@@ -26,8 +29,8 @@ def kthSmall(a,b,k):
 		count+=1
 	return kelm
 
-a=[-4,1]
+a=[-4,1,2]
 b=[-1,13,24,45]
-print kthSmall(a,b,3)
+print kthSmall(a,b,5)
 
 

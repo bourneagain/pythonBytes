@@ -1,46 +1,14 @@
 def titleToNumber(s):
+#     The function reduce(func, seq) continually applies the function func() to the sequence seq. It returns a single value. 
+
+# If seq = [ s1, s2, s3, ... , sn ], calling reduce(func, seq) works like this:
+# At first the first two elements of seq will be applied to func, i.e. func(s1,s2) The list on which reduce() works looks now like this: [ func(s1, s2), s3, ... , sn ]
+# In the next step func will be applied on the previous result and the third element of the list, i.e. func(func(s1, s2),s3)
+# The list looks like this now: [ func(func(s1, s2),s3), ... , sn ]
+# Continue like this until just one element is left and return this element as the result of reduce()
+# We illustrate this process in the following example:
+# >>> reduce(lambda x,y: x+y, [47,11,42,13])
+# 113
     return reduce(lambda x, y : x * 26 + y, [ord(c) - 64 for c in list(s)])
 
-print titleToNumber('A')
-
-
-
-
-
-
-
-
-# class Solution:
-#     # @param dungeon, a list of lists of integers
-#     # @return a integer
-#     def calculateMinimumHP(self, dungeon):
-
-#         m = len(dungeon)
-#         n = len(dungeon[0]) if m>0 else 0
-#         min_hp = 1  # we need at least 1 hp to make knight alive
-
-#         # record matrix: save the minimum hp required to enter each room and reach princess
-#         record = [[0 for i in range(n)] for i in range(m)]
-#         record[m-1][n-1] = min_hp if dungeon[m-1][n-1]>0 else abs(dungeon[m-1][n-1])+1  
-#         # when the bottom-right room contains a number less or equal than zero, the hp required 
-#         # to save the princess successfully is the absolute value of this number plus 1, 
-#         # otherwise it's min_hp which equals to 1 
-# 11
-#         # set up the last row of the matrix backwardly
-#         need = record[m-1][n-1]
-#         for i in range(m-2,-1,-1):
-#             record[i][n-1] = need = max(min_hp, need-dungeon[i][n-1])
-
-#         # set up the last column of the matrix backwardly
-#         need = record[m-1][n-1]
-#         for i in range(n-2,-1,-1):
-#             record[m-1][i] = need = max(min_hp, need-dungeon[m-1][i])
-
-#         # fill the matrix from dungeon[m-2][n-2] to dungeon[0][0]    
-#         for i in range(m-2,-1,-1):
-#             for j in range(n-2,-1,-1):
-#                 need = record[i][j+1] if record[i][j+1]<record[i+1][j] else record[i+1][j]  
-#                 # move down or right - according to which direction has lower value
-#                 record[i][j] = max(min_hp, need-dungeon[i][j]) 
-
-#         return record[0][0]
+print titleToNumber('AA')

@@ -1,24 +1,21 @@
-def qs(a):
-    less=[]
-    more=[]
-    pivotList=[]
-    if len(a)<=1:
-        return a
-    pivot=a[0]
-    for i in a:
-        if i<pivot:
-            less.append(i)
-        elif i>pivot:
-            more.append(i)
-        else:
-            pivotList.append(i)
-    less=qs(less)
-    more=qs(more)
-    return less+pivotList+more
+œœdef kthlargest(arr1, arr2, k):
+    if len(arr1) == 0:
+        return arr2[k]
+    elif len(arr2) == 0:
+        return arr1[k]
 
-a=[3,3,3,3,3,8]
-print a
-print qs(a)
+    mida1 = len(arr1)/2
+    mida2 = len(arr2)/2
+    if mida1+mida2<k:
+        if arr1[mida1]>arr2[mida2]:
+            return kthlargest(arr1, arr2[mida2+1:], k-mida2-1)
+        else:
+            return kthlargest(arr1[mida1+1:], arr2, k-mida1-1)
+    else:
+        if arr1[mida1]>arr2[mida2]:
+            return kthlargest(arr1[:mida1], arr2, k)
+        else:
+            return kthlargest(arr1, arr2[:mida2], k)
 
 # def quickSort(arr):
 #     less = []

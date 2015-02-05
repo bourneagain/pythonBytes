@@ -20,7 +20,8 @@ def sol(a):
 def largestNumber(num):
     num = [str(x) for x in num]
     print num
-    num.sort(cmp=lambda x, y: cmp(y+x, x+y))
+    num.sort(cmp=lambda x, y: cmp(x+y, y+x), reverse = True)
+    print num
     return ''.join(num).lstrip('0') or '0'
 
 num=['3', '30', '34', '5', '9']

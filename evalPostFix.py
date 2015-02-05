@@ -21,7 +21,7 @@ def evalPost(postfix):
 				if i=="-": c=int(a-b)
 				print c
 				res.append(c)	
-	return res
+	return res,op
 
 def evalPre(prefix):
 	prefixList=[]
@@ -33,10 +33,10 @@ def evalPre(prefix):
 
 #https://www.youtube.com/watch?v=MeRb_1bddWg
 
-#postfix="23*52*+"
+postfix="23*52*+"
 prefix="-+*23*549"
-#print evalPost(postfix)
-print evalPre(prefix)
+print evalPost(postfix)
+#print evalPre(prefix)
 #5 2
 #10
 #3 10

@@ -49,9 +49,10 @@ class Solution:
 					self.cost=1
 					# print "diff";
 				# print self.cost,self.ar[i-1,j],self.ar[i-1,j-1],self.ar[i,j-1]; 
-				self.ar[i,j]=min(min(self.ar[i,j-1]+1,self.ar[i-1,j]+1),self.ar[i-1,j-1]+self.cost)
+				#self.ar[i,j]=min(min(self.ar[i,j-1]+1,self.ar[i-1,j]+1),self.ar[i-1,j-1]+self.cost)
+				self.ar[i,j]=min(self.ar[i-1,j],self.ar[i-1,j-1],self.ar[i,j-1])+1
 				#print "VarLUE",self.ar[i,j],"COST",self.cost
 		return self.ar[self.n,self.m]
 
 a=Solution()
-print "EDIT DISTANCE = ",a.minDistance('sham','sam')
+print "EDIT DISTANCE = ",a.minDistance('a','a')

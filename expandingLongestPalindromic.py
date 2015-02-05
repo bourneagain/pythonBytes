@@ -19,4 +19,4 @@ def lps(a):
 		length = max(length,max(len(l1),len(l2)))
 	return length
 
-print lps('ppapq')
+print lps('bb')

@@ -1,5 +1,5 @@
 def radixsort( aList ):
-  RADIX = 10
+  RADIX = 2
   maxLength = False
   tmp , placement = -1, 1
  

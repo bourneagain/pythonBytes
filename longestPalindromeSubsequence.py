@@ -21,13 +21,14 @@ def lps_dp(s):
         #means count of the palindrom sub sequence can be 2 to entire length of string
         for i in xrange(0, n - char_count+1):
             j = i + char_count - 1
+            print i,char_count, j ,n,"|",
             if s[i] == s[j] and char_count == 2:
                 lps[i,j] = 2
             elif s[i] == s[j]:
                 lps[i,j] = lps[i+1,j-1] + 2
             else:
                 lps[i,j] = max(lps[i,j-1],lps[i+1,j])
-
+        print ""
     # below for printing the sequence
     for k in lps:
         i,j=k

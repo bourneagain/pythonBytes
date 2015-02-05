@@ -25,4 +25,4 @@ def wordDistance(alist,word1,word2):
 
 
 alist=["the", "quick", "brown", "fox", "quick", "test", "kumar","foxie"]
-print wordDistance(alist,"x","kumar")
+print wordDistance(alist,"x","x")

@@ -9,4 +9,4 @@ def sol(num):
 	else:
 		return big[(num/1000)%10] + hundreds[(num/100)%10] +' '+ teens[(num/10)%10] +' '+ ones[num%10]
 
-print sol(3014)
+print sol(3104)
