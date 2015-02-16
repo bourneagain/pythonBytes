@@ -6,6 +6,19 @@ class TreeNode:
 
 class BSTree:
     count = 0
+    def closestNode(self, root, val):
+        return self.closestNodeHelper(root,val, None)
+    def closestNodeHelper(self, root, val, closeNode):
+        if not root:
+            return closeNode
+        if root.data == val:
+            return root
+        if closeNode is None or (abs(root.data   - val) < abs(closeNode.data - val)  ):
+            closeNode = root
+        if root.data < val:
+            return self.closestNodeHelper(root.right,val, closeNode)
+        else:
+            return self.closestNodeHelper(root.left,val, closeNode)
     def addNode(self, root, data):
         if not root:
             return TreeNode(data)
@@ -180,7 +193,9 @@ class BSTree:
         return alist
 
     def lca(self, root, n1, n2):
+        lca.iter = 0
         # idea is going from bottom 
+        print lca.iter
         if not root:
             return None
         if root.data == n1 or root.data == n2:
@@ -236,6 +251,7 @@ class BSTree:
             in_start+=1
 
     def construct_tree_inorder_preorder(self, ino, preo, instart, inend, prestart ):
+        #failing
         print preo, instart, inend
         if instart > inend:
             return None
@@ -252,14 +268,21 @@ class BSTree:
 
 
 
-tree = BSTree()
-# root = TreeNode(1)
-# root.left=TreeNode(2)
-# root.right=TreeNode(3)
 
-preorder = [7,10,4,3,1,2,8,11]
-inorder = [4,10,3,1,7,11,8,2]
-root  = tree.construct_tree_inorder_preorder(inorder, preorder, 0 , len(inorder), 0 )
+tree = BSTree()
+root = TreeNode(1)
+root = tree.addNode(root, 199)
+root = tree.addNode(root, 300)
+root = tree.addNode(root, -21)
+root = tree.addNode(root, 890)
+root = tree.addNode(root, 8900)
+root = tree.addNode(root, 4)
+
+print tree.closestNode(root,198).data
+
+# preorder = [7,10,4,3,1,2,8,11]
+# inorder = [4,10,3,1,7,11,8,2]
+# root  = tree.construct_tree_inorder_preorder(inorder, preorder, 0 , len(inorder), 0 )
 # root.right.right=TreeNode(4)
 
 # root2 = TreeNode(2)
@@ -272,7 +295,7 @@ root  = tree.construct_tree_inorder_preorder(inorder, preorder, 0 , len(inorder)
 # root.right.left=TreeNode(6)
 # root.right.right=TreeNode(7)
 # root = tree.sum_tree(root)
-tree.inorder(root)
+# tree.inorder(root)
 # root = tree.delete_node(root,)
 # print "DELETE"
 # tree.inorder(root)
