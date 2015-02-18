@@ -11,9 +11,10 @@ def test(a):
 				mul +=10**j
 
 		# print mul
-		if mul%a == 0:
-			print mul
+		# for any number ...... digit
+		if (mul*9)%a == 0:
+			print mul*9
 			break
 
-test(5)		
+test(3033)		
 
