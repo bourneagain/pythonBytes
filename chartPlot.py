@@ -5,17 +5,24 @@ import sys
 import subprocess
 import os
 JSON_FILE="/Users/sam/cs410/TEAM_BHP_DATA_TOPARSE/srajend2.json"
-
-
+INDEX_NAME="srajend2_index"
+es=Elasticsearch()
 
 def main():
-	es=Elasticsearch()
-	print es.indices.delete(index='srajend2_index', ignore=[400, 404])
-	print es.indices.create(index='srajend2_index', ignore=400)
+	
+	delete_index(INDEX_NAME)
+	create_index(INDEX_NAME)
 	pprint.pprint(es.indices.stats())
 	#split_file_into_chunks(JSON_FILE)
 	load_bulk_data_in_chunks()
 
+def delete_index(_index):
+	global es
+	print es.indices.delete(index=_index, ignore=[400, 404])
+
+def create_index(_index):
+	global es
+	print es.indices.create(index=_index, ignore=400)
 
 def listFiles(dirpath):
 	filenames = next(os.walk(dirpath))[2]
@@ -49,11 +56,13 @@ def load_bulk_data_in_chunks():
 		PWD = os.getcwd()
 		timeelp=0
 		for jsons in listFiles("/tmp/JUNKS_"+str(chunk)):
+			delete_index(INDEX_NAME)
+			create_index(INDEX_NAME)
 			p = "/tmp/JUNKS_"+str(chunk)
 			os.chdir(p)
 			for json in jsons:
 				timeelp+=curljson(json)
-		print "TABLE",chunk,timeelp
+		print "TABLE,",chunk,",",timeelp
 		os.chdir(PWD)
 
 			
