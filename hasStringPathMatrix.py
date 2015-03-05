@@ -17,7 +17,8 @@ def haspath(m, rowC, colC, cur_row, cur_col, st, pathl, visited):
 	if pathl == len(st):
 		return True
 	has_path_var = False
-	if cur_row >= 0 and cur_row <= rowC and cur_col>=0 and cur_col<=colC and m[cur_row][cur_col] == st[pathl] and (cur_row,cur_col) not in visited:
+	if cur_row >= 0 and cur_row <= rowC and cur_col>=0 and cur_col<=colC and \
+			m[cur_row][cur_col] == st[pathl] and (cur_row,cur_col) not in visited:
 		pathl+=1
 		visited[cur_row,cur_col] = True
 		has_path_var = haspath(m,rowC, colC, cur_row,cur_col-1,st,pathl,visited) or \

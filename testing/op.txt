@@ -1,0 +1,2454 @@
+host-1-61:sam @ ~/Box Sync/423_OS/OS_MPS/MP1_sol # cd ../../../
+host-1-61:sam @ ~/Box Sync # cd cs440mp1/
+host-1-61:sam @ ~/Box Sync/cs440mp1 # ls
+CS440 Assignment 1.html				clone						readmaze.cpp
+Screen Shot 2015-02-05 at 4.27.12 AM.png	maze.txt					smallMaze.txt
+TSP_final.pptx					mediumMaze.txt					tags
+a.out						notes						x
+bigMaze.txt					readmaze					y
+host-1-61:sam @ ~/Box Sync/cs440mp1 # cd clone/AI_MP\ \(srajend2\@illinois.edu\)/
+host-1-61:sam @ ~/Box Sync/cs440mp1/clone/AI_MP (srajend2@illinois.edu) # ls
+8puzzle			Book4.twb		bigMaze.txt		mediumMaze.txt		readmaze
+8puzzle.cpp		MP1_REPORT.docx		input.txt		note			readmaze.cpp
+8puzzle.py		MakeFile		log			op			shyam1.patch
+8puzzle_final.cpp	a.out			maze.txt		op__tableau.txt		smallMaze.txt
+host-1-61:sam @ ~/Box Sync/cs440mp1/clone/AI_MP (srajend2@illinois.edu) # open MP1_REPORT.docx 
+host-1-61:sam @ ~/Box Sync/cs440mp1/clone/AI_MP (srajend2@illinois.edu) # open Book4.twb 
+host-1-61:sam @ ~/Box Sync/cs440mp1/clone/AI_MP (srajend2@illinois.edu) # git add MP1_REPORT.docx 
+host-1-61:sam @ ~/Box Sync/cs440mp1/clone/AI_MP (srajend2@illinois.edu) # git commit -m 'legends added'
+[master b6f5a4e] legends added
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+host-1-61:sam @ ~/Box Sync/cs440mp1/clone/AI_MP (srajend2@illinois.edu) # git push
+To https://github.com/shyamrajendran/AI_MP
+ ! [rejected]        master -> master (fetch first)
+error: failed to push some refs to 'https://github.com/shyamrajendran/AI_MP'
+hint: Updates were rejected because the remote contains work that you do
+hint: not have locally. This is usually caused by another repository pushing
+hint: to the same ref. You may want to first integrate the remote changes
+hint: (e.g., 'git pull ...') before pushing again.
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+host-1-61:sam @ ~/Box Sync/cs440mp1/clone/AI_MP (srajend2@illinois.edu) # git pull
+remote: Counting objects: 3, done.
+remote: Compressing objects: 100% (1/1), done.
+remote: Total 3 (delta 2), reused 3 (delta 2)
+Unpacking objects: 100% (3/3), done.
+From https://github.com/shyamrajendran/AI_MP
+   18e461d..5bd3bd0  master     -> origin/master
+warning: Cannot merge binary files: MP1_REPORT.docx (HEAD vs. 5bd3bd08ff9ac1a0f884dd25124357cc4f40eca3)
+Auto-merging MP1_REPORT.docx
+CONFLICT (content): Merge conflict in MP1_REPORT.docx
+Automatic merge failed; fix conflicts and then commit the result.
+host-1-61:sam @ ~/Box Sync/cs440mp1/clone/AI_MP (srajend2@illinois.edu) # git merge MP1_REPORT.docx 
+error: 'merge' is not possible because you have unmerged files.
+hint: Fix them up in the work tree,
+hint: and then use 'git add/rm <file>' as
+hint: appropriate to mark resolution and make a commit,
+hint: or use 'git commit -a'.
+fatal: Exiting because of an unresolved conflict.
+host-1-61:sam @ ~/Box Sync/cs440mp1/clone/AI_MP (srajend2@illinois.edu) # git resolve MP1_REPORT.docx 
+git: 'resolve' is not a git command. See 'git --help'.
+host-1-61:sam @ ~/Box Sync/cs440mp1/clone/AI_MP (srajend2@illinois.edu) # mv MP1_REPORT.docx /tmp/
+host-1-61:sam @ ~/Box Sync/cs440mp1/clone/AI_MP (srajend2@illinois.edu) # git pull
+U	MP1_REPORT.docx
+Pull is not possible because you have unmerged files.
+Please, fix them up in the work tree, and then use 'git add/rm <file>'
+as appropriate to mark resolution, or use 'git commit -a'.
+host-1-61:sam @ ~/Box Sync/cs440mp1/clone/AI_MP (srajend2@illinois.edu) # git rm MP1_REPORT.docx
+MP1_REPORT.docx: needs merge
+rm 'MP1_REPORT.docx'
+host-1-61:sam @ ~/Box Sync/cs440mp1/clone/AI_MP (srajend2@illinois.edu) # 
+host-1-61:sam @ ~/Box Sync/cs440mp1/clone/AI_MP (srajend2@illinois.edu) # ls -lh MP_REPORT.docx
+ls: MP_REPORT.docx: No such file or directory
+host-1-61:sam @ ~/Box Sync/cs440mp1/clone/AI_MP (srajend2@illinois.edu) # git log
+commit b6f5a4e70f4f95084033d90f98ade08db1020c19
+Author: Shyam Rajendran <rshyam.psg@gmail.com>
+Date:   Sat Feb 21 12:01:56 2015 -0600
+
+    legends added
+
+commit 18e461d75069be343a2ebfff8de96022277469e6
+Author: Shyam Rajendran <rshyam.psg@gmail.com>
+Date:   Sat Feb 21 09:00:43 2015 -0600
+
+    tableau book
+
+commit f108c447a4a9a2490d134afd409f4c6003c67f45
+Author: Shyam Rajendran <rshyam.psg@gmail.com>
+Date:   Sat Feb 21 08:43:55 2015 -0600
+
+    added charts
+
+commit c062c3d8d1efea5ab62a09df5d1182941b6740b5
+Author: saikatroyc <rychwdh2@illinois.edu>
+Date:   Fri Feb 20 18:30:33 2015 -0600
+
+    report part2
+
+commit 7454dcddaf004446bf64902461b5f2dbb423242e
+Author: Shyam Rajendran <rshyam.psg@gmail.com>
+Date:   Fri Feb 20 18:09:03 2015 -0600
+
+    cleaned data
+
+commit d60a16780c0fdc584da8de4308cb60d184ed0cdc
+Author: Shyam Rajendran <rshyam.psg@gmail.com>
+Date:   Fri Feb 20 17:50:19 2015 -0600
+
+    ini doc
+
+commit cd48aa5833d3880f8c6490704d05b6089f1f611b
+Author: saikatroyc <rychwdh2@illinois.edu>
+Date:   Fri Feb 20 17:26:55 2015 -0600
+
+    code clean 8 puzzle
+
+commit f2d697abb97c4a0dbf0a10e7225f27054037f4f5
+Author: saikatroyc <rychwdh2@illinois.edu>
+Date:   Fri Feb 20 17:23:41 2015 -0600
+
+host-1-61:sam @ ~/Box Sync/cs440mp1/clone/AI_MP (srajend2@illinois.edu) # git check
+host-1-61:sam @ ~/Box Sync/cs440mp1/clone/AI_MP (srajend2@illinois.edu) # git checkout 18e461d75069be343a2ebfff8de96022277469e6
+error: Your local changes to the following files would be overwritten by checkout:
+	MP1_REPORT.docx
+Please, commit your changes or stash them before you can switch branches.
+Aborting
+host-1-61:sam @ ~/Box Sync/cs440mp1/clone/AI_MP (srajend2@illinois.edu) # gi
+host-1-61:sam @ ~/Box Sync/cs440mp1/clone/AI_MP (srajend2@illinois.edu) # git checkout 18e461d75069be343a2ebfff8de96022277469e6
+host-1-61:sam @ ~/Box Sync/cs440mp1/clone/AI_MP (srajend2@illinois.edu) # git fetch --all
+Fetching origin
+host-1-61:sam @ ~/Box Sync/cs440mp1/clone/AI_MP (srajend2@illinois.edu) # git reset --hard origin/master
+HEAD is now at 5bd3bd0 gashnig : add steps count as score
+host-1-61:sam @ ~/Box Sync/cs440mp1/clone/AI_MP (srajend2@illinois.edu) # git pull
+Already up-to-date.
+host-1-61:sam @ ~/Box Sync/cs440mp1/clone/AI_MP (srajend2@illinois.edu) # open MP1_REPORT.docx 
+host-1-61:sam @ ~/Box Sync/cs440mp1/clone/AI_MP (srajend2@illinois.edu) # git add MP1_REPORT.docx 
+host-1-61:sam @ ~/Box Sync/cs440mp1/clone/AI_MP (srajend2@illinois.edu) # mv MP1_REPORT.docx /tmp/
+host-1-61:sam @ ~/Box Sync/cs440mp1/clone/AI_MP (srajend2@illinois.edu) # git commit -m 'legends added'
+[master 853938a] legends added
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+host-1-61:sam @ ~/Box Sync/cs440mp1/clone/AI_MP (srajend2@illinois.edu) # git push
+Counting objects: 5, done.
+Delta compression using up to 4 threads.
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 117.43 KiB | 0 bytes/s, done.
+Total 3 (delta 2), reused 0 (delta 0)
+To https://github.com/shyamrajendran/AI_MP
+   5bd3bd0..853938a  master -> master
+host-1-61:sam @ ~/Box Sync/cs440mp1/clone/AI_MP (srajend2@illinois.edu) # 
+host-1-61:sam @ ~/Box Sync/cs440mp1/clone/AI_MP (srajend2@illinois.edu) # ping 76.10.1.154
+PING 76.10.1.154 (76.10.1.154): 56 data bytes
+Request timeout for icmp_seq 0
+Request timeout for icmp_seq 1
+Request timeout for icmp_seq 2
+Request timeout for icmp_seq 3
+Request timeout for icmp_seq 4
+^C
+--- 76.10.1.154 ping statistics ---
+6 packets transmitted, 0 packets received, 100.0% packet loss
+host-1-61:sam @ ~/Box Sync/cs440mp1/clone/AI_MP (srajend2@illinois.edu) # ping 76.10.1.54
+PING 76.10.1.54 (76.10.1.54): 56 data bytes
+Request timeout for icmp_seq 0
+64 bytes from 76.10.1.54: icmp_seq=0 ttl=64 time=1554.607 ms
+64 bytes from 76.10.1.54: icmp_seq=1 ttl=64 time=553.119 ms
+64 bytes from 76.10.1.54: icmp_seq=2 ttl=64 time=2.513 ms
+64 bytes from 76.10.1.54: icmp_seq=3 ttl=64 time=2.390 ms
+64 bytes from 76.10.1.54: icmp_seq=4 ttl=64 time=8.531 ms
+64 bytes from 76.10.1.54: icmp_seq=5 ttl=64 time=468.801 ms
+64 bytes from 76.10.1.54: icmp_seq=6 ttl=64 time=1.990 ms
+64 bytes from 76.10.1.54: icmp_seq=7 ttl=64 time=2.627 ms
+64 bytes from 76.10.1.54: icmp_seq=8 ttl=64 time=2.836 ms
+64 bytes from 76.10.1.54: icmp_seq=9 ttl=64 time=403.891 ms
+64 bytes from 76.10.1.54: icmp_seq=10 ttl=64 time=2.317 ms
+64 bytes from 76.10.1.54: icmp_seq=11 ttl=64 time=129.480 ms
+64 bytes from 76.10.1.54: icmp_seq=12 ttl=64 time=111.063 ms
+64 bytes from 76.10.1.54: icmp_seq=13 ttl=64 time=11.412 ms
+64 bytes from 76.10.1.54: icmp_seq=14 ttl=64 time=2.354 ms
+64 bytes from 76.10.1.54: icmp_seq=15 ttl=64 time=97.067 ms
+64 bytes from 76.10.1.54: icmp_seq=16 ttl=64 time=24.010 ms
+64 bytes from 76.10.1.54: icmp_seq=17 ttl=64 time=2.383 ms
+64 bytes from 76.10.1.54: icmp_seq=18 ttl=64 time=35.231 ms
+64 bytes from 76.10.1.54: icmp_seq=19 ttl=64 time=11.666 ms
+^C
+--- 76.10.1.54 ping statistics ---
+20 packets transmitted, 20 packets received, 0.0% packet loss
+round-trip min/avg/max/stddev = 1.990/171.414/1554.607/357.681 ms
+host-1-61:sam @ ~/Box Sync/cs440mp1/clone/AI_MP (srajend2@illinois.edu) # tracert 76.10.1.54
+-bash: tracert: command not found
+host-1-61:sam @ ~/Box Sync/cs440mp1/clone/AI_MP (srajend2@illinois.edu) # traceroute 76.10.1.54
+traceroute to 76.10.1.54 (76.10.1.54), 64 hops max, 52 byte packets
+ 1  host-1-54 (76.10.1.54)  10.042 ms  8.615 ms  3.008 ms
+host-1-61:sam @ ~/Box Sync/cs440mp1/clone/AI_MP (srajend2@illinois.edu) # 
+
+
+
+
+host-1-61:sam @ ~/Box Sync/cs440mp1/clone/AI_MP (srajend2@illinois.edu) # cd ~/Desktop/
+host-1-61:sam @ ~/Desktop # unzip FOR_SHARMA-testing_all_dots.zip 
+Archive:  FOR_SHARMA-testing_all_dots.zip
+c2734bbe90f88fcbd05e3c23373b21e9a73fcc5d
+   creating: FOR_SHARMA-testing_all_dots/
+   creating: FOR_SHARMA-testing_all_dots/.idea/
+ extracting: FOR_SHARMA-testing_all_dots/.idea/.name  
+  inflating: FOR_SHARMA-testing_all_dots/.idea/compiler.xml  
+   creating: FOR_SHARMA-testing_all_dots/.idea/copyright/
+  inflating: FOR_SHARMA-testing_all_dots/.idea/copyright/profiles_settings.xml  
+  inflating: FOR_SHARMA-testing_all_dots/.idea/encodings.xml  
+  inflating: FOR_SHARMA-testing_all_dots/.idea/misc.xml  
+  inflating: FOR_SHARMA-testing_all_dots/.idea/modules.xml  
+   creating: FOR_SHARMA-testing_all_dots/.idea/scopes/
+  inflating: FOR_SHARMA-testing_all_dots/.idea/scopes/scope_settings.xml  
+  inflating: FOR_SHARMA-testing_all_dots/.idea/uiDesigner.xml  
+  inflating: FOR_SHARMA-testing_all_dots/.idea/vcs.xml  
+  inflating: FOR_SHARMA-testing_all_dots/.idea/workspace.xml  
+  inflating: FOR_SHARMA-testing_all_dots/Assignment1.iml  
+  inflating: FOR_SHARMA-testing_all_dots/TSPsample.txt  
+  inflating: FOR_SHARMA-testing_all_dots/berlin52.tsp  
+  inflating: FOR_SHARMA-testing_all_dots/bigMaze.txt  
+  inflating: FOR_SHARMA-testing_all_dots/bigSearch.txt  
+  inflating: FOR_SHARMA-testing_all_dots/javaCode.zip  
+  inflating: FOR_SHARMA-testing_all_dots/mediumMaze.txt  
+  inflating: FOR_SHARMA-testing_all_dots/mediumSearch.txt  
+   creating: FOR_SHARMA-testing_all_dots/out/
+   creating: FOR_SHARMA-testing_all_dots/out/production/
+   creating: FOR_SHARMA-testing_all_dots/out/production/Assignment1/
+  inflating: FOR_SHARMA-testing_all_dots/out/production/Assignment1/DisjointSet$Item.class  
+  inflating: FOR_SHARMA-testing_all_dots/out/production/Assignment1/DisjointSet.class  
+  inflating: FOR_SHARMA-testing_all_dots/out/production/Assignment1/EatAllDots$Maze.class  
+  inflating: FOR_SHARMA-testing_all_dots/out/production/Assignment1/EatAllDots.class  
+  inflating: FOR_SHARMA-testing_all_dots/out/production/Assignment1/Edge.class  
+  inflating: FOR_SHARMA-testing_all_dots/out/production/Assignment1/GridCanvas$1.class  
+  inflating: FOR_SHARMA-testing_all_dots/out/production/Assignment1/GridCanvas.class  
+  inflating: FOR_SHARMA-testing_all_dots/out/production/Assignment1/Location.class  
+  inflating: FOR_SHARMA-testing_all_dots/out/production/Assignment1/MazeSearch$MazeState.class  
+  inflating: FOR_SHARMA-testing_all_dots/out/production/Assignment1/MazeSearch.class  
+  inflating: FOR_SHARMA-testing_all_dots/out/production/Assignment1/MyPriorityQueue$1.class  
+  inflating: FOR_SHARMA-testing_all_dots/out/production/Assignment1/MyPriorityQueue.class  
+  inflating: FOR_SHARMA-testing_all_dots/out/production/Assignment1/Node.class  
+  inflating: FOR_SHARMA-testing_all_dots/out/production/Assignment1/PacmanGrid$1.class  
+  inflating: FOR_SHARMA-testing_all_dots/out/production/Assignment1/PacmanGrid.class  
+  inflating: FOR_SHARMA-testing_all_dots/out/production/Assignment1/Point.class  
+  inflating: FOR_SHARMA-testing_all_dots/out/production/Assignment1/PriorityQueueWrapper$1.class  
+  inflating: FOR_SHARMA-testing_all_dots/out/production/Assignment1/PriorityQueueWrapper$MyItem.class  
+  inflating: FOR_SHARMA-testing_all_dots/out/production/Assignment1/PriorityQueueWrapper$queueType.class  
+  inflating: FOR_SHARMA-testing_all_dots/out/production/Assignment1/PriorityQueueWrapper.class  
+  inflating: FOR_SHARMA-testing_all_dots/out/production/Assignment1/State.class  
+  inflating: FOR_SHARMA-testing_all_dots/out/production/Assignment1/TSP$Coordinate.class  
+  inflating: FOR_SHARMA-testing_all_dots/out/production/Assignment1/TSP$State.class  
+  inflating: FOR_SHARMA-testing_all_dots/out/production/Assignment1/TSP.class  
+  inflating: FOR_SHARMA-testing_all_dots/out/production/Assignment1/bigMaze.txt  
+  inflating: FOR_SHARMA-testing_all_dots/out/production/Assignment1/javaCode.zip  
+  inflating: FOR_SHARMA-testing_all_dots/out/production/Assignment1/mediumMaze.txt  
+  inflating: FOR_SHARMA-testing_all_dots/out/production/Assignment1/smallMaze.txt  
+  inflating: FOR_SHARMA-testing_all_dots/smallMaze.txt  
+  inflating: FOR_SHARMA-testing_all_dots/smallSearch.txt  
+  inflating: FOR_SHARMA-testing_all_dots/smallSearch_2.txt  
+   creating: FOR_SHARMA-testing_all_dots/src/
+  inflating: FOR_SHARMA-testing_all_dots/src/DisjointSet.java  
+  inflating: FOR_SHARMA-testing_all_dots/src/EatAllDots.java  
+  inflating: FOR_SHARMA-testing_all_dots/src/Edge.java  
+  inflating: FOR_SHARMA-testing_all_dots/src/MazeSearch.java  
+  inflating: FOR_SHARMA-testing_all_dots/src/MyPriorityQueue.java  
+  inflating: FOR_SHARMA-testing_all_dots/src/Node.java  
+  inflating: FOR_SHARMA-testing_all_dots/src/PacmanGrid.java  
+  inflating: FOR_SHARMA-testing_all_dots/src/Point.java  
+  inflating: FOR_SHARMA-testing_all_dots/src/PriorityQueueWrapper.java  
+  inflating: FOR_SHARMA-testing_all_dots/src/State.java  
+  inflating: FOR_SHARMA-testing_all_dots/src/TSP.java  
+  inflating: FOR_SHARMA-testing_all_dots/src/bigMaze.txt  
+  inflating: FOR_SHARMA-testing_all_dots/src/mediumMaze.txt  
+  inflating: FOR_SHARMA-testing_all_dots/src/smallMaze.txt  
+  inflating: FOR_SHARMA-testing_all_dots/trickySearch.txt  
+host-1-61:sam @ ~/Desktop # 
+host-1-61:sam @ ~/Desktop # cd FOR_SHARMA-testing_all_dots
+host-1-61:sam @ ~/Desktop/FOR_SHARMA-testing_all_dots # ls
+Assignment1.iml		bigMaze.txt		mediumMaze.txt		smallMaze.txt		src
+TSPsample.txt		bigSearch.txt		mediumSearch.txt	smallSearch.txt		trickySearch.txt
+berlin52.tsp		javaCode.zip		out			smallSearch_2.txt
+host-1-61:sam @ ~/Desktop/FOR_SHARMA-testing_all_dots # ls -ltr
+total 104
+-rw-r--r--@  1 sam  staff   147 Feb 22 16:55 trickySearch.txt
+drwxr-xr-x@ 16 sam  staff   544 Feb 22 16:55 src
+-rw-r--r--@  1 sam  staff   104 Feb 22 16:55 smallSearch_2.txt
+-rw-r--r--@  1 sam  staff   104 Feb 22 16:55 smallSearch.txt
+-rw-r--r--@  1 sam  staff   229 Feb 22 16:55 smallMaze.txt
+drwxr-xr-x@  3 sam  staff   102 Feb 22 16:55 out
+-rw-r--r--@  1 sam  staff   256 Feb 22 16:55 mediumSearch.txt
+-rw-r--r--@  1 sam  staff   665 Feb 22 16:55 mediumMaze.txt
+-rw-r--r--@  1 sam  staff  6034 Feb 22 16:55 javaCode.zip
+-rw-r--r--@  1 sam  staff   479 Feb 22 16:55 bigSearch.txt
+-rw-r--r--@  1 sam  staff  1405 Feb 22 16:55 bigMaze.txt
+-rw-r--r--@  1 sam  staff   200 Feb 22 16:55 berlin52.tsp
+-rw-r--r--@  1 sam  staff    53 Feb 22 16:55 TSPsample.txt
+-rw-r--r--@  1 sam  staff   423 Feb 22 16:55 Assignment1.iml
+host-1-61:sam @ ~/Desktop/FOR_SHARMA-testing_all_dots # cd src/
+DisjointSet.java           MazeSearch.java            PacmanGrid.java            State.java                 mediumMaze.txt             
+EatAllDots.java            MyPriorityQueue.java       Point.java                 TSP.java                   smallMaze.txt              
+Edge.java                  Node.java                  PriorityQueueWrapper.java  bigMaze.txt                
+host-1-61:sam @ ~/Desktop/FOR_SHARMA-testing_all_dots # cd src/
+DisjointSet.java           MazeSearch.java            PacmanGrid.java            State.java                 mediumMaze.txt             
+EatAllDots.java            MyPriorityQueue.java       Point.java                 TSP.java                   smallMaze.txt              
+Edge.java                  Node.java                  PriorityQueueWrapper.java  bigMaze.txt                
+host-1-61:sam @ ~/Desktop/FOR_SHARMA-testing_all_dots # cd src/
+host-1-61:sam @ ~/Desktop/FOR_SHARMA-testing_all_dots/src # ls -l
+total 200
+-rw-r--r--@ 1 sam  staff   3220 Feb 22 16:55 DisjointSet.java
+-rw-r--r--@ 1 sam  staff  15280 Feb 22 16:55 EatAllDots.java
+-rw-r--r--@ 1 sam  staff    348 Feb 22 16:55 Edge.java
+-rw-r--r--@ 1 sam  staff  13546 Feb 22 16:55 MazeSearch.java
+-rw-r--r--@ 1 sam  staff   7749 Feb 22 16:55 MyPriorityQueue.java
+-rw-r--r--@ 1 sam  staff   2124 Feb 22 16:55 Node.java
+-rw-r--r--@ 1 sam  staff   6183 Feb 22 16:55 PacmanGrid.java
+-rw-r--r--@ 1 sam  staff    927 Feb 22 16:55 Point.java
+-rw-r--r--@ 1 sam  staff   4867 Feb 22 16:55 PriorityQueueWrapper.java
+-rw-r--r--@ 1 sam  staff   2042 Feb 22 16:55 State.java
+-rw-r--r--@ 1 sam  staff  11284 Feb 22 16:55 TSP.java
+-rw-r--r--@ 1 sam  staff   1405 Feb 22 16:55 bigMaze.txt
+-rw-r--r--@ 1 sam  staff    665 Feb 22 16:55 mediumMaze.txt
+-rw-r--r--@ 1 sam  staff    229 Feb 22 16:55 smallMaze.txt
+host-1-61:sam @ ~/Desktop/FOR_SHARMA-testing_all_dots/src # 
+host-1-61:sam @ ~/Desktop/FOR_SHARMA-testing_all_dots/src # asd
+host-1-61:sam @ ~/Desktop/FOR_SHARMA-testing_all_dots/src # ls -l
+total 200
+-rw-r--r--@ 1 sam  staff   3220 Feb 22 16:55 DisjointSet.java
+-rw-r--r--@ 1 sam  staff  15280 Feb 22 16:55 EatAllDots.java
+-rw-r--r--@ 1 sam  staff    348 Feb 22 16:55 Edge.java
+-rw-r--r--@ 1 sam  staff  13546 Feb 22 16:55 MazeSearch.java
+-rw-r--r--@ 1 sam  staff   7749 Feb 22 16:55 MyPriorityQueue.java
+-rw-r--r--@ 1 sam  staff   2124 Feb 22 16:55 Node.java
+-rw-r--r--@ 1 sam  staff   6183 Feb 22 16:55 PacmanGrid.java
+-rw-r--r--@ 1 sam  staff    927 Feb 22 16:55 Point.java
+-rw-r--r--@ 1 sam  staff   4867 Feb 22 16:55 PriorityQueueWrapper.java
+-rw-r--r--@ 1 sam  staff   2042 Feb 22 16:55 State.java
+-rw-r--r--@ 1 sam  staff  11284 Feb 22 16:55 TSP.java
+-rw-r--r--@ 1 sam  staff   1405 Feb 22 16:55 bigMaze.txt
+-rw-r--r--@ 1 sam  staff    665 Feb 22 16:55 mediumMaze.txt
+-rw-r--r--@ 1 sam  staff    229 Feb 22 16:55 smallMaze.txt
+host-1-61:sam @ ~/Desktop/FOR_SHARMA-testing_all_dots/src # javac *.java
+Note: Some input files use unchecked or unsafe operations.
+Note: Recompile with -Xlint:unchecked for details.
+host-1-61:sam @ ~/Desktop/FOR_SHARMA-testing_all_dots/src # javac -Xlinkt:checked *.java
+javac: invalid flag: -Xlinkt:checked
+Usage: javac <options> <source files>
+use -help for a list of possible options
+host-1-61:sam @ ~/Desktop/FOR_SHARMA-testing_all_dots/src # javac -Xlint:checked *.java
+javac: invalid flag: -Xlint:checked
+Usage: javac <options> <source files>
+use -help for a list of possible options
+host-1-61:sam @ ~/Desktop/FOR_SHARMA-testing_all_dots/src # 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+host-1-61:sam @ ~/Desktop/FOR_SHARMA-testing_all_dots/src # javac *.java
+Note: Some input files use unchecked or unsafe operations.
+Note: Recompile with -Xlint:unchecked for details.
+host-1-61:sam @ ~/Desktop/FOR_SHARMA-testing_all_dots/src # ls -l
+total 432
+-rw-r--r--  1 sam  staff    595 Feb 22 18:11 DisjointSet$Item.class
+-rw-r--r--  1 sam  staff   3190 Feb 22 18:11 DisjointSet.class
+-rw-r--r--@ 1 sam  staff   3220 Feb 22 16:55 DisjointSet.java
+-rw-r--r--  1 sam  staff    867 Feb 22 18:11 EatAllDots$Maze.class
+-rw-r--r--  1 sam  staff   8143 Feb 22 18:11 EatAllDots.class
+-rw-r--r--@ 1 sam  staff  15280 Feb 22 16:55 EatAllDots.java
+-rw-r--r--  1 sam  staff    731 Feb 22 18:11 Edge.class
+-rw-r--r--@ 1 sam  staff    348 Feb 22 16:55 Edge.java
+-rw-r--r--  1 sam  staff    511 Feb 22 18:11 GridCanvas$1.class
+-rw-r--r--  1 sam  staff   2189 Feb 22 18:11 GridCanvas.class
+-rw-r--r--  1 sam  staff    258 Feb 22 18:11 Location.class
+-rw-r--r--  1 sam  staff    877 Feb 22 18:11 MazeSearch$MazeState.class
+-rw-r--r--  1 sam  staff   9213 Feb 22 18:11 MazeSearch.class
+-rw-r--r--@ 1 sam  staff  13546 Feb 22 16:55 MazeSearch.java
+-rw-r--r--  1 sam  staff   1010 Feb 22 18:11 MyPriorityQueue$1.class
+-rw-r--r--  1 sam  staff   5692 Feb 22 18:11 MyPriorityQueue.class
+-rw-r--r--@ 1 sam  staff   7749 Feb 22 16:55 MyPriorityQueue.java
+-rw-r--r--  1 sam  staff   2280 Feb 22 18:11 Node.class
+-rw-r--r--@ 1 sam  staff   2124 Feb 22 16:55 Node.java
+-rw-r--r--  1 sam  staff    600 Feb 22 18:11 PacmanGrid$1.class
+-rw-r--r--  1 sam  staff   3080 Feb 22 18:11 PacmanGrid.class
+-rw-r--r--@ 1 sam  staff   6183 Feb 22 16:55 PacmanGrid.java
+-rw-r--r--  1 sam  staff   1233 Feb 22 18:11 Point.class
+-rw-r--r--@ 1 sam  staff    927 Feb 22 16:55 Point.java
+-rw-r--r--  1 sam  staff   1045 Feb 22 18:11 PriorityQueueWrapper$1.class
+-rw-r--r--  1 sam  staff   1675 Feb 22 18:11 PriorityQueueWrapper$MyItem.class
+-rw-r--r--  1 sam  staff   1046 Feb 22 18:11 PriorityQueueWrapper$queueType.class
+-rw-r--r--  1 sam  staff   3821 Feb 22 18:11 PriorityQueueWrapper.class
+-rw-r--r--@ 1 sam  staff   4867 Feb 22 16:55 PriorityQueueWrapper.java
+-rw-r--r--  1 sam  staff   2121 Feb 22 18:11 State.class
+-rw-r--r--@ 1 sam  staff   2042 Feb 22 16:55 State.java
+-rw-r--r--  1 sam  staff    514 Feb 22 18:11 TSP$Coordinate.class
+-rw-r--r--  1 sam  staff   2082 Feb 22 18:11 TSP$State.class
+-rw-r--r--  1 sam  staff   7275 Feb 22 18:11 TSP.class
+-rw-r--r--@ 1 sam  staff  11284 Feb 22 16:55 TSP.java
+-rw-r--r--@ 1 sam  staff   1405 Feb 22 16:55 bigMaze.txt
+-rw-r--r--@ 1 sam  staff    665 Feb 22 16:55 mediumMaze.txt
+-rw-r--r--@ 1 sam  staff    229 Feb 22 16:55 smallMaze.txt
+host-1-61:sam @ ~/Desktop/FOR_SHARMA-testing_all_dots/src # java 
+host-1-61:sam @ ~/Desktop/FOR_SHARMA-testing_all_dots/src # grep main *
+Binary file DisjointSet.class matches
+DisjointSet.java:    public static void main(String[] args) {
+Binary file EatAllDots.class matches
+EatAllDots.java:        List<Point> goals_remaining = new ArrayList<Point>();
+EatAllDots.java:            goals_remaining.add(p.clone());
+EatAllDots.java://            if (goals_remaining.contains(current_node.item)) {
+EatAllDots.java://                goals_remaining.remove(current_node.item);
+EatAllDots.java:    public static void main(String[] args) throws CloneNotSupportedException {
+Binary file MazeSearch.class matches
+MazeSearch.java:    public static void main(String[] args) {
+Binary file MyPriorityQueue.class matches
+MyPriorityQueue.java:    public static void main(String[] args) {
+Binary file Node.class matches
+Node.java:    public static void main(String[] args) {
+Binary file PacmanGrid.class matches
+PacmanGrid.java:    public static void main(String[] a) {
+Binary file PriorityQueueWrapper.class matches
+PriorityQueueWrapper.java:    public static void main(String[] args) {
+Binary file State.class matches
+State.java:    public static void main(String[] args) {
+Binary file TSP.class matches
+TSP.java:    public static void main(String[] args) throws IOException {
+host-1-61:sam @ ~/Desktop/FOR_SHARMA-testing_all_dots/src # java MazeSearch
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%                                 P%
+% %%%%%%%%%%%%%%%%%%%%%%% %%%%%%%% %
+% %%   %   %      %%%%%%%   %%     %
+% %% % % % % %%%% %%%%%%%%% %% %%%%%
+% %% % % % %             %% %%     %
+% %% % % % % % %%%%  %%%    %%%%%% %
+% %  % % %   %    %% %%%%%%%%      %
+% %% % % %%%%%%%% %%        %% %%%%%
+% %% %   %%       %%%%%%%%% %%     %
+%    %%%%%% %%%%%%%      %% %%%%%% %
+%%%%%%      %       %%%% %% %      %
+%      %%%%%% %%%%% %    %% %% %%%%%
+% %%%%%%      %       %%%%% %%     %
+%        %%%%%% %%%%%%%%%%% %%  %% %
+%%%%%%%%%%                  %%%%%% %
+%.         %%%%%%%%%%%%%%%%        %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+Eating All Dots
+Num nodes explored = 3756
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%|||||||||||||||||||||||||||||||||P%
+%|%%%%%%%%%%%%%%%%%%%%%%%|%%%%%%%%|%
+%|%%|  %|||%||||||%%%%%%%|||%%|||||%
+%|%%|% %|%|%|%%%%|%%%%%%%%%|%%|%%%%%
+%|%%|% %|%|%|||||||||||||%%|%%|||||%
+%|%%|%|%|%|%|%|%%%%||%%%||||%%%%%%|%
+%|%||%|%|%|||%||||%%|%%%%%%%%||||||%
+%|%%|%|%|%%%%%%%%|%%||||||||%%|%%%%%
+%|%%|%|||%%|||||||%%%%%%%%%|%%|||||%
+%||||%%%%%%|%%%%%%%      %%|%%%%%%|%
+%%%%%%||||||%       %%%% %%|%||||||%
+%||||||%%%%%% %%%%% %    %%|%%|%%%%%
+%|%%%%%%      %       %%%%%|%%|||  %
+%|||||   %%%%%% %%%%%%%%%%%|%%||%% %
+%%%%%%%%%%||||||||||||||||||%%%%%% %
+%E|||||||||%%%%%%%%%%%%%%%%|       %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+[(1, 34)]
+Path Cost = 0
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%                                 P%
+% %%%%%%%%%%%%%%%%%%%%%%% %%%%%%%% %
+% %%   %   %      %%%%%%%   %%     %
+% %% % % % % %%%% %%%%%%%%% %% %%%%%
+% %% % % % %             %% %%     %
+% %% % % % % % %%%%  %%%    %%%%%% %
+% %  % % %   %    %% %%%%%%%%      %
+% %% % % %%%%%%%% %%        %% %%%%%
+% %% %   %%       %%%%%%%%% %%     %
+%    %%%%%% %%%%%%%      %% %%%%%% %
+%%%%%%      %       %%%% %% %      %
+%      %%%%%% %%%%% %    %% %% %%%%%
+% %%%%%%      %       %%%%% %%     %
+%        %%%%%% %%%%%%%%%%% %%  %% %
+%%%%%%%%%%                  %%%%%% %
+%E         %%%%%%%%%%%%%%%%        %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+Doing DFS Search
+Num nodes explored = 144
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%|||||||||||||||||||||||||||||||||P%
+%|%%%%%%%%%%%%%%%%%%%%%%% %%%%%%%% %
+%|%%|||%|||%      %%%%%%%|||%%     %
+%|%%|%|%|%|% %%%% %%%%%%%%%|%% %%%%%
+%|%%|%|%|%|%|||||||||||||%%|%%     %
+%|%%|%|%|%|%|% %%%% |%%%||||%%%%%% %
+%|%||%|%|%|||%    %%|%%%%%%%%      %
+%|%%|%|%|%%%%%%%% %%||||||||%% %%%%%
+%|%%|%|||%%       %%%%%%%%%|%%     %
+%||||%%%%%% %%%%%%%      %%|%%%%%% %
+%%%%%%      %       %%%% %%|%      %
+%      %%%%%% %%%%% %    %%|%% %%%%%
+% %%%%%%      %       %%%%%|%%     %
+%        %%%%%% %%%%%%%%%%%|%%  %% %
+%%%%%%%%%%||||||||||||||||||%%%%%% %
+%E|||||||||%%%%%%%%%%%%%%%%        %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+Path Cost = 130
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%|||||||||||||||||||||||||||||||||P%
+%|%%%%%%%%%%%%%%%%%%%%%%% %%%%%%%% %
+%|%%|||%|||%      %%%%%%%   %%     %
+%|%%|%|%|%|% %%%% %%%%%%%%% %% %%%%%
+%|%%|%|%|%|%|||||||||    %% %%     %
+%|%%|%|%|%|%|% %%%% |%%%    %%%%%% %
+%|% |%|%|%|||%    %%|%%%%%%%%      %
+%|%%|%|%|%%%%%%%% %%||||||||%% %%%%%
+%|%%|%|||%%       %%%%%%%%%|%%     %
+%||||%%%%%% %%%%%%%      %%|%%%%%% %
+%%%%%%      %       %%%% %%|%      %
+%      %%%%%% %%%%% %    %%|%% %%%%%
+% %%%%%%      %       %%%%%|%%     %
+%        %%%%%% %%%%%%%%%%%|%%  %% %
+%%%%%%%%%%||||||||||||||||||%%%%%% %
+%E|||||||||%%%%%%%%%%%%%%%%        %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+Doing BFS Search
+Num nodes explored = 269
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%|||||||||||||||||||||||||||||||||P%
+%|%%%%%%%%%%%%%%%%%%%%%%%|%%%%%%%%|%
+%|%%|||%|||%||||||%%%%%%%|||%%|||||%
+%|%%|%|%|%|%|%%%%|%%%%%%%%%|%%|%%%%%
+%|%%|%|%|%|%|||||||||||||%%|%%|||||%
+%|%%|%|%|%|%|%|%%%%||%%%||||%%%%%%|%
+%|%||%|%|%|||%||||%%|%%%%%%%%||||||%
+%|%%|%|%|%%%%%%%%|%%||||||||%%|%%%%%
+%|%%|%|||%%|||||||%%%%%%%%%|%%|||||%
+%||||%%%%%%|%%%%%%%||||||%%|%%%%%%|%
+%%%%%%||||||%|||||||%%%%|%%|%||||||%
+%||||||%%%%%%|%%%%%|%||||%%|%%|%%%%%
+%|%%%%%%||    %|||||||%%%%%|%%|||||%
+%||||||||%%%%%%|%%%%%%%%%%%|%%||%%|%
+%%%%%%%%%%||||||||||||||||||%%%%%%|%
+%E|||||||||%%%%%%%%%%%%%%%%||||||||%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+Path Cost = 68
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%                        |||||||||P%
+% %%%%%%%%%%%%%%%%%%%%%%%|%%%%%%%% %
+% %%   %   %      %%%%%%%|||%%     %
+% %% % % % % %%%% %%%%%%%%%|%% %%%%%
+% %% % % % %        |||||%%|%%     %
+% %% % % % % % %%%% |%%%||||%%%%%% %
+% %  % % %   %    %%|%%%%%%%%      %
+% %% % % %%%%%%%% %%||||||||%% %%%%%
+% %% %   %%       %%%%%%%%%|%%     %
+%    %%%%%% %%%%%%%      %%|%%%%%% %
+%%%%%%      %       %%%% %%|%      %
+%      %%%%%% %%%%% %    %%|%% %%%%%
+% %%%%%%      %       %%%%%|%%     %
+%        %%%%%% %%%%%%%%%%%|%%  %% %
+%%%%%%%%%%||||||||||||||||||%%%%%% %
+%E|||||||||%%%%%%%%%%%%%%%%        %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+Doing Greedy Search
+Num nodes explored = 78
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%                                 P%
+% %%%%%%%%%%%%%%%%%%%%%%% %%%%%%%%|%
+% %%   %   %      %%%%%%%   %%|||||%
+% %% % % % % %%%% %%%%%%%%% %%|%%%%%
+% %% % % % %             %% %%|||||%
+% %% % % % % % %%%%  %%%    %%%%%%|%
+% %  % % %   %    %% %%%%%%%%||||||%
+% %% % % %%%%%%%% %%        %%|%%%%%
+% %% %   %%       %%%%%%%%% %%|||||%
+%    %%%%%% %%%%%%%      %% %%%%%%|%
+%%%%%%      %       %%%% %% %||||||%
+%      %%%%%% %%%%% %    %% %%|%%%%%
+% %%%%%%      %       %%%%% %%|||||%
+%        %%%%%% %%%%%%%%%%% %%||%%|%
+%%%%%%%%%%||||||||||||||||||%%%%%%|%
+%E|||||||||%%%%%%%%%%%%%%%%||||||||%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+Path Cost = 74
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%                                 P%
+% %%%%%%%%%%%%%%%%%%%%%%% %%%%%%%%|%
+% %%   %   %      %%%%%%%   %%|||||%
+% %% % % % % %%%% %%%%%%%%% %%|%%%%%
+% %% % % % %             %% %%|||||%
+% %% % % % % % %%%%  %%%    %%%%%%|%
+% %  % % %   %    %% %%%%%%%% |||||%
+% %% % % %%%%%%%% %%        %%|%%%%%
+% %% %   %%       %%%%%%%%% %%|||||%
+%    %%%%%% %%%%%%%      %% %%%%%%|%
+%%%%%%      %       %%%% %% % |||||%
+%      %%%%%% %%%%% %    %% %%|%%%%%
+% %%%%%%      %       %%%%% %%|||||%
+%        %%%%%% %%%%%%%%%%% %%  %%|%
+%%%%%%%%%%||||||||||||||||||%%%%%%|%
+%E|||||||||%%%%%%%%%%%%%%%%||||||||%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+Doing UCS Search
+Num nodes explored = 269
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%|||||||||||||||||||||||||||||||||P%
+%|%%%%%%%%%%%%%%%%%%%%%%%|%%%%%%%%|%
+%|%%|||%|||%||||||%%%%%%%|||%%|||||%
+%|%%|%|%|%|%|%%%%|%%%%%%%%%|%%|%%%%%
+%|%%|%|%|%|%|||||||||||||%%|%%|||||%
+%|%%|%|%|%|%|%|%%%%||%%%||||%%%%%%|%
+%|%||%|%|%|||%||||%%|%%%%%%%%||||||%
+%|%%|%|%|%%%%%%%%|%%||||||||%%|%%%%%
+%|%%|%|||%%|||||||%%%%%%%%%|%%|||||%
+%||||%%%%%%|%%%%%%%||||||%%|%%%%%%|%
+%%%%%%||||||%|||||||%%%%|%%|%||||||%
+%||||||%%%%%%|%%%%%|%||||%%|%%|%%%%%
+%|%%%%%%||    %|||||||%%%%%|%%|||||%
+%||||||||%%%%%%|%%%%%%%%%%%|%%||%%|%
+%%%%%%%%%%||||||||||||||||||%%%%%%|%
+%E|||||||||%%%%%%%%%%%%%%%%||||||||%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+Path Cost = 68
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%                        |||||||||P%
+% %%%%%%%%%%%%%%%%%%%%%%%|%%%%%%%% %
+% %%   %   %      %%%%%%%|||%%     %
+% %% % % % % %%%% %%%%%%%%%|%% %%%%%
+% %% % % % %        |||||%%|%%     %
+% %% % % % % % %%%% |%%%||||%%%%%% %
+% %  % % %   %    %%|%%%%%%%%      %
+% %% % % %%%%%%%% %%||||||||%% %%%%%
+% %% %   %%       %%%%%%%%%|%%     %
+%    %%%%%% %%%%%%%      %%|%%%%%% %
+%%%%%%      %       %%%% %%|%      %
+%      %%%%%% %%%%% %    %%|%% %%%%%
+% %%%%%%      %       %%%%%|%%     %
+%        %%%%%% %%%%%%%%%%%|%%  %% %
+%%%%%%%%%%||||||||||||||||||%%%%%% %
+%E|||||||||%%%%%%%%%%%%%%%%        %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+Doing ASTAR Search
+Num nodes explored = 222
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%|||||||||||||||||||||||||||||||||P%
+%|%%%%%%%%%%%%%%%%%%%%%%%|%%%%%%%%|%
+%|%%|  %|||%||||||%%%%%%%|||%%|||||%
+%|%%|% %|%|%|%%%%|%%%%%%%%%|%%|%%%%%
+%|%%|% %|%|%|||||||||||||%%|%%|||||%
+%|%%|%|%|%|%|%|%%%%||%%%||||%%%%%%|%
+%|%||%|%|%|||%||||%%|%%%%%%%%||||||%
+%|%%|%|%|%%%%%%%%|%%||||||||%%|%%%%%
+%|%%|%|||%%|||||||%%%%%%%%%|%%|||||%
+%||||%%%%%%|%%%%%%%      %%|%%%%%%|%
+%%%%%%||||||%       %%%% %%|%||||||%
+%||||||%%%%%% %%%%% %    %%|%%|%%%%%
+%|%%%%%%      %       %%%%%|%%|||  %
+%|||||   %%%%%% %%%%%%%%%%%|%%||%% %
+%%%%%%%%%%||||||||||||||||||%%%%%% %
+%E|||||||||%%%%%%%%%%%%%%%%|       %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+Path Cost = 68
+host-1-61:sam @ ~/Desktop/FOR_SHARMA-testing_all_dots/src # java MazeSearch
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%                                 P%
+% %%%%%%%%%%%%%%%%%%%%%%% %%%%%%%% %
+% %%   %   %      %%%%%%%   %%     %
+% %% % % % % %%%% %%%%%%%%% %% %%%%%
+% %% % % % %             %% %%     %
+% %% % % % % % %%%%  %%%    %%%%%% %
+% %  % % %   %    %% %%%%%%%%      %
+% %% % % %%%%%%%% %%        %% %%%%%
+% %% %   %%       %%%%%%%%% %%     %
+%    %%%%%% %%%%%%%      %% %%%%%% %
+%%%%%%      %       %%%% %% %      %
+%      %%%%%% %%%%% %    %% %% %%%%%
+% %%%%%%      %       %%%%% %%     %
+%        %%%%%% %%%%%%%%%%% %%  %% %
+%%%%%%%%%%                  %%%%%% %
+%.         %%%%%%%%%%%%%%%%        %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+Eating All Dots
+Num nodes explored = 3756
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%|||||||||||||||||||||||||||||||||P%
+%|%%%%%%%%%%%%%%%%%%%%%%%|%%%%%%%%|%
+%|%%|  %|||%||||||%%%%%%%|||%%|||||%
+%|%%|% %|%|%|%%%%|%%%%%%%%%|%%|%%%%%
+%|%%|% %|%|%|||||||||||||%%|%%|||||%
+%|%%|%|%|%|%|%|%%%%||%%%||||%%%%%%|%
+%|%||%|%|%|||%||||%%|%%%%%%%%||||||%
+%|%%|%|%|%%%%%%%%|%%||||||||%%|%%%%%
+%|%%|%|||%%|||||||%%%%%%%%%|%%|||||%
+%||||%%%%%%|%%%%%%%      %%|%%%%%%|%
+%%%%%%||||||%       %%%% %%|%||||||%
+%||||||%%%%%% %%%%% %    %%|%%|%%%%%
+%|%%%%%%      %       %%%%%|%%|||  %
+%|||||   %%%%%% %%%%%%%%%%%|%%||%% %
+%%%%%%%%%%||||||||||||||||||%%%%%% %
+%E|||||||||%%%%%%%%%%%%%%%%|       %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+[(1, 34)]
+Path Cost = 0
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%                                 P%
+% %%%%%%%%%%%%%%%%%%%%%%% %%%%%%%% %
+% %%   %   %      %%%%%%%   %%     %
+% %% % % % % %%%% %%%%%%%%% %% %%%%%
+% %% % % % %             %% %%     %
+% %% % % % % % %%%%  %%%    %%%%%% %
+% %  % % %   %    %% %%%%%%%%      %
+% %% % % %%%%%%%% %%        %% %%%%%
+% %% %   %%       %%%%%%%%% %%     %
+%    %%%%%% %%%%%%%      %% %%%%%% %
+%%%%%%      %       %%%% %% %      %
+%      %%%%%% %%%%% %    %% %% %%%%%
+% %%%%%%      %       %%%%% %%     %
+%        %%%%%% %%%%%%%%%%% %%  %% %
+%%%%%%%%%%                  %%%%%% %
+%E         %%%%%%%%%%%%%%%%        %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+Doing DFS Search
+Num nodes explored = 144
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%|||||||||||||||||||||||||||||||||P%
+%|%%%%%%%%%%%%%%%%%%%%%%% %%%%%%%% %
+%|%%|||%|||%      %%%%%%%|||%%     %
+%|%%|%|%|%|% %%%% %%%%%%%%%|%% %%%%%
+%|%%|%|%|%|%|||||||||||||%%|%%     %
+%|%%|%|%|%|%|% %%%% |%%%||||%%%%%% %
+%|%||%|%|%|||%    %%|%%%%%%%%      %
+%|%%|%|%|%%%%%%%% %%||||||||%% %%%%%
+%|%%|%|||%%       %%%%%%%%%|%%     %
+%||||%%%%%% %%%%%%%      %%|%%%%%% %
+%%%%%%      %       %%%% %%|%      %
+%      %%%%%% %%%%% %    %%|%% %%%%%
+% %%%%%%      %       %%%%%|%%     %
+%        %%%%%% %%%%%%%%%%%|%%  %% %
+%%%%%%%%%%||||||||||||||||||%%%%%% %
+%E|||||||||%%%%%%%%%%%%%%%%        %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+Path Cost = 130
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%|||||||||||||||||||||||||||||||||P%
+%|%%%%%%%%%%%%%%%%%%%%%%% %%%%%%%% %
+%|%%|||%|||%      %%%%%%%   %%     %
+%|%%|%|%|%|% %%%% %%%%%%%%% %% %%%%%
+%|%%|%|%|%|%|||||||||    %% %%     %
+%|%%|%|%|%|%|% %%%% |%%%    %%%%%% %
+%|% |%|%|%|||%    %%|%%%%%%%%      %
+%|%%|%|%|%%%%%%%% %%||||||||%% %%%%%
+%|%%|%|||%%       %%%%%%%%%|%%     %
+%||||%%%%%% %%%%%%%      %%|%%%%%% %
+%%%%%%      %       %%%% %%|%      %
+%      %%%%%% %%%%% %    %%|%% %%%%%
+% %%%%%%      %       %%%%%|%%     %
+%        %%%%%% %%%%%%%%%%%|%%  %% %
+%%%%%%%%%%||||||||||||||||||%%%%%% %
+%E|||||||||%%%%%%%%%%%%%%%%        %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+Doing BFS Search
+Num nodes explored = 269
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%|||||||||||||||||||||||||||||||||P%
+%|%%%%%%%%%%%%%%%%%%%%%%%|%%%%%%%%|%
+%|%%|||%|||%||||||%%%%%%%|||%%|||||%
+%|%%|%|%|%|%|%%%%|%%%%%%%%%|%%|%%%%%
+%|%%|%|%|%|%|||||||||||||%%|%%|||||%
+%|%%|%|%|%|%|%|%%%%||%%%||||%%%%%%|%
+%|%||%|%|%|||%||||%%|%%%%%%%%||||||%
+%|%%|%|%|%%%%%%%%|%%||||||||%%|%%%%%
+%|%%|%|||%%|||||||%%%%%%%%%|%%|||||%
+%||||%%%%%%|%%%%%%%||||||%%|%%%%%%|%
+%%%%%%||||||%|||||||%%%%|%%|%||||||%
+%||||||%%%%%%|%%%%%|%||||%%|%%|%%%%%
+%|%%%%%%||    %|||||||%%%%%|%%|||||%
+%||||||||%%%%%%|%%%%%%%%%%%|%%||%%|%
+%%%%%%%%%%||||||||||||||||||%%%%%%|%
+%E|||||||||%%%%%%%%%%%%%%%%||||||||%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+Path Cost = 68
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%                        |||||||||P%
+% %%%%%%%%%%%%%%%%%%%%%%%|%%%%%%%% %
+% %%   %   %      %%%%%%%|||%%     %
+% %% % % % % %%%% %%%%%%%%%|%% %%%%%
+% %% % % % %        |||||%%|%%     %
+% %% % % % % % %%%% |%%%||||%%%%%% %
+% %  % % %   %    %%|%%%%%%%%      %
+% %% % % %%%%%%%% %%||||||||%% %%%%%
+% %% %   %%       %%%%%%%%%|%%     %
+%    %%%%%% %%%%%%%      %%|%%%%%% %
+%%%%%%      %       %%%% %%|%      %
+%      %%%%%% %%%%% %    %%|%% %%%%%
+% %%%%%%      %       %%%%%|%%     %
+%        %%%%%% %%%%%%%%%%%|%%  %% %
+%%%%%%%%%%||||||||||||||||||%%%%%% %
+%E|||||||||%%%%%%%%%%%%%%%%        %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+Doing Greedy Search
+Num nodes explored = 78
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%                                 P%
+% %%%%%%%%%%%%%%%%%%%%%%% %%%%%%%%|%
+% %%   %   %      %%%%%%%   %%|||||%
+% %% % % % % %%%% %%%%%%%%% %%|%%%%%
+% %% % % % %             %% %%|||||%
+% %% % % % % % %%%%  %%%    %%%%%%|%
+% %  % % %   %    %% %%%%%%%%||||||%
+% %% % % %%%%%%%% %%        %%|%%%%%
+% %% %   %%       %%%%%%%%% %%|||||%
+%    %%%%%% %%%%%%%      %% %%%%%%|%
+%%%%%%      %       %%%% %% %||||||%
+%      %%%%%% %%%%% %    %% %%|%%%%%
+% %%%%%%      %       %%%%% %%|||||%
+%        %%%%%% %%%%%%%%%%% %%||%%|%
+%%%%%%%%%%||||||||||||||||||%%%%%%|%
+%E|||||||||%%%%%%%%%%%%%%%%||||||||%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+Path Cost = 74
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%                                 P%
+% %%%%%%%%%%%%%%%%%%%%%%% %%%%%%%%|%
+% %%   %   %      %%%%%%%   %%|||||%
+% %% % % % % %%%% %%%%%%%%% %%|%%%%%
+% %% % % % %             %% %%|||||%
+% %% % % % % % %%%%  %%%    %%%%%%|%
+% %  % % %   %    %% %%%%%%%% |||||%
+% %% % % %%%%%%%% %%        %%|%%%%%
+% %% %   %%       %%%%%%%%% %%|||||%
+%    %%%%%% %%%%%%%      %% %%%%%%|%
+%%%%%%      %       %%%% %% % |||||%
+%      %%%%%% %%%%% %    %% %%|%%%%%
+% %%%%%%      %       %%%%% %%|||||%
+%        %%%%%% %%%%%%%%%%% %%  %%|%
+%%%%%%%%%%||||||||||||||||||%%%%%%|%
+%E|||||||||%%%%%%%%%%%%%%%%||||||||%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+Doing UCS Search
+Num nodes explored = 269
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%|||||||||||||||||||||||||||||||||P%
+%|%%%%%%%%%%%%%%%%%%%%%%%|%%%%%%%%|%
+%|%%|||%|||%||||||%%%%%%%|||%%|||||%
+%|%%|%|%|%|%|%%%%|%%%%%%%%%|%%|%%%%%
+%|%%|%|%|%|%|||||||||||||%%|%%|||||%
+%|%%|%|%|%|%|%|%%%%||%%%||||%%%%%%|%
+%|%||%|%|%|||%||||%%|%%%%%%%%||||||%
+%|%%|%|%|%%%%%%%%|%%||||||||%%|%%%%%
+%|%%|%|||%%|||||||%%%%%%%%%|%%|||||%
+%||||%%%%%%|%%%%%%%||||||%%|%%%%%%|%
+%%%%%%||||||%|||||||%%%%|%%|%||||||%
+%||||||%%%%%%|%%%%%|%||||%%|%%|%%%%%
+%|%%%%%%||    %|||||||%%%%%|%%|||||%
+%||||||||%%%%%%|%%%%%%%%%%%|%%||%%|%
+%%%%%%%%%%||||||||||||||||||%%%%%%|%
+%E|||||||||%%%%%%%%%%%%%%%%||||||||%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+Path Cost = 68
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%                        |||||||||P%
+% %%%%%%%%%%%%%%%%%%%%%%%|%%%%%%%% %
+% %%   %   %      %%%%%%%|||%%     %
+% %% % % % % %%%% %%%%%%%%%|%% %%%%%
+% %% % % % %        |||||%%|%%     %
+% %% % % % % % %%%% |%%%||||%%%%%% %
+% %  % % %   %    %%|%%%%%%%%      %
+% %% % % %%%%%%%% %%||||||||%% %%%%%
+% %% %   %%       %%%%%%%%%|%%     %
+%    %%%%%% %%%%%%%      %%|%%%%%% %
+%%%%%%      %       %%%% %%|%      %
+%      %%%%%% %%%%% %    %%|%% %%%%%
+% %%%%%%      %       %%%%%|%%     %
+%        %%%%%% %%%%%%%%%%%|%%  %% %
+%%%%%%%%%%||||||||||||||||||%%%%%% %
+%E|||||||||%%%%%%%%%%%%%%%%        %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+Doing ASTAR Search
+Num nodes explored = 222
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%|||||||||||||||||||||||||||||||||P%
+%|%%%%%%%%%%%%%%%%%%%%%%%|%%%%%%%%|%
+%|%%|  %|||%||||||%%%%%%%|||%%|||||%
+%|%%|% %|%|%|%%%%|%%%%%%%%%|%%|%%%%%
+%|%%|% %|%|%|||||||||||||%%|%%|||||%
+%|%%|%|%|%|%|%|%%%%||%%%||||%%%%%%|%
+%|%||%|%|%|||%||||%%|%%%%%%%%||||||%
+%|%%|%|%|%%%%%%%%|%%||||||||%%|%%%%%
+%|%%|%|||%%|||||||%%%%%%%%%|%%|||||%
+%||||%%%%%%|%%%%%%%      %%|%%%%%%|%
+%%%%%%||||||%       %%%% %%|%||||||%
+%||||||%%%%%% %%%%% %    %%|%%|%%%%%
+%|%%%%%%      %       %%%%%|%%|||  %
+%|||||   %%%%%% %%%%%%%%%%%|%%||%% %
+%%%%%%%%%%||||||||||||||||||%%%%%% %
+%E|||||||||%%%%%%%%%%%%%%%%|       %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+Path Cost = 68
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%                        |||||||||P%
+% %%%%%%%%%%%%%%%%%%%%%%%|%%%%%%%% %
+% %%   %   %      %%%%%%%|||%%     %
+% %% % % % % %%%% %%%%%%%%%|%% %%%%%
+% %% % % % %        |||||%%|%%     %
+% %% % % % % % %%%% |%%%||||%%%%%% %
+% %  % % %   %    %%|%%%%%%%%      %
+% %% % % %%%%%%%% %%||||||||%% %%%%%
+% %% %   %%       %%%%%%%%%|%%     %
+%    %%%%%% %%%%%%%      %%|%%%%%% %
+%%%%%%      %       %%%% %%|%      %
+%      %%%%%% %%%%% %    %%|%% %%%%%
+% %%%%%%      %       %%%%%|%%     %
+%        %%%%%% %%%%%%%%%%%|%%  %% %
+%%%%%%%%%%||||||||||||||||||%%%%%% %
+%E|||||||||%%%%%%%%%%%%%%%%        %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+host-1-61:sam @ ~/Desktop/FOR_SHARMA-testing_all_dots/src # java MazeSearch
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%                                 P%
+% %%%%%%%%%%%%%%%%%%%%%%% %%%%%%%% %
+% %%   %   %      %%%%%%%   %%     %
+% %% % % % % %%%% %%%%%%%%% %% %%%%%
+% %% % % % %             %% %%     %
+% %% % % % % % %%%%  %%%    %%%%%% %
+% %  % % %   %    %% %%%%%%%%      %
+% %% % % %%%%%%%% %%        %% %%%%%
+% %% %   %%       %%%%%%%%% %%     %
+%    %%%%%% %%%%%%%      %% %%%%%% %
+%%%%%%      %       %%%% %% %      %
+%      %%%%%% %%%%% %    %% %% %%%%%
+% %%%%%%      %       %%%%% %%     %
+%        %%%%%% %%%%%%%%%%% %%  %% %
+%%%%%%%%%%                  %%%%%% %
+%.         %%%%%%%%%%%%%%%%        %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+vEating All Dots
+Num nodes explored = 3756
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%|||||||||||||||||||||||||||||||||P%
+%|%%%%%%%%%%%%%%%%%%%%%%%|%%%%%%%%|%
+%|%%|  %|||%||||||%%%%%%%|||%%|||||%
+%|%%|% %|%|%|%%%%|%%%%%%%%%|%%|%%%%%
+%|%%|% %|%|%|||||||||||||%%|%%|||||%
+%|%%|%|%|%|%|%|%%%%||%%%||||%%%%%%|%
+%|%||%|%|%|||%||||%%|%%%%%%%%||||||%
+%|%%|%|%|%%%%%%%%|%%||||||||%%|%%%%%
+%|%%|%|||%%|||||||%%%%%%%%%|%%|||||%
+%||||%%%%%%|%%%%%%%      %%|%%%%%%|%
+%%%%%%||||||%       %%%% %%|%||||||%
+%||||||%%%%%% %%%%% %    %%|%%|%%%%%
+%|%%%%%%      %       %%%%%|%%|||  %
+%|||||   %%%%%% %%%%%%%%%%%|%%||%% %
+%%%%%%%%%%||||||||||||||||||%%%%%% %
+%E|||||||||%%%%%%%%%%%%%%%%|       %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+[(1, 34)]
+host-1-61:sam @ ~/Desktop/FOR_SHARMA-testing_all_dots/src # vc
+host-1-61:sam @ ~/Desktop/FOR_SHARMA-testing_all_dots/src # vi MazeSearch.java 
+host-1-61:sam @ ~/Desktop/FOR_SHARMA-testing_all_dots/src # javac MazeSearch.java 
+host-1-61:sam @ ~/Desktop/FOR_SHARMA-testing_all_dots/src # java MazeSearch
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%                                 P%
+% %%%%%%%%%%%%%%%%%%%%%%% %%%%%%%% %
+% %%   %   %      %%%%%%%   %%     %
+% %% % % % % %%%% %%%%%%%%% %% %%%%%
+% %% % % % %             %% %%     %
+% %% % % % % % %%%%  %%%    %%%%%% %
+% %  % % %   %    %% %%%%%%%%      %
+% %% % % %%%%%%%% %%        %% %%%%%
+% %% %   %%       %%%%%%%%% %%     %
+%    %%%%%% %%%%%%%      %% %%%%%% %
+%%%%%%      %       %%%% %% %      %
+%      %%%%%% %%%%% %    %% %% %%%%%
+% %%%%%%      %       %%%%% %%     %
+%        %%%%%% %%%%%%%%%%% %%  %% %
+%%%%%%%%%%                  %%%%%% %
+%.         %%%%%%%%%%%%%%%%        %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+Eating All Dots
+Num nodes explored = 3756
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%|||||||||||||||||||||||||||||||||P%
+%|%%%%%%%%%%%%%%%%%%%%%%%|%%%%%%%%|%
+%|%%|  %|||%||||||%%%%%%%|||%%|||||%
+%|%%|% %|%|%|%%%%|%%%%%%%%%|%%|%%%%%
+%|%%|% %|%|%|||||||||||||%%|%%|||||%
+%|%%|%|%|%|%|%|%%%%||%%%||||%%%%%%|%
+%|%||%|%|%|||%||||%%|%%%%%%%%||||||%
+%|%%|%|%|%%%%%%%%|%%||||||||%%|%%%%%
+%|%%|%|||%%|||||||%%%%%%%%%|%%|||||%
+%||||%%%%%%|%%%%%%%      %%|%%%%%%|%
+%%%%%%||||||%       %%%% %%|%||||||%
+%||||||%%%%%% %%%%% %    %%|%%|%%%%%
+%|%%%%%%      %       %%%%%|%%|||  %
+%|||||   %%%%%% %%%%%%%%%%%|%%||%% %
+%%%%%%%%%%||||||||||||||||||%%%%%% %
+%E|||||||||%%%%%%%%%%%%%%%%|       %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+[(1, 34)]
+Path Cost = 0
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%                                 P%
+% %%%%%%%%%%%%%%%%%%%%%%% %%%%%%%% %
+% %%   %   %      %%%%%%%   %%     %
+% %% % % % % %%%% %%%%%%%%% %% %%%%%
+% %% % % % %             %% %%     %
+% %% % % % % % %%%%  %%%    %%%%%% %
+% %  % % %   %    %% %%%%%%%%      %
+% %% % % %%%%%%%% %%        %% %%%%%
+% %% %   %%       %%%%%%%%% %%     %
+%    %%%%%% %%%%%%%      %% %%%%%% %
+%%%%%%      %       %%%% %% %      %
+%      %%%%%% %%%%% %    %% %% %%%%%
+% %%%%%%      %       %%%%% %%     %
+%        %%%%%% %%%%%%%%%%% %%  %% %
+%%%%%%%%%%                  %%%%%% %
+%E         %%%%%%%%%%%%%%%%        %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+Doing DFS Search
+Num nodes explored = 144
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%|||||||||||||||||||||||||||||||||P%
+%|%%%%%%%%%%%%%%%%%%%%%%% %%%%%%%% %
+%|%%|||%|||%      %%%%%%%|||%%     %
+%|%%|%|%|%|% %%%% %%%%%%%%%|%% %%%%%
+%|%%|%|%|%|%|||||||||||||%%|%%     %
+%|%%|%|%|%|%|% %%%% |%%%||||%%%%%% %
+%|%||%|%|%|||%    %%|%%%%%%%%      %
+%|%%|%|%|%%%%%%%% %%||||||||%% %%%%%
+%|%%|%|||%%       %%%%%%%%%|%%     %
+%||||%%%%%% %%%%%%%      %%|%%%%%% %
+%%%%%%      %       %%%% %%|%      %
+%      %%%%%% %%%%% %    %%|%% %%%%%
+% %%%%%%      %       %%%%%|%%     %
+%        %%%%%% %%%%%%%%%%%|%%  %% %
+%%%%%%%%%%||||||||||||||||||%%%%%% %
+%E|||||||||%%%%%%%%%%%%%%%%        %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+Path Cost = 130
+host-1-61:sam @ ~/Desktop/FOR_SHARMA-testing_all_dots/src # vi MazeSearch.java 
+host-1-61:sam @ ~/Desktop/FOR_SHARMA-testing_all_dots/src # vi MazeSearch.java 
+host-1-61:sam @ ~/Desktop/FOR_SHARMA-testing_all_dots/src # vi MazeSearch.java 
+host-1-61:sam @ ~/Desktop/FOR_SHARMA-testing_all_dots/src # vi MazeSearch.java 
+host-1-61:sam @ ~/Desktop/FOR_SHARMA-testing_all_dots/src # git pull
+fatal: Not a git repository (or any of the parent directories): .git
+host-1-61:sam @ ~/Desktop/FOR_SHARMA-testing_all_dots/src # cd ..
+host-1-61:sam @ ~/Desktop/FOR_SHARMA-testing_all_dots # git pul
+host-1-61:sam @ ~/Desktop/FOR_SHARMA-testing_all_dots # cd .
+host-1-61:sam @ ~/Desktop/FOR_SHARMA-testing_all_dots # cd ..
+host-1-61:sam @ ~/Desktop # rm -rf FOR_SHARMA-testing_all_dots
+(reverse-i-search)`git': git pull
+(reverse-i-search)`clone': git clone https://github.com/shyamrajendran/OS_MPS.git
+host-1-61:sam @ ~/Desktop # git clone 
+host-1-61:sam @ ~/Desktop # cd ..
+host-1-61:sam @ ~ # 
+host-1-61:sam @ ~ # git clone https://github.com/shyamrajendran/FOR_SHARMA.git
+Cloning into 'FOR_SHARMA'...
+remote: Repository not found.
+fatal: repository 'https://github.com/shyamrajendran/FOR_SHARMA.git/' not found
+host-1-61:sam @ ~ # git clone https://github.com/shyamrajendran/FOR_SHARMA.git
+Cloning into 'FOR_SHARMA'...
+remote: Counting objects: 72, done.
+remote: Compressing objects: 100% (62/62), done.
+remote: Total 72 (delta 5), reused 72 (delta 5)
+Unpacking objects: 100% (72/72), done.
+Checking connectivity... done.
+host-1-61:sam @ ~ # 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+host-1-61:sam @ ~ # cd FOR_SHARMA/
+host-1-61:sam @ ~/FOR_SHARMA # ls -ltr
+total 112
+-rw-r--r--   1 sam  staff   147 Feb 22 22:55 trickySearch.txt
+drwxr-xr-x  18 sam  staff   612 Feb 22 22:55 src
+-rw-r--r--   1 sam  staff   829 Feb 22 22:55 small_pacman.tsp
+-rw-r--r--   1 sam  staff   104 Feb 22 22:55 smallSearch_2.txt
+-rw-r--r--   1 sam  staff   104 Feb 22 22:55 smallSearch.txt
+-rw-r--r--   1 sam  staff   229 Feb 22 22:55 smallMaze.txt
+drwxr-xr-x   3 sam  staff   102 Feb 22 22:55 out
+-rw-r--r--   1 sam  staff   256 Feb 22 22:55 mediumSearch.txt
+-rw-r--r--   1 sam  staff   665 Feb 22 22:55 mediumMaze.txt
+-rw-r--r--   1 sam  staff  6034 Feb 22 22:55 javaCode.zip
+-rw-r--r--   1 sam  staff   479 Feb 22 22:55 bigSearch.txt
+-rw-r--r--   1 sam  staff  1405 Feb 22 22:55 bigMaze.txt
+-rw-r--r--   1 sam  staff   200 Feb 22 22:55 berlin52.tsp
+-rw-r--r--   1 sam  staff    53 Feb 22 22:55 TSPsample.txt
+-rw-r--r--   1 sam  staff   423 Feb 22 22:55 Assignment1.iml
+host-1-61:sam @ ~/FOR_SHARMA # java
+host-1-61:sam @ ~/FOR_SHARMA # cd src/
+AstarData.java             MazeSearch.java            Point.java                 TSPForPacman.java          
+DisjointSet.java           MyPriorityQueue.java       PriorityQueueWrapper.java  bigMaze.txt                
+EatAllDots.java            Node.java                  State.java                 mediumMaze.txt             
+Edge.java                  PacmanGrid.java            TSP.java                   smallMaze.txt              
+host-1-61:sam @ ~/FOR_SHARMA # cd src/
+AstarData.java             MazeSearch.java            Point.java                 TSPForPacman.java          
+DisjointSet.java           MyPriorityQueue.java       PriorityQueueWrapper.java  bigMaze.txt                
+EatAllDots.java            Node.java                  State.java                 mediumMaze.txt             
+Edge.java                  PacmanGrid.java            TSP.java                   smallMaze.txt              
+host-1-61:sam @ ~/FOR_SHARMA # cd src/
+host-1-61:sam @ ~/FOR_SHARMA/src # javac *.java
+Note: Some input files use unchecked or unsafe operations.
+Note: Recompile with -Xlint:unchecked for details.
+host-1-61:sam @ ~/FOR_SHARMA/src # java MazeSearch
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%                                 P%
+% %%%%%%%%%%%%%%%%%%%%%%% %%%%%%%% %
+% %%   %   %      %%%%%%%   %%     %
+% %% % % % % %%%% %%%%%%%%% %% %%%%%
+% %% % % % %             %% %%     %
+% %% % % % % % %%%%  %%%    %%%%%% %
+% %  % % %   %    %% %%%%%%%%      %
+% %% % % %%%%%%%% %%        %% %%%%%
+% %% %   %%       %%%%%%%%% %%     %
+%    %%%%%% %%%%%%%      %% %%%%%% %
+%%%%%%      %       %%%% %% %      %
+%      %%%%%% %%%%% %    %% %% %%%%%
+% %%%%%%      %       %%%%% %%     %
+%        %%%%%% %%%%%%%%%%% %%  %% %
+%%%%%%%%%%                  %%%%%% %
+%.         %%%%%%%%%%%%%%%%        %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+Eating All Dots
+Num nodes explored = 3756
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%|||||||||||||||||||||||||||||||||P%
+%|%%%%%%%%%%%%%%%%%%%%%%%|%%%%%%%%|%
+%|%%|  %|||%||||||%%%%%%%|||%%|||||%
+%|%%|% %|%|%|%%%%|%%%%%%%%%|%%|%%%%%
+%|%%|% %|%|%|||||||||||||%%|%%|||||%
+%|%%|%|%|%|%|%|%%%%||%%%||||%%%%%%|%
+%|%||%|%|%|||%||||%%|%%%%%%%%||||||%
+%|%%|%|%|%%%%%%%%|%%||||||||%%|%%%%%
+%|%%|%|||%%|||||||%%%%%%%%%|%%|||||%
+%||||%%%%%%|%%%%%%%      %%|%%%%%%|%
+%%%%%%||||||%       %%%% %%|%||||||%
+%||||||%%%%%% %%%%% %    %%|%%|%%%%%
+%|%%%%%%      %       %%%%%|%%|||  %
+%|||||   %%%%%% %%%%%%%%%%%|%%||%% %
+%%%%%%%%%%||||||||||||||||||%%%%%% %
+%E|||||||||%%%%%%%%%%%%%%%%|       %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+[(1, 34)]
+Path Cost = 0
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%                                 P%
+% %%%%%%%%%%%%%%%%%%%%%%% %%%%%%%% %
+% %%   %   %      %%%%%%%   %%     %
+% %% % % % % %%%% %%%%%%%%% %% %%%%%
+% %% % % % %             %% %%     %
+% %% % % % % % %%%%  %%%    %%%%%% %
+% %  % % %   %    %% %%%%%%%%      %
+% %% % % %%%%%%%% %%        %% %%%%%
+% %% %   %%       %%%%%%%%% %%     %
+%    %%%%%% %%%%%%%      %% %%%%%% %
+%%%%%%      %       %%%% %% %      %
+%      %%%%%% %%%%% %    %% %% %%%%%
+% %%%%%%      %       %%%%% %%     %
+%        %%%%%% %%%%%%%%%%% %%  %% %
+%%%%%%%%%%                  %%%%%% %
+%E         %%%%%%%%%%%%%%%%        %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+Doing DFS Search
+Num nodes explored = 144
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%|||||||||||||||||||||||||||||||||P%
+%|%%%%%%%%%%%%%%%%%%%%%%% %%%%%%%% %
+%|%%|||%|||%      %%%%%%%|||%%     %
+%|%%|%|%|%|% %%%% %%%%%%%%%|%% %%%%%
+%|%%|%|%|%|%|||||||||||||%%|%%     %
+%|%%|%|%|%|%|% %%%% |%%%||||%%%%%% %
+%|%||%|%|%|||%    %%|%%%%%%%%      %
+%|%%|%|%|%%%%%%%% %%||||||||%% %%%%%
+%|%%|%|||%%       %%%%%%%%%|%%     %
+%||||%%%%%% %%%%%%%      %%|%%%%%% %
+%%%%%%      %       %%%% %%|%      %
+%      %%%%%% %%%%% %    %%|%% %%%%%
+% %%%%%%      %       %%%%%|%%     %
+%        %%%%%% %%%%%%%%%%%|%%  %% %
+%%%%%%%%%%||||||||||||||||||%%%%%% %
+%E|||||||||%%%%%%%%%%%%%%%%        %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+Path Cost = 130
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%|||||||||||||||||||||||||||||||||P%
+%|%%%%%%%%%%%%%%%%%%%%%%% %%%%%%%% %
+%|%%|||%|||%      %%%%%%%   %%     %
+%|%%|%|%|%|% %%%% %%%%%%%%% %% %%%%%
+%|%%|%|%|%|%|||||||||    %% %%     %
+%|%%|%|%|%|%|% %%%% |%%%    %%%%%% %
+%|% |%|%|%|||%    %%|%%%%%%%%      %
+%|%%|%|%|%%%%%%%% %%||||||||%% %%%%%
+%|%%|%|||%%       %%%%%%%%%|%%     %
+%||||%%%%%% %%%%%%%      %%|%%%%%% %
+%%%%%%      %       %%%% %%|%      %
+%      %%%%%% %%%%% %    %%|%% %%%%%
+% %%%%%%      %       %%%%%|%%     %
+%        %%%%%% %%%%%%%%%%%|%%  %% %
+%%%%%%%%%%||||||||||||||||||%%%%%% %
+%E|||||||||%%%%%%%%%%%%%%%%        %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+Doing BFS Search
+Num nodes explored = 269
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%|||||||||||||||||||||||||||||||||P%
+%|%%%%%%%%%%%%%%%%%%%%%%%|%%%%%%%%|%
+%|%%|||%|||%||||||%%%%%%%|||%%|||||%
+%|%%|%|%|%|%|%%%%|%%%%%%%%%|%%|%%%%%
+%|%%|%|%|%|%|||||||||||||%%|%%|||||%
+%|%%|%|%|%|%|%|%%%%||%%%||||%%%%%%|%
+%|%||%|%|%|||%||||%%|%%%%%%%%||||||%
+%|%%|%|%|%%%%%%%%|%%||||||||%%|%%%%%
+%|%%|%|||%%|||||||%%%%%%%%%|%%|||||%
+%||||%%%%%%|%%%%%%%||||||%%|%%%%%%|%
+%%%%%%||||||%|||||||%%%%|%%|%||||||%
+%||||||%%%%%%|%%%%%|%||||%%|%%|%%%%%
+%|%%%%%%||    %|||||||%%%%%|%%|||||%
+%||||||||%%%%%%|%%%%%%%%%%%|%%||%%|%
+%%%%%%%%%%||||||||||||||||||%%%%%%|%
+%E|||||||||%%%%%%%%%%%%%%%%||||||||%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+Path Cost = 68
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%                        |||||||||P%
+% %%%%%%%%%%%%%%%%%%%%%%%|%%%%%%%% %
+% %%   %   %      %%%%%%%|||%%     %
+% %% % % % % %%%% %%%%%%%%%|%% %%%%%
+% %% % % % %        |||||%%|%%     %
+% %% % % % % % %%%% |%%%||||%%%%%% %
+% %  % % %   %    %%|%%%%%%%%      %
+% %% % % %%%%%%%% %%||||||||%% %%%%%
+% %% %   %%       %%%%%%%%%|%%     %
+%    %%%%%% %%%%%%%      %%|%%%%%% %
+%%%%%%      %       %%%% %%|%      %
+%      %%%%%% %%%%% %    %%|%% %%%%%
+% %%%%%%      %       %%%%%|%%     %
+%        %%%%%% %%%%%%%%%%%|%%  %% %
+%%%%%%%%%%||||||||||||||||||%%%%%% %
+%E|||||||||%%%%%%%%%%%%%%%%        %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+Doing Greedy Search
+Num nodes explored = 78
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%                                 P%
+% %%%%%%%%%%%%%%%%%%%%%%% %%%%%%%%|%
+% %%   %   %      %%%%%%%   %%|||||%
+% %% % % % % %%%% %%%%%%%%% %%|%%%%%
+% %% % % % %             %% %%|||||%
+% %% % % % % % %%%%  %%%    %%%%%%|%
+% %  % % %   %    %% %%%%%%%%||||||%
+% %% % % %%%%%%%% %%        %%|%%%%%
+% %% %   %%       %%%%%%%%% %%|||||%
+%    %%%%%% %%%%%%%      %% %%%%%%|%
+%%%%%%      %       %%%% %% %||||||%
+%      %%%%%% %%%%% %    %% %%|%%%%%
+% %%%%%%      %       %%%%% %%|||||%
+%        %%%%%% %%%%%%%%%%% %%||%%|%
+%%%%%%%%%%||||||||||||||||||%%%%%%|%
+%E|||||||||%%%%%%%%%%%%%%%%||||||||%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+Path Cost = 74
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%                                 P%
+% %%%%%%%%%%%%%%%%%%%%%%% %%%%%%%%|%
+% %%   %   %      %%%%%%%   %%|||||%
+% %% % % % % %%%% %%%%%%%%% %%|%%%%%
+% %% % % % %             %% %%|||||%
+% %% % % % % % %%%%  %%%    %%%%%%|%
+% %  % % %   %    %% %%%%%%%% |||||%
+% %% % % %%%%%%%% %%        %%|%%%%%
+% %% %   %%       %%%%%%%%% %%|||||%
+%    %%%%%% %%%%%%%      %% %%%%%%|%
+%%%%%%      %       %%%% %% % |||||%
+%      %%%%%% %%%%% %    %% %%|%%%%%
+% %%%%%%      %       %%%%% %%|||||%
+%        %%%%%% %%%%%%%%%%% %%  %%|%
+%%%%%%%%%%||||||||||||||||||%%%%%%|%
+%E|||||||||%%%%%%%%%%%%%%%%||||||||%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+Doing UCS Search
+Num nodes explored = 269
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%|||||||||||||||||||||||||||||||||P%
+%|%%%%%%%%%%%%%%%%%%%%%%%|%%%%%%%%|%
+%|%%|||%|||%||||||%%%%%%%|||%%|||||%
+%|%%|%|%|%|%|%%%%|%%%%%%%%%|%%|%%%%%
+%|%%|%|%|%|%|||||||||||||%%|%%|||||%
+%|%%|%|%|%|%|%|%%%%||%%%||||%%%%%%|%
+%|%||%|%|%|||%||||%%|%%%%%%%%||||||%
+%|%%|%|%|%%%%%%%%|%%||||||||%%|%%%%%
+%|%%|%|||%%|||||||%%%%%%%%%|%%|||||%
+%||||%%%%%%|%%%%%%%||||||%%|%%%%%%|%
+%%%%%%||||||%|||||||%%%%|%%|%||||||%
+%||||||%%%%%%|%%%%%|%||||%%|%%|%%%%%
+%|%%%%%%||    %|||||||%%%%%|%%|||||%
+%||||||||%%%%%%|%%%%%%%%%%%|%%||%%|%
+%%%%%%%%%%||||||||||||||||||%%%%%%|%
+%E|||||||||%%%%%%%%%%%%%%%%||||||||%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+Path Cost = 68
+host-1-61:sam @ ~/FOR_SHARMA/src # ls
+AstarData.class				MazeSearch.java				PriorityQueueWrapper.java
+AstarData.java				MyPriorityQueue$1.class			State.class
+DisjointSet$Item.class			MyPriorityQueue.class			State.java
+DisjointSet.class			MyPriorityQueue.java			TSP$Coordinate.class
+DisjointSet.java			Node.class				TSP$State.class
+EatAllDots$Maze.class			Node.java				TSP.class
+EatAllDots.class			PacmanGrid$1.class			TSP.java
+EatAllDots.java				PacmanGrid.class			TSPForPacman$State.class
+Edge.class				PacmanGrid.java				TSPForPacman.class
+Edge.java				Point.class				TSPForPacman.java
+GridCanvas$1.class			Point.java				bigMaze.txt
+GridCanvas.class			PriorityQueueWrapper$1.class		mediumMaze.txt
+Location.class				PriorityQueueWrapper$MyItem.class	smallMaze.txt
+MazeSearch$MazeState.class		PriorityQueueWrapper$queueType.class
+MazeSearch.class			PriorityQueueWrapper.class
+host-1-61:sam @ ~/FOR_SHARMA/src # vim MazeSearch.java 
+host-1-61:sam @ ~/FOR_SHARMA/src # javac *.java
+Note: Some input files use unchecked or unsafe operations.
+Note: Recompile with -Xlint:unchecked for details.
+host-1-61:sam @ ~/FOR_SHARMA/src # java -version
+java version "1.7.0_67"
+Java(TM) SE Runtime Environment (build 1.7.0_67-b01)
+Java HotSpot(TM) 64-Bit Server VM (build 24.65-b04, mixed mode)
+host-1-61:sam @ ~/FOR_SHARMA/src # java MazeSearch
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%                                 P%
+% %%%%%%%%%%%%%%%%%%%%%%% %%%%%%%% %
+% %%   %   %      %%%%%%%   %%     %
+% %% % % % % %%%% %%%%%%%%% %% %%%%%
+% %% % % % %             %% %%     %
+% %% % % % % % %%%%  %%%    %%%%%% %
+% %  % % %   %    %% %%%%%%%%      %
+% %% % % %%%%%%%% %%        %% %%%%%
+% %% %   %%       %%%%%%%%% %%     %
+%    %%%%%% %%%%%%%      %% %%%%%% %
+%%%%%%      %       %%%% %% %      %
+%      %%%%%% %%%%% %    %% %% %%%%%
+% %%%%%%      %       %%%%% %%     %
+%        %%%%%% %%%%%%%%%%% %%  %% %
+%%%%%%%%%%                  %%%%%% %
+%.         %%%%%%%%%%%%%%%%        %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+Eating All Dots
+Num nodes explored = 3756
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+P%
+%.
+%%%%%%%%%%%%%%%%%%%%%%%.
+%%%%%%%%.
+%
+%.
+%%.
+  %.
+.
+.
+%.
+.
+.
+.
+.
+.
+%%%%%%%.
+.
+.
+%%.
+.
+.
+.
+.
+%
+%.
+%%.
+% %.
+%.
+%.
+%%%%.
+%%%%%%%%%.
+%%.
+%%%%%
+%.
+%%.
+% %.
+%.
+%.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+%%.
+%%.
+.
+.
+.
+.
+%
+%.
+%%.
+%.
+%.
+%.
+%.
+%.
+%%%%.
+.
+%%%.
+.
+.
+.
+%%%%%%.
+%
+%.
+%.
+.
+%.
+%.
+%.
+.
+.
+%.
+.
+.
+.
+%%.
+%%%%%%%%.
+.
+.
+.
+.
+.
+%
+%.
+%%.
+%.
+%.
+%%%%%%%%.
+%%.
+.
+.
+.
+.
+.
+.
+.
+%%.
+%%%%%
+%.
+%%.
+%.
+.
+.
+%%.
+.
+.
+.
+.
+.
+.
+%%%%%%%%%.
+%%.
+.
+.
+.
+.
+%
+%.
+.
+.
+.
+%%%%%%.
+%%%%%%%      %%.
+%%%%%%.
+%
+%%%%%%.
+.
+.
+.
+.
+.
+%       %%%% %%.
+%.
+.
+.
+.
+.
+.
+%
+%.
+.
+.
+.
+.
+.
+%%%%%% %%%%% %    %%.
+%%.
+%%%%%
+%.
+%%%%%%      %       %%%%%.
+%%.
+.
+.
+  %
+%.
+.
+.
+.
+.
+   %%%%%% %%%%%%%%%%%.
+%%.
+.
+%% %
+%%%%%%%%%%.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+%%%%%% %
+%E.
+.
+.
+.
+.
+.
+.
+.
+.
+%%%%%%%%%%%%%%%%.
+       %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+[(1, 34)]
+Path Cost = 0
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%                                 P%
+% %%%%%%%%%%%%%%%%%%%%%%% %%%%%%%% %
+% %%   %   %      %%%%%%%   %%     %
+% %% % % % % %%%% %%%%%%%%% %% %%%%%
+% %% % % % %             %% %%     %
+% %% % % % % % %%%%  %%%    %%%%%% %
+% %  % % %   %    %% %%%%%%%%      %
+% %% % % %%%%%%%% %%        %% %%%%%
+% %% %   %%       %%%%%%%%% %%     %
+%    %%%%%% %%%%%%%      %% %%%%%% %
+%%%%%%      %       %%%% %% %      %
+%      %%%%%% %%%%% %    %% %% %%%%%
+% %%%%%%      %       %%%%% %%     %
+%        %%%%%% %%%%%%%%%%% %%  %% %
+%%%%%%%%%%                  %%%%%% %
+%E         %%%%%%%%%%%%%%%%        %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+Doing DFS Search
+Num nodes explored = 144
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+P%
+%.
+%%%%%%%%%%%%%%%%%%%%%%% %%%%%%%% %
+%.
+%%.
+.
+.
+%.
+.
+.
+%      %%%%%%%.
+.
+.
+%%     %
+%.
+%%.
+%.
+%.
+%.
+% %%%% %%%%%%%%%.
+%% %%%%%
+%.
+%%.
+%.
+%.
+%.
+%.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+%%.
+%%     %
+%.
+%%.
+%.
+%.
+%.
+%.
+% %%%% .
+%%%.
+.
+.
+.
+%%%%%% %
+%.
+%.
+.
+%.
+%.
+%.
+.
+.
+%    %%.
+%%%%%%%%      %
+%.
+%%.
+%.
+%.
+%%%%%%%% %%.
+.
+.
+.
+.
+.
+.
+.
+%% %%%%%
+%.
+%%.
+%.
+.
+.
+%%       %%%%%%%%%.
+%%     %
+%.
+.
+.
+.
+%%%%%% %%%%%%%      %%.
+%%%%%% %
+%%%%%%      %       %%%% %%.
+%      %
+%      %%%%%% %%%%% %    %%.
+%% %%%%%
+% %%%%%%      %       %%%%%.
+%%     %
+%        %%%%%% %%%%%%%%%%%.
+%%  %% %
+%%%%%%%%%%.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+        .
+        .
+        %%%%%% %
+        %E.
+        .
+        .
+        .
+        .
+        .
+        .
+        .
+        .
+        %%%%%%%%%%%%%%%%        %
+        %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+        
+        Path Cost = 130
+        host-1-61:sam @ ~/FOR_SHARMA/src # vim MazeSearch.java 
+        host-1-61:sam @ ~/FOR_SHARMA/src # javac *.java
+        Note: Some input files use unchecked or unsafe operations.
+        Note: Recompile with -Xlint:unchecked for details.
+        host-1-61:sam @ ~/FOR_SHARMA/src # java MazeSearch
+        
+        %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+        %                                 P%
+        % %%%%%%%%%%%%%%%%%%%%%%% %%%%%%%% %
+        % %%   %   %      %%%%%%%   %%     %
+        % %% % % % % %%%% %%%%%%%%% %% %%%%%
+        % %% % % % %             %% %%     %
+        % %% % % % % % %%%%  %%%    %%%%%% %
+        % %  % % %   %    %% %%%%%%%%      %
+        % %% % % %%%%%%%% %%        %% %%%%%
+        % %% %   %%       %%%%%%%%% %%     %
+        %    %%%%%% %%%%%%%      %% %%%%%% %
+        %%%%%%      %       %%%% %% %      %
+        %      %%%%%% %%%%% %    %% %% %%%%%
+        % %%%%%%      %       %%%%% %%     %
+        %        %%%%%% %%%%%%%%%%% %%  %% %
+        %%%%%%%%%%                  %%%%%% %
+        %.         %%%%%%%%%%%%%%%%        %
+        %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+        
+        Eating All Dots
+        Num nodes explored = 3756
+        
+        %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+        %.................................P%
+        %.%%%%%%%%%%%%%%%%%%%%%%%.%%%%%%%%.%
+        %.%%.  %...%......%%%%%%%...%%.....%
+        %.%%.% %.%.%.%%%%.%%%%%%%%%.%%.%%%%%
+        %.%%.% %.%.%.............%%.%%.....%
+        %.%%.%.%.%.%.%.%%%%..%%%....%%%%%%.%
+        %.%..%.%.%...%....%%.%%%%%%%%......%
+        %.%%.%.%.%%%%%%%%.%%........%%.%%%%%
+        %.%%.%...%%.......%%%%%%%%%.%%.....%
+        %....%%%%%%.%%%%%%%      %%.%%%%%%.%
+        %%%%%%......%       %%%% %%.%......%
+        %......%%%%%% %%%%% %    %%.%%.%%%%%
+        %.%%%%%%      %       %%%%%.%%...  %
+        %.....   %%%%%% %%%%%%%%%%%.%%..%% %
+        %%%%%%%%%%..................%%%%%% %
+        %E.........%%%%%%%%%%%%%%%%.       %
+        %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+        
+        [(1, 34)]
+        Path Cost = 0
+        
+        %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+        %                                 P%
+        % %%%%%%%%%%%%%%%%%%%%%%% %%%%%%%% %
+        % %%   %   %      %%%%%%%   %%     %
+        % %% % % % % %%%% %%%%%%%%% %% %%%%%
+        % %% % % % %             %% %%     %
+        % %% % % % % % %%%%  %%%    %%%%%% %
+        % %  % % %   %    %% %%%%%%%%      %
+        % %% % % %%%%%%%% %%        %% %%%%%
+        % %% %   %%       %%%%%%%%% %%     %
+        %    %%%%%% %%%%%%%      %% %%%%%% %
+        %%%%%%      %       %%%% %% %      %
+        %      %%%%%% %%%%% %    %% %% %%%%%
+        % %%%%%%      %       %%%%% %%     %
+        %        %%%%%% %%%%%%%%%%% %%  %% %
+        %%%%%%%%%%                  %%%%%% %
+        %E         %%%%%%%%%%%%%%%%        %
+        %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+        
+        Doing DFS Search
+        Num nodes explored = 144
+        
+        %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+        %.................................P%
+        %.%%%%%%%%%%%%%%%%%%%%%%% %%%%%%%% %
+        %.%%...%...%      %%%%%%%...%%     %
+        %.%%.%.%.%.% %%%% %%%%%%%%%.%% %%%%%
+        %.%%.%.%.%.%.............%%.%%     %
+        %.%%.%.%.%.%.% %%%% .%%%....%%%%%% %
+        %.%..%.%.%...%    %%.%%%%%%%%      %
+        %.%%.%.%.%%%%%%%% %%........%% %%%%%
+        %.%%.%...%%       %%%%%%%%%.%%     %
+        %....%%%%%% %%%%%%%      %%.%%%%%% %
+        %%%%%%      %       %%%% %%.%      %
+        %      %%%%%% %%%%% %    %%.%% %%%%%
+        % %%%%%%      %       %%%%%.%%     %
+        %        %%%%%% %%%%%%%%%%%.%%  %% %
+        %%%%%%%%%%..................%%%%%% %
+        %E.........%%%%%%%%%%%%%%%%        %
+        %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+        
+        Path Cost = 130
+        host-1-61:sam @ ~/FOR_SHARMA/src # vim MazeSearch.java 
+        host-1-61:sam @ ~/FOR_SHARMA/src # java MazeSearch
+        
+        %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+        %                                 P%
+        % %%%%%%%%%%%%%%%%%%%%%%% %%%%%%%% %
+        % %%   %   %      %%%%%%%   %%     %
+        % %% % % % % %%%% %%%%%%%%% %% %%%%%
+        % %% % % % %             %% %%     %
+        % %% % % % % % %%%%  %%%    %%%%%% %
+        % %  % % %   %    %% %%%%%%%%      %
+        % %% % % %%%%%%%% %%        %% %%%%%
+        % %% %   %%       %%%%%%%%% %%     %
+        %    %%%%%% %%%%%%%      %% %%%%%% %
+        %%%%%%      %       %%%% %% %      %
+        %      %%%%%% %%%%% %    %% %% %%%%%
+        % %%%%%%      %       %%%%% %%     %
+        %        %%%%%% %%%%%%%%%%% %%  %% %
+        %%%%%%%%%%                  %%%%%% %
+        %.         %%%%%%%%%%%%%%%%        %
+        %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+        
+        Eating All Dots
+        Num nodes explored = 3756
+        
+        %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+        %.................................P%
+        %.%%%%%%%%%%%%%%%%%%%%%%%.%%%%%%%%.%
+        %.%%.  %...%......%%%%%%%...%%.....%
+        %.%%.% %.%.%.%%%%.%%%%%%%%%.%%.%%%%%
+        %.%%.% %.%.%.............%%.%%.....%
+        %.%%.%.%.%.%.%.%%%%..%%%....%%%%%%.%
+        %.%..%.%.%...%....%%.%%%%%%%%......%
+        %.%%.%.%.%%%%%%%%.%%........%%.%%%%%
+        %.%%.%...%%.......%%%%%%%%%.%%.....%
+        %....%%%%%%.%%%%%%%      %%.%%%%%%.%
+        %%%%%%......%       %%%% %%.%......%
+        %......%%%%%% %%%%% %    %%.%%.%%%%%
+        %.%%%%%%      %       %%%%%.%%...  %
+        %.....   %%%%%% %%%%%%%%%%%.%%..%% %
+        %%%%%%%%%%..................%%%%%% %
+        %E.........%%%%%%%%%%%%%%%%.       %
+        %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+        
+        [(1, 34)]
+        host-1-61:sam @ ~/FOR_SHARMA/src # javac *.java
+        Note: Some input files use unchecked or unsafe operations.
+        Note: Recompile with -Xlint:unchecked for details.
+        host-1-61:sam @ ~/FOR_SHARMA/src # java MazeSearch
+        
+        %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+        %                                 P%
+        % %%%%%%%%%%%%%%%%%%%%%%% %%%%%%%% %
+        % %%   %   %      %%%%%%%   %%     %
+        % %% % % % % %%%% %%%%%%%%% %% %%%%%
+        % %% % % % %             %% %%     %
+        % %% % % % % % %%%%  %%%    %%%%%% %
+        % %  % % %   %    %% %%%%%%%%      %
+        % %% % % %%%%%%%% %%        %% %%%%%
+        % %% %   %%       %%%%%%%%% %%     %
+        %    %%%%%% %%%%%%%      %% %%%%%% %
+        %%%%%%      %       %%%% %% %      %
+        %      %%%%%% %%%%% %    %% %% %%%%%
+        % %%%%%%      %       %%%%% %%     %
+        %        %%%%%% %%%%%%%%%%% %%  %% %
+        %%%%%%%%%%                  %%%%%% %
+        %.         %%%%%%%%%%%%%%%%        %
+        %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+        
+        Eating All Dots
+        Num nodes explored = 3756
+        
+        %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+        %.................................P%
+        %.%%%%%%%%%%%%%%%%%%%%%%%.%%%%%%%%.%
+        %.%%.  %...%......%%%%%%%...%%.....%
+        %.%%.% %.%.%.%%%%.%%%%%%%%%.%%.%%%%%
+        %.%%.% %.%.%.............%%.%%.....%
+        %.%%.%.%.%.%.%.%%%%..%%%....%%%%%%.%
+        %.%..%.%.%...%....%%.%%%%%%%%......%
+        %.%%.%.%.%%%%%%%%.%%........%%.%%%%%
+        %.%%.%...%%.......%%%%%%%%%.%%.....%
+        %....%%%%%%.%%%%%%%      %%.%%%%%%.%
+        %%%%%%......%       %%%% %%.%......%
+        %......%%%%%% %%%%% %    %%.%%.%%%%%
+        %.%%%%%%      %       %%%%%.%%...  %
+        %.....   %%%%%% %%%%%%%%%%%.%%..%% %
+        %%%%%%%%%%..................%%%%%% %
+        %E.........%%%%%%%%%%%%%%%%.       %
+        %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+        
+        [(1, 34)]
+        Path Cost = 0
+        
+        %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+        %                                 P%
+        % %%%%%%%%%%%%%%%%%%%%%%% %%%%%%%% %
+        % %%   %   %      %%%%%%%   %%     %
+        % %% % % % % %%%% %%%%%%%%% %% %%%%%
+        % %% % % % %             %% %%     %
+        % %% % % % % % %%%%  %%%    %%%%%% %
+        % %  % % %   %    %% %%%%%%%%      %
+        % %% % % %%%%%%%% %%        %% %%%%%
+        % %% %   %%       %%%%%%%%% %%     %
+        %    %%%%%% %%%%%%%      %% %%%%%% %
+        %%%%%%      %       %%%% %% %      %
+        %      %%%%%% %%%%% %    %% %% %%%%%
+        % %%%%%%      %       %%%%% %%     %
+        %        %%%%%% %%%%%%%%%%% %%  %% %
+        %%%%%%%%%%                  %%%%%% %
+        %E         %%%%%%%%%%%%%%%%        %
+        %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+        
+        Doing DFS Search
+        Num nodes explored = 144
+        
+        %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+        %.................................P%
+        %.%%%%%%%%%%%%%%%%%%%%%%% %%%%%%%% %
+        %.%%...%...%      %%%%%%%...%%     %
+        %.%%.%.%.%.% %%%% %%%%%%%%%.%% %%%%%
+        %.%%.%.%.%.%.............%%.%%     %
+        %.%%.%.%.%.%.% %%%% .%%%....%%%%%% %
+        %.%..%.%.%...%    %%.%%%%%%%%      %
+        %.%%.%.%.%%%%%%%% %%........%% %%%%%
+        %.%%.%...%%       %%%%%%%%%.%%     %
+        %....%%%%%% %%%%%%%      %%.%%%%%% %
+        %%%%%%      %       %%%% %%.%      %
+        %      %%%%%% %%%%% %    %%.%% %%%%%
+        % %%%%%%      %       %%%%%.%%     %
+        %        %%%%%% %%%%%%%%%%%.%%  %% %
+        %%%%%%%%%%..................%%%%%% %
+        %E.........%%%%%%%%%%%%%%%%        %
+        %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+        
+        Path Cost = 130
+        
+        %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+        %.................................P%
+        %.%%%%%%%%%%%%%%%%%%%%%%% %%%%%%%% %
+        %.%%...%...%      %%%%%%%   %%     %
+        %.%%.%.%.%.% %%%% %%%%%%%%% %% %%%%%
+        %.%%.%.%.%.%.........    %% %%     %
+        %.%%.%.%.%.%.% %%%% .%%%    %%%%%% %
+        %.% .%.%.%...%    %%.%%%%%%%%      %
+        %.%%.%.%.%%%%%%%% %%........%% %%%%%
+        %.%%.%...%%       %%%%%%%%%.%%     %
+        %....%%%%%% %%%%%%%      %%.%%%%%% %
+        %%%%%%      %       %%%% %%.%      %
+        %      %%%%%% %%%%% %    %%.%% %%%%%
+        % %%%%%%      %       %%%%%.%%     %
+        %        %%%%%% %%%%%%%%%%%.%%  %% %
+        %%%%%%%%%%..................%%%%%% %
+        %E.........%%%%%%%%%%%%%%%%        %
+        %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+        
+        
+        Doing BFS Search
+        Num nodes explored = 269
+        
+        %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+        %.................................P%
+        %.%%%%%%%%%%%%%%%%%%%%%%%.%%%%%%%%.%
+        %.%%...%...%......%%%%%%%...%%.....%
+        %.%%.%.%.%.%.%%%%.%%%%%%%%%.%%.%%%%%
+        %.%%.%.%.%.%.............%%.%%.....%
+        %.%%.%.%.%.%.%.%%%%..%%%....%%%%%%.%
+        %.%..%.%.%...%....%%.%%%%%%%%......%
+        %.%%.%.%.%%%%%%%%.%%........%%.%%%%%
+        %.%%.%...%%.......%%%%%%%%%.%%.....%
+        %....%%%%%%.%%%%%%%......%%.%%%%%%.%
+        %%%%%%......%.......%%%%.%%.%......%
+        %......%%%%%%.%%%%%.%....%%.%%.%%%%%
+        %.%%%%%%..    %.......%%%%%.%%.....%
+        %........%%%%%%.%%%%%%%%%%%.%%..%%.%
+        %%%%%%%%%%..................%%%%%%.%
+        %E.........%%%%%%%%%%%%%%%%........%
+        %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+        
+        Path Cost = 68
+        host-1-61:sam @ ~/FOR_SHARMA/src # vim MazeSearch.java 
+        host-1-61:sam @ ~/FOR_SHARMA/src # javac *.java
+        Note: Some input files use unchecked or unsafe operations.
+        Note: Recompile with -Xlint:unchecked for details.
+        host-1-61:sam @ ~/FOR_SHARMA/src # java MazeSearch
+        
+        %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+        %                                 P%
+        % %%%%%%%%%%%%%%%%%%%%%%% %%%%%%%% %
+        % %%   %   %      %%%%%%%   %%     %
+        % %% % % % % %%%% %%%%%%%%% %% %%%%%
+        % %% % % % %             %% %%     %
+        % %% % % % % % %%%%  %%%    %%%%%% %
+        % %  % % %   %    %% %%%%%%%%      %
+        % %% % % %%%%%%%% %%        %% %%%%%
+        % %% %   %%       %%%%%%%%% %%     %
+        %    %%%%%% %%%%%%%      %% %%%%%% %
+        %%%%%%      %       %%%% %% %      %
+        %      %%%%%% %%%%% %    %% %% %%%%%
+        % %%%%%%      %       %%%%% %%     %
+        %        %%%%%% %%%%%%%%%%% %%  %% %
+        %%%%%%%%%%                  %%%%%% %
+        %.         %%%%%%%%%%%%%%%%        %
+        %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+        
+        Eating All Dots
+        Num nodes explored = 3756
+        
+        %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+        %.................................P%
+        %.%%%%%%%%%%%%%%%%%%%%%%%.%%%%%%%%.%
+        %.%%.  %...%......%%%%%%%...%%.....%
+        %.%%.% %.%.%.%%%%.%%%%%%%%%.%%.%%%%%
+        %.%%.% %.%.%.............%%.%%.....%
+        %.%%.%.%.%.%.%.%%%%..%%%....%%%%%%.%
+        %.%..%.%.%...%....%%.%%%%%%%%......%
+        %.%%.%.%.%%%%%%%%.%%........%%.%%%%%
+        %.%%.%...%%.......%%%%%%%%%.%%.....%
+        %....%%%%%%.%%%%%%%      %%.%%%%%%.%
+        %%%%%%......%       %%%% %%.%......%
+        %......%%%%%% %%%%% %    %%.%%.%%%%%
+        %.%%%%%%      %       %%%%%.%%...  %
+        %.....   %%%%%% %%%%%%%%%%%.%%..%% %
+        %%%%%%%%%%..................%%%%%% %
+        %E.........%%%%%%%%%%%%%%%%.       %
+        %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+        
+        [(1, 34)]
+        Path Cost = 0
+        
+        %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+        %                                 P%
+        % %%%%%%%%%%%%%%%%%%%%%%% %%%%%%%% %
+        % %%   %   %      %%%%%%%   %%     %
+        % %% % % % % %%%% %%%%%%%%% %% %%%%%
+        % %% % % % %             %% %%     %
+        % %% % % % % % %%%%  %%%    %%%%%% %
+        % %  % % %   %    %% %%%%%%%%      %
+        % %% % % %%%%%%%% %%        %% %%%%%
+        % %% %   %%       %%%%%%%%% %%     %
+        %    %%%%%% %%%%%%%      %% %%%%%% %
+        %%%%%%      %       %%%% %% %      %
+        %      %%%%%% %%%%% %    %% %% %%%%%
+        % %%%%%%      %       %%%%% %%     %
+        %        %%%%%% %%%%%%%%%%% %%  %% %
+        %%%%%%%%%%                  %%%%%% %
+        %E         %%%%%%%%%%%%%%%%        %
+        %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+        
+        Doing DFS Search
+        Num nodes explored = 144
+        
+        %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+        %.................................P%
+        %.%%%%%%%%%%%%%%%%%%%%%%% %%%%%%%% %
+        %.%%...%...%      %%%%%%%...%%     %
+        %.%%.%.%.%.% %%%% %%%%%%%%%.%% %%%%%
+        %.%%.%.%.%.%.............%%.%%     %
+        %.%%.%.%.%.%.% %%%% .%%%....%%%%%% %
+        %.%..%.%.%...%    %%.%%%%%%%%      %
+        %.%%.%.%.%%%%%%%% %%........%% %%%%%
+        %.%%.%...%%       %%%%%%%%%.%%     %
+        %....%%%%%% %%%%%%%      %%.%%%%%% %
+        %%%%%%      %       %%%% %%.%      %
+        %      %%%%%% %%%%% %    %%.%% %%%%%
+        % %%%%%%      %       %%%%%.%%     %
+        %        %%%%%% %%%%%%%%%%%.%%  %% %
+        %%%%%%%%%%..................%%%%%% %
+        %E.........%%%%%%%%%%%%%%%%        %
+        %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+        
+        Path Cost = 130
+        
+        %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+        %.................................P%
+        %.%%%%%%%%%%%%%%%%%%%%%%% %%%%%%%% %
+        %.%%...%...%      %%%%%%%   %%     %
+        %.%%.%.%.%.% %%%% %%%%%%%%% %% %%%%%
+        %.%%.%.%.%.%.........    %% %%     %
+        %.%%.%.%.%.%.% %%%% .%%%    %%%%%% %
+        %.% .%.%.%...%    %%.%%%%%%%%      %
+        %.%%.%.%.%%%%%%%% %%........%% %%%%%
+        %.%%.%...%%       %%%%%%%%%.%%     %
+        %....%%%%%% %%%%%%%      %%.%%%%%% %
+        %%%%%%      %       %%%% %%.%      %
+        %      %%%%%% %%%%% %    %%.%% %%%%%
+        % %%%%%%      %       %%%%%.%%     %
+        %        %%%%%% %%%%%%%%%%%.%%  %% %
+        %%%%%%%%%%..................%%%%%% %
+        %E.........%%%%%%%%%%%%%%%%        %
+        %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+        
+        
+        Doing BFS Search
+        Num nodes explored = 269
+        
+        %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+        %.................................P%
+        %.%%%%%%%%%%%%%%%%%%%%%%%.%%%%%%%%.%
+        %.%%...%...%......%%%%%%%...%%.....%
+        %.%%.%.%.%.%.%%%%.%%%%%%%%%.%%.%%%%%
+        %.%%.%.%.%.%.............%%.%%.....%
+        %.%%.%.%.%.%.%.%%%%..%%%....%%%%%%.%
+        %.%..%.%.%...%....%%.%%%%%%%%......%
+        %.%%.%.%.%%%%%%%%.%%........%%.%%%%%
+        %.%%.%...%%.......%%%%%%%%%.%%.....%
+        %....%%%%%%.%%%%%%%......%%.%%%%%%.%
+        %%%%%%......%.......%%%%.%%.%......%
+        %......%%%%%%.%%%%%.%....%%.%%.%%%%%
+        %.%%%%%%..    %.......%%%%%.%%.....%
+        %........%%%%%%.%%%%%%%%%%%.%%..%%.%
+        %%%%%%%%%%..................%%%%%%.%
+        %E.........%%%%%%%%%%%%%%%%........%
+        %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+        
+        Path Cost = 68
+        
+        %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+        %                        .........P%
+        % %%%%%%%%%%%%%%%%%%%%%%%.%%%%%%%% %
+        % %%   %   %      %%%%%%%...%%     %
+        % %% % % % % %%%% %%%%%%%%%.%% %%%%%
+        % %% % % % %        .....%%.%%     %
+        % %% % % % % % %%%% .%%%....%%%%%% %
+        % %  % % %   %    %%.%%%%%%%%      %
+        % %% % % %%%%%%%% %%........%% %%%%%
+        % %% %   %%       %%%%%%%%%.%%     %
+        %    %%%%%% %%%%%%%      %%.%%%%%% %
+        %%%%%%      %       %%%% %%.%      %
+        %      %%%%%% %%%%% %    %%.%% %%%%%
+        % %%%%%%      %       %%%%%.%%     %
+        %        %%%%%% %%%%%%%%%%%.%%  %% %
+        %%%%%%%%%%..................%%%%%% %
+        %E.........%%%%%%%%%%%%%%%%        %
+        %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+        
+        
+        Doing Greedy Search
+        Num nodes explored = 78
+        
+        %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+        %                                 P%
+        % %%%%%%%%%%%%%%%%%%%%%%% %%%%%%%%.%
+        % %%   %   %      %%%%%%%   %%.....%
+        % %% % % % % %%%% %%%%%%%%% %%.%%%%%
+        % %% % % % %             %% %%.....%
+        % %% % % % % % %%%%  %%%    %%%%%%.%
+        % %  % % %   %    %% %%%%%%%%......%
+        % %% % % %%%%%%%% %%        %%.%%%%%
+        % %% %   %%       %%%%%%%%% %%.....%
+        %    %%%%%% %%%%%%%      %% %%%%%%.%
+        %%%%%%      %       %%%% %% %......%
+        %      %%%%%% %%%%% %    %% %%.%%%%%
+        % %%%%%%      %       %%%%% %%.....%
+        %        %%%%%% %%%%%%%%%%% %%..%%.%
+        %%%%%%%%%%..................%%%%%%.%
+        %E.........%%%%%%%%%%%%%%%%........%
+        %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+        
+        Path Cost = 74
+        
+        %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+        %                                 P%
+        % %%%%%%%%%%%%%%%%%%%%%%% %%%%%%%%.%
+        % %%   %   %      %%%%%%%   %%.....%
+        % %% % % % % %%%% %%%%%%%%% %%.%%%%%
+        % %% % % % %             %% %%.....%
+        % %% % % % % % %%%%  %%%    %%%%%%.%
+        % %  % % %   %    %% %%%%%%%% .....%
+        % %% % % %%%%%%%% %%        %%.%%%%%
+        % %% %   %%       %%%%%%%%% %%.....%
+        %    %%%%%% %%%%%%%      %% %%%%%%.%
+        %%%%%%      %       %%%% %% % .....%
+        %      %%%%%% %%%%% %    %% %%.%%%%%
+        % %%%%%%      %       %%%%% %%.....%
+        %        %%%%%% %%%%%%%%%%% %%  %%.%
+        %%%%%%%%%%..................%%%%%%.%
+        %E.........%%%%%%%%%%%%%%%%........%
+        %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+        
+        
+        Doing UCS Search
+        Num nodes explored = 269
+        
+        %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+        %.................................P%
+        %.%%%%%%%%%%%%%%%%%%%%%%%.%%%%%%%%.%
+        %.%%...%...%......%%%%%%%...%%.....%
+        %.%%.%.%.%.%.%%%%.%%%%%%%%%.%%.%%%%%
+        %.%%.%.%.%.%.............%%.%%.....%
+        %.%%.%.%.%.%.%.%%%%..%%%....%%%%%%.%
+        %.%..%.%.%...%....%%.%%%%%%%%......%
+        %.%%.%.%.%%%%%%%%.%%........%%.%%%%%
+        %.%%.%...%%.......%%%%%%%%%.%%.....%
+        %....%%%%%%.%%%%%%%......%%.%%%%%%.%
+        %%%%%%......%.......%%%%.%%.%......%
+        %......%%%%%%.%%%%%.%....%%.%%.%%%%%
+        %.%%%%%%..    %.......%%%%%.%%.....%
+        %........%%%%%%.%%%%%%%%%%%.%%..%%.%
+        %%%%%%%%%%..................%%%%%%.%
+        %E.........%%%%%%%%%%%%%%%%........%
+        %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+        
+        Path Cost = 68
+        
+        %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+        %                        .........P%
+        % %%%%%%%%%%%%%%%%%%%%%%%.%%%%%%%% %
+        % %%   %   %      %%%%%%%...%%     %
+        % %% % % % % %%%% %%%%%%%%%.%% %%%%%
+        % %% % % % %        .....%%.%%     %
+        % %% % % % % % %%%% .%%%....%%%%%% %
+        % %  % % %   %    %%.%%%%%%%%      %
+        % %% % % %%%%%%%% %%........%% %%%%%
+        % %% %   %%       %%%%%%%%%.%%     %
+        %    %%%%%% %%%%%%%      %%.%%%%%% %
+        %%%%%%      %       %%%% %%.%      %
+        %      %%%%%% %%%%% %    %%.%% %%%%%
+        % %%%%%%      %       %%%%%.%%     %
+        %        %%%%%% %%%%%%%%%%%.%%  %% %
+        %%%%%%%%%%..................%%%%%% %
+        %E.........%%%%%%%%%%%%%%%%        %
+        %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+        
+        
+        Doing ASTAR Search
+        Num nodes explored = 222
+        
+        %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+        %.................................P%
+        %.%%%%%%%%%%%%%%%%%%%%%%%.%%%%%%%%.%
+        %.%%.  %...%......%%%%%%%...%%.....%
+        %.%%.% %.%.%.%%%%.%%%%%%%%%.%%.%%%%%
+        %.%%.% %.%.%.............%%.%%.....%
+        %.%%.%.%.%.%.%.%%%%..%%%....%%%%%%.%
+        %.%..%.%.%...%....%%.%%%%%%%%......%
+        %.%%.%.%.%%%%%%%%.%%........%%.%%%%%
+        %.%%.%...%%.......%%%%%%%%%.%%.....%
+        %....%%%%%%.%%%%%%%      %%.%%%%%%.%
+        %%%%%%......%       %%%% %%.%......%
+        %......%%%%%% %%%%% %    %%.%%.%%%%%
+        %.%%%%%%      %       %%%%%.%%...  %
+        %.....   %%%%%% %%%%%%%%%%%.%%..%% %
+        %%%%%%%%%%..................%%%%%% %
+        %E.........%%%%%%%%%%%%%%%%.       %
+        %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+        
+        Path Cost = 68
+        
+        %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+        %                        .........P%
+        % %%%%%%%%%%%%%%%%%%%%%%%.%%%%%%%% %
+        % %%   %   %      %%%%%%%...%%     %
+        % %% % % % % %%%% %%%%%%%%%.%% %%%%%
+        % %% % % % %        .....%%.%%     %
+        % %% % % % % % %%%% .%%%....%%%%%% %
+        % %  % % %   %    %%.%%%%%%%%      %
+        % %% % % %%%%%%%% %%........%% %%%%%
+        % %% %   %%       %%%%%%%%%.%%     %
+        %    %%%%%% %%%%%%%      %%.%%%%%% %
+        %%%%%%      %       %%%% %%.%      %
+        %      %%%%%% %%%%% %    %%.%% %%%%%
+        % %%%%%%      %       %%%%%.%%     %
+        %        %%%%%% %%%%%%%%%%%.%%  %% %
+        %%%%%%%%%%..................%%%%%% %
+        %E.........%%%%%%%%%%%%%%%%        %
+        %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+host-1-61:sam @ ~/FOR_SHARMA/src # 

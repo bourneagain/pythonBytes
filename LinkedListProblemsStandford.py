@@ -227,28 +227,58 @@ class linkedlist:
 
         return prev
 
+    def delalternate(self, head):
+        if not head:
+            return None
+        if not head.next:
+            return head
+        ref = head
+        while head and head.next:
+            temp = head.next
+            head.next = head.next.next
+            del temp
+            head = head.next
+        return ref
 
+    def del_right_big(self, head):
+        if not head:
+            return None
+        if not head.next:
+            return head
+  
+        cur = head
+        while cur and cur.next:
+            if cur.data < cur.next.data:
+                cur.data  = cur.next.data
+                t = cur.next
+                cur.next = cur.next.next
+                del t
+            else:
+                cur = cur.next
 
+        return head
        
 
 
 
 a_list = linkedlist()
-head = Node(800)
-head = a_list.addNode(head, 24)
-head = a_list.addNode(head, 8)
-head = a_list.addNode(head, 22)
-head = a_list.addNode(head, 700)
-head = a_list.addNode(head, -8)
+head = Node(3)
+head = a_list.addNode(head, 2)
+head = a_list.addNode(head, 6)
+head = a_list.addNode(head, 5)
+head = a_list.addNode(head, 11)
+head = a_list.addNode(head, 10)
 
-head = a_list.addNode(head, 87)
-head = a_list.addNode(head, 9)
+head = a_list.addNode(head, 15)
+# head = a_list.addNode(head, 12)
 a_list.printlist(head)
 # head = a_list.mergesort(head)
 # a_list.printlist(head)
 
 # head = a_list.reverse_recursive(head)
-head = a_list.reverse_k_nodes(head, 2)
+# head = a_list.reverse_k_nodes(head, 2)
+#head = a_list.delalternate(head)
+head = a_list.del_right_big(head)
 a_list.printlist(head)
 
 # head1 = Node(20)

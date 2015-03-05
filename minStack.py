@@ -5,7 +5,7 @@ class Stack():
 
 	def min_(self):
 		if not self.bstack:
-			return 999999
+			return "NOT PRESENT"
 		else:
 			return self.bstack[-1]
 	def push(self, data):
@@ -29,14 +29,11 @@ trystack.push(-1)
 trystack.push(5)
 trystack.push(-3)
 trystack.push(7)
+trystack.push(233)
 print trystack.min_()
 print trystack.pop()
 print trystack.pop()
-print trystack.pop()
-print trystack.pop()
-print trystack.pop()
-print trystack.pop()
-print trystack.pop()
+# 
 
 print trystack.min_()
 

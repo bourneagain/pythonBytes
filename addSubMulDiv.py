@@ -49,5 +49,5 @@ def neg(n):
 
 	return result
 
-print divide(16,-8)
+print divide(19,2)
 #print subt(-2,-3)

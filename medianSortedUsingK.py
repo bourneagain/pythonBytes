@@ -39,7 +39,7 @@ a=[]
 b=[1]
 print A.findMedianSortedArrays(a,b)        
 
-"""
+# """
 o(log(m)+log(n))
 def findMedianSortedArrays(self, A, B):
     l = len(A) + len(B)
@@ -70,4 +70,4 @@ def kth(self, a, b, k):
             return self.kth(a[:ia], b, k)
         else:
             return self.kth(a, b[:ib], k)
-"""
+# """

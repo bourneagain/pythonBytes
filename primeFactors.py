@@ -1,4 +1,14 @@
 def primes(n):
+    # res = []
+    # i = 2 
+    # while i*i <= n:
+    #     while n%i == 0:
+    #         res.append(i)
+    #         n=n//i
+    #     i+=1
+    # return res
+
+
     primfac = []
     d = 2
     while d*d <= n:
@@ -9,4 +19,4 @@ def primes(n):
     if n > 1:
        primfac.append(n)
     return primfac
-print primes(42)
+print primes(125)

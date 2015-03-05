@@ -1,6 +1,5 @@
 def sortStack(st):
 	rst = []
-	
 	while st:
 		temp = st.pop()
 		while rst and temp < rst[-1]:

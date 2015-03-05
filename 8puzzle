@@ -1,0 +1,90 @@
+import Queue
+import time
+# import heaq
+class Board():
+	def __init__(self, x):
+		self.board_array = x
+	def __eq__(self, other):
+		return self.board_array == other.board_array
+	def __hash__(self):
+		a=0
+		i=0
+		for n in self.board_array:
+			a+=n*(3**i)
+		return hash(a)
+	def findNeighbours(self):
+		i = self.board_array.index(0)
+		print i
+		x = []
+		x.append(i+3)
+		x.append(i-3)
+		x.append(i-1)
+		x.append(i+1)
+		res = []
+		for move in x:
+			if move >=0 and move <=8:
+				res.append(move)
+		return move
+	def printb(self):
+		return self.board_array
+	def is_reached(self):
+		for index, i  in enumerate(self.board_array):
+			if index != i:
+				return False
+		return True
+	def find_missed_value(self, skip):
+		res = []
+		for index,i in enumerate(self.board_array):
+			if skip and i == 0:
+				continue
+			if index != i:
+				res.append(i)
+		return res
+	def gashnik(self):
+		print "BOARD"
+		
+
+		result = []
+		res = self.find_missed_value(1)
+		res.sort()
+		path_cost = 0
+		while not self.is_reached():
+			time.sleep(1)
+			print "RES", res
+			print "BOARD",self.printb()
+			path_cost+=1
+			zero_index = self.board_array.index(0)
+			if zero_index != 0 :
+				# assume board 6 3 5 2 1 50 4 8 7 
+				# index of 0 = 5
+				# index of 5 = 2 
+				# swap a[2] and a[5] 
+				# remove 5 ; index of 0 initially from res
+				# case where the 0 is not in the right place
+				to_swap = self.board_array.index(zero_index)
+				
+				# to_swap contains the index of 0 
+				self.board_array[to_swap],self.board_array[zero_index] = self.board_array[zero_index], self.board_array[to_swap]
+				
+			else:
+				# case where 0 is in the right place
+				# take first of the res
+				# swap 
+				checkVal = res[0]
+				to_swap = self.board_array.index(checkVal)
+				self.board_array[self.board_array.index(0)], self.board_array[to_swap] = to_swap, self.board_array[to_swap]
+				del res[0]
+# del a[a.index(2)]
+
+
+A = [6,3,5,2,1,0,4,8,7]
+a = Board(A)		
+
+a.gashnik()
+
+
+
+
+
+
+

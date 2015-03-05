@@ -20,7 +20,9 @@ def a_cluster(lst):
 	return result
 
 a=['god', 'dog', 'abc', 'cab', 'man']
-print a_cluster(a)
+print a
+print a_sort(a)
+#print a_cluster(a)
 
 """
 

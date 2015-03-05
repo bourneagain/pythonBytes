@@ -1,3 +1,4 @@
+import sys
 def makebold(func):
     def wrapped(*args,**kwargs):
         return "<b>" + func(*args,**kwargs) + "</b>"  
@@ -16,7 +17,7 @@ def text(num,name="hello"):
 
 print text(2,name="sam")
 
-
+sys.exit()
 
 
 print "-----------------"

@@ -1,0 +1,28 @@
+wget: unable to resolve host address 'gutenberg'
+--2014-12-28 16:16:18--  http://ebook/
+Resolving ebook... failed: nodename nor servname provided, or not known.
+wget: unable to resolve host address 'ebook'
+--2014-12-28 16:16:18--  http://of/
+Resolving of... failed: nodename nor servname provided, or not known.
+wget: unable to resolve host address 'of'
+--2014-12-28 16:16:18--  http://the/
+Resolving the... failed: nodename nor servname provided, or not known.
+wget: unable to resolve host address 'the'
+--2014-12-28 16:16:18--  http://complete/
+Resolving complete... failed: nodename nor servname provided, or not known.
+wget: unable to resolve host address 'complete'
+--2014-12-28 16:16:18--  http://works/
+Resolving works... failed: nodename nor servname provided, or not known.
+wget: unable to resolve host address 'works'
+--2014-12-28 16:16:18--  http://of/
+Resolving of... failed: nodename nor servname provided, or not known.
+wget: unable to resolve host address 'of'
+--2014-12-28 16:16:18--  http://william/
+Resolving william... failed: nodename nor servname provided, or not known.
+wget: unable to resolve host address 'william'
+--2014-12-28 16:16:18--  http://shakespeare,/
+Resolving shakespeare,... failed: nodename nor servname provided, or not known.
+wget: unable to resolve host address 'shakespeare,'
+--2014-12-28 16:16:28--  http://by/
+Resolving by... failed: nodename nor servname provided, or not known.
+wget: unable to resolve host address 'by'

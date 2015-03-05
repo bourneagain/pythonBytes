@@ -5,6 +5,106 @@ class TreeNode:
         self.right = None
 
 class BSTree:
+    def constructTree(self, preorder, inorder, length):
+        if not inorder or not preorder or length < 0:
+            return None
+        return self.constructTree_private(preorder, inorder, 0, length-1, 0, length-1)
+
+    def constructTree_private(self, preorder, inorder, start_preorder, end_preorder, start_inorder, end_inorder):
+        root_val = preorder[start_preorder]
+        root = TreeNode(root_val)
+        if start_preorder == end_preorder and start_inorder == end_preorder:
+            return root
+        root_inorder = start_inorder
+
+        while root_inorder <= end_inorder and inorder[root_inorder] != root_val:
+            root_inorder += 1
+
+        left_length = root_inorder - start_inorder
+        left_preorder_end = start_preorder + left_length
+
+        if left_length > 0:
+            root.left = self.constructTree_private(preorder, inorder, start_preorder+1, left_preorder_end, start_inorder, left_length-1)
+        if left_length < end_preorder - start_preorder:
+            root.right = self.constructTree_private(preorder, inorder, left_length+1, end_preorder, root_inorder+1, end_inorder)           
+
+        return root
+
+    def countNumberOfNodes(self, root):
+        if not root:
+            return 0
+        return 1 + self.countNumberOfNodes(root.left) + self.countNumberOfNodes(root.right)
+    def medianBST(self, root):
+        n = self.countNumberOfNodes(root)
+        count = 1
+        # while root:
+            
+    def ismirror(self, root):
+        if not root:
+            return True
+        if not root.left and not root.right:
+            return True
+        return self.ismirror_u(root.left, root.right)
+
+    def diameter(self, root, max_len_):
+        if not root:
+            return 0
+        lheight = diameter(root.left)
+        rheight = diameter(root.right)
+        len_ = lheight + rheight+1
+        max_len_ = max(len_,max_len_)
+        return max_len_
+
+    def ismirror_u(self, nleft, nright):
+        if not nleft or not nright:
+            return False
+        if not nleft and not nright:
+            return True
+        return ismirror_u(nleft.left,nleft.right) and ismirror_u(nright.left, nright.right)
+
+    def printSum(self, root, sum_check, level, path):
+        if not root:
+            return
+        print "LEVEL",level
+        path[level] = root.data
+        t=0
+        for i in range(level,-1,-1):
+            print "PATH",level,path
+            t+=path[i]
+            print "T",t
+            if t == sum_check:
+                print path[:i]
+        self.printSum(root.left, sum_check, level+1, path)
+        self.printSum(root.right, sum_check, level+1, path)
+        path[level] = -99999999
+
+
+    def printSum_main(self, root, sum_check):
+        path = [0]*self.max_depth(root)
+        self.printSum(root, sum_check, 0, path)
+    def treeToLevelLinkedList(self, root):
+        cu = []
+        cu.append(root)
+        res=[]
+        while cur:
+            res.append(cu)
+            cu=[]
+            if root.left:
+                cu.append(root.left)
+            if root.right:
+                cu.append(root.right)
+        return res
+
+    def arrayToBST(self, arr):
+        if not arr:
+            return None
+        n = len(arr)
+        mid = n//2
+        root = TreeNode(arr[mid])
+        root.left = self.arrayToBST(arr[:mid])
+        root.right = self.arrayToBST(arr[mid+1:])
+        return root
+
     count = 0
     def closestNode(self, root, val):
         return self.closestNodeHelper(root,val, None)
@@ -250,19 +350,6 @@ class BSTree:
                 return in_start
             in_start+=1
 
-    def construct_tree_inorder_preorder(self, ino, preo, instart, inend, prestart ):
-        #failing
-        print preo, instart, inend
-        if instart > inend:
-            return None
-        root = TreeNode(preo[prestart])
-        if instart == inend:
-            return root
-        index = self.search_index(ino, instart, inend, root.data)
-        print root.data, index
-        root.left = self.construct_tree_inorder_preorder(ino, preo, instart, index,prestart+1)
-        root.right = self.construct_tree_inorder_preorder(ino, preo, index+1, inend,prestart+1)
-        return root
 
 
 
@@ -270,19 +357,25 @@ class BSTree:
 
 
 tree = BSTree()
-root = TreeNode(1)
-root = tree.addNode(root, 199)
-root = tree.addNode(root, 300)
-root = tree.addNode(root, -21)
-root = tree.addNode(root, 890)
-root = tree.addNode(root, 8900)
-root = tree.addNode(root, 4)
+inorder = [4,7,2,1,5,3,8,6]
+preorder = [1,2,4,7,3,5,6,8]
+print inorder(tree.constructTree(preorder,inorder, 8))
 
-print tree.closestNode(root,198).data
+# root = tree.arrayToBST(arr)
+# print tree.countNumberOfNodes(root)
+# print tree.printSum_main(root,2)
+# root = TreeNode(1)
+# root = tree.addNode(root, 199)
+# root = tree.addNode(root, 300)
+# root = tree.addNode(root, -21)
+# root = tree.addNode(root, 890)
+# root = tree.addNode(root, 8900)
+# root = tree.addNode(root, 4)
+
+# print tree.closestNode(root,198).data
 
 # preorder = [7,10,4,3,1,2,8,11]
 # inorder = [4,10,3,1,7,11,8,2]
-# root  = tree.construct_tree_inorder_preorder(inorder, preorder, 0 , len(inorder), 0 )
 # root.right.right=TreeNode(4)
 
 # root2 = TreeNode(2)
